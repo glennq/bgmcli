@@ -1,3 +1,6 @@
+CUR_VERSION = (0, 0, 1)
+
+
 class BangumiBase(object):
     """Interface for all element and collection classes"""
 
@@ -12,10 +15,10 @@ class BangumiBase(object):
         raise NotImplementedError
 
     @classmethod
-    def deserialize(cls, text):
+    def from_json(cls, json_text):
         """Create element object from serialized form"""
         raise NotImplementedError
 
-    def serialize(self):
+    def to_json(self):
         """Transform to a serializable from"""
         raise NotImplementedError

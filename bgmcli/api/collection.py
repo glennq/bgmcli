@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 import re
+import weakref
+import json
 from functools import wraps
 from bs4 import BeautifulSoup
-from element import BangumiEpisode, BangumiSubject
+from .element import BangumiEpisode, BangumiSubject
 from .utils import get_user_id_from_soup, get_checked_values, to_unicode,\
     get_ep_colls_up_to_this
-from .base import BangumiBase
+from .base import BangumiBase, CUR_VERSION
 
 
 def require_session(method):
@@ -172,6 +174,51 @@ class BangumiSubjectCollection(BangumiCollection, BangumiBase):
                               .ep_colls_for_sub_from_soup(subject, ep_soup))
             return cls(subject, status, rating, tags, comment, n_watched_eps,
                        ep_collections)
+
+    @classmethod
+    def from_json(cls, json_text):
+        """Convert back from json
+        
+        Args:
+            json_text (unicode): json text to convert from
+            
+        Returns:
+            BangumiSubjectCollection: created from data in json text
+        """
+        kwargs = json.loads(json_text)
+        kwargs.pop('version', (0, 0, 1))
+        kwargs = {(key[1:] if key.startswith('_') else key): value
+                  for key, value in kwargs.items()}
+        kwargs['ep_collections'] = [BangumiEpisodeCollection.from_json(j_text)
+                                    for j_text in kwargs['ep_collections']]
+        kwargs['subject'] = BangumiSubject.from_json(kwargs['subject'])
+        sub_coll = cls(**kwargs)
+        sub_coll.subject._eps = [ep_coll.episode for ep_coll
+                                 in sub_coll.ep_collections]
+        for ep_coll in sub_coll.ep_collections:
+            ep_coll.sub_collection = sub_coll
+        for ep in sub_coll.subject.eps:
+            ep.subject = sub_coll.subject
+        return sub_coll
+    
+    def to_json(self):
+        """Convert to json
+        
+        Returns:
+            unicode: converted json text
+        """
+        kwargs = self.__dict__.copy()
+        kwargs['version'] = CUR_VERSION
+        kwargs.pop('_session')
+        kwargs['_ep_collections'] = [ep_coll.to_json() for ep_coll in
+                                     kwargs['_ep_collections']]
+        # temporarily drop subject._eps to avoid duplicating information,
+        # since _ep_collections already contains data for episodes
+        sub, eps = kwargs['_subject'], kwargs['_subject']._eps
+        kwargs['_subject']._eps = []
+        kwargs['_subject'] = kwargs['_subject'].to_json()
+        sub._eps = eps
+        return json.dumps(kwargs, ensure_ascii=False)
 
     @property
     def subject(self):
@@ -391,7 +438,8 @@ class BangumiEpisodeCollection(BangumiCollection, BangumiBase):
     def __init__(self, episode, c_status=None, sub_collection=None):
         self._episode = episode
         self._c_status = c_status
-        self._sub_collection = sub_collection
+        self._sub_collection = (weakref.ref(sub_collection)
+                                if sub_collection else None)
         self._session = None
 
     @classmethod
@@ -506,6 +554,39 @@ class BangumiEpisodeCollection(BangumiCollection, BangumiBase):
                 ep_collections.append(ep_collection)
         return ep_collections
 
+    @classmethod
+    def from_json(cls, json_text):
+        """Convert back from json
+        
+        Args:
+            json_text (unicode): json text to convert from
+            
+        Returns:
+            BangumiEpisodeCollection: created from data in json text
+        """
+        kwargs = json.loads(json_text)
+        kwargs.pop('version', (0, 0, 1))
+        kwargs = {(key[1:] if key.startswith('_') else key): value
+                  for key, value in kwargs.items()}
+        kwargs['episode'] = BangumiEpisode.from_json(kwargs['episode'])
+        return cls(**kwargs)
+    
+    def to_json(self):
+        """Convert to json
+        
+        Note:
+            sub_collection and session are dropped
+            
+        Returns:
+            unicode: converted json text
+        """
+        kwargs = self.__dict__.copy()
+        kwargs['version'] = CUR_VERSION
+        kwargs.pop('_sub_collection')
+        kwargs.pop('_session')
+        kwargs['_episode'] = kwargs['_episode'].to_json()
+        return json.dumps(kwargs, ensure_ascii=False)
+    
     @property
     def episode(self):
         """BangumiEpisode: the episode associated with this collection
@@ -535,11 +616,14 @@ class BangumiEpisodeCollection(BangumiCollection, BangumiBase):
         
         setter will raise TypeError for incorrect type
         """
-        return self._sub_collection
+        if self._sub_collection is None:
+            return self._sub_collection
+        else:
+            return self._sub_collection()
     
     @sub_collection.setter
     def sub_collection(self, value):
         if not isinstance(value, BangumiSubjectCollection):
             raise TypeError("value must be BangumiSubjectCollection, got {0}"
                             .format(type(value)))
-        self._sub_collection = value
+        self._sub_collection = weakref.ref(value)

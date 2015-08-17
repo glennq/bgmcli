@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 import re
+import weakref
+import json
 from bs4 import BeautifulSoup
-from .base import BangumiBase
+from .base import BangumiBase, CUR_VERSION
 from _pyio import __metaclass__
 
 
@@ -111,6 +113,40 @@ class BangumiSubject(BangumiElement):
         sub_eps = BangumiEpisode.eps_from_soup(ep_soup)
         subject = cls(sub_id, sub_title, sub_ch_title, sub_n_eps, sub_eps)
         return subject
+    
+    @classmethod
+    def from_json(cls, json_text):
+        """Convert back from json
+        
+        Args:
+            json_text (unicode): json text to convert from
+            
+        Returns:
+            BangumiSubject: created from data in json text
+        """
+        kwargs = json.loads(json_text)
+        kwargs.pop('version', (0, 0, 1))
+        other_info = kwargs.pop('other_info')
+        kwargs = {(key[1:] if key.startswith('_') else key): value
+                  for key, value in kwargs.items()}
+        kwargs['eps'] = [BangumiEpisode.from_json(j_text)
+                         for j_text in kwargs['eps']]
+        subject = BangumiSubject(**kwargs)
+        subject.other_info = other_info
+        for ep in subject._eps:
+            ep.subject = subject
+        return subject
+    
+    def to_json(self):
+        """Convert to json
+        
+        Returns:
+            unicode: converted json text
+        """
+        kwargs = self.__dict__.copy()
+        kwargs['_eps'] = [ep.to_json() for ep in kwargs['_eps']]
+        kwargs['version'] = CUR_VERSION
+        return json.dumps(kwargs, ensure_ascii=False)
 
     def to_collection(self, session):
         """Convert to a BangumiSubjectCollection
@@ -210,7 +246,7 @@ class BangumiEpisode(BangumiElement):
         self._status = status
         self._title = title if title else ""
         self._ch_title = ch_title if ch_title else ""
-        self._subject = subject
+        self._subject = weakref.ref(subject) if subject else None
         self.other_info = None
 
     @classmethod
@@ -276,6 +312,39 @@ class BangumiEpisode(BangumiElement):
         ep_info = soup.find(href=ep_url).parent
         ep = cls(*cls._extract_ep_info(ep_info))
         return ep
+    
+    @classmethod
+    def from_json(cls, json_text):
+        """Convert from json
+        
+        Note:
+            subject is dropped converting to json, so won't be included here
+            
+        Returns:
+            BangumiEpisode: created from data in json text
+        """
+        kwargs = json.loads(json_text)
+        kwargs.pop('version', (0, 0, 1))
+        other_info = kwargs.pop('other_info')
+        kwargs = {(key[1:] if key.startswith('_') else key): value
+                  for key, value in kwargs.items()}
+        ep = cls(**kwargs)
+        ep.other_info = other_info
+        return ep
+    
+    def to_json(self):
+        """Convert to json
+
+        Note:
+            subject is dropped if when converting episode
+            
+        Returns:
+            unicode: result of converting to json
+        """
+        kwargs = self.__dict__.copy()
+        kwargs['version'] = CUR_VERSION
+        kwargs.pop('_subject')
+        return json.dumps(kwargs, ensure_ascii=False)
         
     @property
     def status(self):
@@ -300,14 +369,17 @@ class BangumiEpisode(BangumiElement):
         
         setter will raise TypeError for incorrect type
         """
-        return self._subject
+        if self._subject is None:
+            return self._subject
+        else:
+            return self._subject()
     
     @subject.setter
     def subject(self, value):
         if not isinstance(value, BangumiSubject):
             raise TypeError("Provided value must be a BangumiSubject, got {0}"
                             .format(type(value)))
-        self._subject = value
+        self._subject = weakref.ref(value)
             
     def to_collection(self, session):
         """Convert to a BangumiEpisodeCollection
