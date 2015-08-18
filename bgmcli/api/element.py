@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+"""Classes that represents elements such as subjects and episodes
+"""
 import re
 import weakref
 import json

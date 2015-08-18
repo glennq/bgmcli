@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+"""Utility functions for the package
+"""
+
 import re
 from bs4 import BeautifulSoup
 

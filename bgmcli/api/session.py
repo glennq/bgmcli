@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-The subject methods currently only work for anime subjects and subject
-collection methods only work for anime collections
+"""Library that defines a login session for Bangumi
 """
 
 import re
@@ -29,6 +27,10 @@ def require_login(method):
 class BangumiSession(object):
     """This class abtracts a login session for Bangumi and provides methods
     to retrieve and set element/collection data
+    
+    Note:
+        The subject methods currently only work for anime subjects and subject
+        collection methods only work for anime collections
     
     Attributes:
         email (str): email address used for login

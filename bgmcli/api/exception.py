@@ -1,3 +1,6 @@
+"""Exceptions for the package
+"""
+
 class BangumiCLIException(Exception):
 
     def __init__(self, message):

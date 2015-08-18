@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+"""Defines collection classes
+"""
 import re
 import weakref
 import json

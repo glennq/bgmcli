@@ -1,3 +1,6 @@
+"""Library containing base for all element and collection classes
+"""
+
 class BangumiBase(object):
     """Interface for all element and collection classes"""
 
