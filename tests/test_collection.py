@@ -1,17 +1,22 @@
 # -*- coding: utf-8 -*-
+import os
 import unittest
 from bgmcli.api import BangumiSession
 from bgmcli.api.element import BangumiEpisode, BangumiAnime
 from bgmcli.api.collection import BangumiAnimeCollection,\
     BangumiEpisodeCollection
+from test_utils import module_path
     
 
 class BangumiEpisodeCollectionTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        with open('ep_html') as f:
+        path = os.path.split(module_path(cls.setUpClass))[0]
+        ep_html_path = os.path.join(path, 'ep_html')
+        sub_html_path = os.path.join(path, 'sub_html')
+        with open(ep_html_path) as f:
             cls._ep_html = f.read()
-        with open('sub_html') as f:
+        with open(sub_html_path) as f:
             cls._sub_html = f.read()
         cls._c_statuses = ['watched'] * 24 + ['queue', 'drop'] + [None] * 5
         cls._sub_id = "253"
@@ -63,9 +68,12 @@ class BangumiEpisodeCollectionTest(unittest.TestCase):
 class BangumiAnimeCollectionTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        with open('ep_html') as f:
+        path = os.path.split(module_path(cls.setUpClass))[0]
+        ep_html_path = os.path.join(path, 'ep_html')
+        sub_html_path = os.path.join(path, 'sub_html')
+        with open(ep_html_path) as f:
             cls._ep_html = f.read()
-        with open('sub_html') as f:
+        with open(sub_html_path) as f:
             cls._sub_html = f.read()
         cls._c_status = 3
         cls._sub_id = "253"

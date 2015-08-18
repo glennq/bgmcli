@@ -1,14 +1,18 @@
 # -*- coding: utf-8 -*-
 import unittest
+import os
 from bgmcli.api import BangumiSession
 from bgmcli.api.element import BangumiAnime, BangumiEpisode, FixedAttribute
+from test_utils import module_path
 
 
 class BangumiEpisodeTest(unittest.TestCase):
     
     @classmethod
     def setUpClass(cls):
-        with open('ep_html') as f:
+        path = os.path.split(module_path(cls.setUpClass))[0]
+        ep_html_path = os.path.join(path, 'ep_html')
+        with open(ep_html_path) as f:
             cls._ep_html = f.read()
         ep_ids = [519] + range(7027, 7052) + [46037] + range(103232, 103236)
         cls._ep_ids = [str(i) for i in ep_ids]
@@ -84,9 +88,12 @@ class BangumiEpisodeTest(unittest.TestCase):
 class BangumiAnimeTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        with open('ep_html') as f:
+        path = os.path.split(module_path(cls.setUpClass))[0]
+        ep_html_path = os.path.join(path, 'ep_html')
+        sub_html_path = os.path.join(path, 'sub_html')
+        with open(ep_html_path) as f:
             cls._ep_html = f.read()
-        with open('sub_html') as f:
+        with open(sub_html_path) as f:
             cls._sub_html = f.read()
         cls._sub_id = "253"
         cls._title = u'カウボーイビバップ'
