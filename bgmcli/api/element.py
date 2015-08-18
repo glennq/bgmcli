@@ -2,13 +2,19 @@
 import re
 import weakref
 import json
-from bs4 import BeautifulSoup
-from .base import BangumiBase, CUR_VERSION
 from _pyio import __metaclass__
+import pkg_resources
+from bs4 import BeautifulSoup
+from .base import BangumiBase
+from .utils import get_subject_type_from_soup
+
+
+__all__ = ['BangumiAnime', 'BangumiEpisode']
+CUR_VERSION = pkg_resources.require("bgmcli")[0].version
 
 
 class FixedAttribute(object):
-    """A descriptor for attributes not supposed to be changed
+    """A descriptor for attributes not supposed to be modified once set
     """
     def __init__(self):
         self.attr_name = None
@@ -20,7 +26,7 @@ class FixedAttribute(object):
         return getattr(obj, self.internal_name)
     
     def __set__(self, obj, value):
-        if getattr(obj, self.internal_name) is None:
+        if not getattr(obj, self.internal_name):
             setattr(obj, self.internal_name, value)
         else:
             raise AttributeError("Attribute {0} is NOT supposed to be changed"
@@ -41,43 +47,55 @@ class ElementMeta(type):
 
 
 class BangumiElement(BangumiBase):
-    """Interface for elements including BangumiSubject and BangumiEpisode"""
+    """Interface for elements including BangumiAnime and BangumiEpisode"""
     
     __metaclass__ = ElementMeta
 
     def to_collection(self, session):
         """Transform to collection of same type."""
         raise NotImplementedError
-
+    
+    def __eq__(self, other):
+        """Does not compare BangumiAnime.eps and BangumiEpisode.subject"""
+        if not isinstance(other, self.__class__):
+            return False
+        else:
+            for key, value in self.__dict__.items():
+                if key in ['_eps', '_subject']:
+                    continue
+                if value != getattr(other, key):
+                    return False
+            return True
+        
+    def __ne__(self, other):
+        return not self.__eq__(other)
 
 
 class BangumiSubject(BangumiElement):
-    """Class representing a subject
+    """"The class representing a general subject.
+    A subject is an anime or manga or game title, which may contain a number
+    of episodes (for anime) or volumes (for manga)
+    
+    Note:
+        This abstract class is NOT supposed to be instantiated
     
     Attributes:
-        sub_id (str): subject id. NOT supposed to be changed
-        title (unicode): official title of the subject. NOT supposed to be
-            changed
+        sub_id (str): subject id. NOT supposed to be modified
+        title (unicode): official title of the subject. NOT supposed to
+            be modified
         ch_title (unicode): title of the subject in Chinese or other language.
-            NOT supposed to be changed.
-        other_info (dict): key-values for other info
+            NOT supposed to be modified.
     """
     
     sub_id = FixedAttribute()
     title = FixedAttribute()
     ch_title = FixedAttribute()
-
-    def __init__(self, sub_id, title=None, ch_title=None, n_eps=None,
-                 eps=None):
+    
+    def __init__(self, sub_id, title=None, ch_title=None):
         self._sub_id = sub_id
         self._title = title
         self._ch_title = ch_title
-        self._n_eps = n_eps
-        self._eps = list(eps) if eps else []
-        for ep in self.eps:
-            ep.subject = self
-        self.other_info = None
-
+    
     @classmethod
     def from_html(cls, sub_html, ep_html):
         """Create BangumiSubject object from html of the subject main page and
@@ -88,15 +106,45 @@ class BangumiSubject(BangumiElement):
             ep_html (unicode): html for the subject's episodes page
             
         Returns:
-            BangumiSubject: with data from html
+            BangumiAnime: with data from html
         """
         sub_soup = BeautifulSoup(sub_html, 'html.parser')
         ep_soup = BeautifulSoup(ep_html, 'html.parser')
         return cls.from_soup(sub_soup, ep_soup)
+    
+    @classmethod
+    def from_soup(cls, sub_soup, ep_soup):
+        sub_type = get_subject_type_from_soup(sub_soup)
+        if sub_type == 'anime':
+            return BangumiAnime.from_soup(sub_soup, ep_soup)
+        else:
+            raise NotImplementedError
+
+
+class BangumiAnime(BangumiSubject):
+    """Class representing an anime subject
+    
+    Attributes:
+        sub_id (str): subject id. NOT supposed to be modified
+        title (unicode): official title of the anime subject. NOT supposed to
+            be modified
+        ch_title (unicode): title of the subject in Chinese or other language.
+            NOT supposed to be modified.
+        other_info (dict): key-values for other info
+    """
+
+    def __init__(self, sub_id, title=None, ch_title=None, n_eps=None,
+                 eps=None):
+        super(BangumiAnime, self).__init__(sub_id, title, ch_title)
+        self._n_eps = n_eps
+        self._eps = list(eps) if eps else []
+        for ep in self.eps:
+            ep.subject = self
+        self.other_info = None
 
     @classmethod
     def from_soup(cls, sub_soup, ep_soup):
-        """Create BangumiSubject object from parsed html of subject main page
+        """Create BangumiAnime object from parsed html of subject main page
         and episodes page
         
         Args:
@@ -104,7 +152,7 @@ class BangumiSubject(BangumiElement):
             ep_html (unicode): parsed html for the subject's episodes page
             
         Returns:
-            BangumiSubject: with data from parsed html
+            BangumiAnime: with data from parsed html
         """
         sub_id = sub_soup.find(class_='nameSingle').a['href'].split('/')[-1]
         sub_title = sub_soup.find(class_='nameSingle').a.text
@@ -122,7 +170,7 @@ class BangumiSubject(BangumiElement):
             json_text (unicode): json text to convert from
             
         Returns:
-            BangumiSubject: created from data in json text
+            BangumiAnime: created from data in json text
         """
         kwargs = json.loads(json_text)
         kwargs.pop('version', (0, 0, 1))
@@ -131,7 +179,7 @@ class BangumiSubject(BangumiElement):
                   for key, value in kwargs.items()}
         kwargs['eps'] = [BangumiEpisode.from_json(j_text)
                          for j_text in kwargs['eps']]
-        subject = BangumiSubject(**kwargs)
+        subject = BangumiAnime(**kwargs)
         subject.other_info = other_info
         for ep in subject._eps:
             ep.subject = subject
@@ -155,7 +203,7 @@ class BangumiSubject(BangumiElement):
             session (BangumiSession): session for downloading necessary data
             
         Returns:
-            BangumiSubjectCollection: collection containing this subject
+            BangumiSubjectCollection: collection containing this anime subject
         """
         sub_coll = session.get_sub_collection_with_subject(self)
         return sub_coll
@@ -208,6 +256,7 @@ class BangumiSubject(BangumiElement):
         parsed_dict = dict([line.strip().split(': ')
                             for line in info.split('\n')])
         return parsed_dict
+
 
 class BangumiEpisode(BangumiElement):
     
@@ -294,7 +343,7 @@ class BangumiEpisode(BangumiElement):
             BangumiEpisode: object created with data provided        
         """
         soup = BeautifulSoup(html, 'html.parser')
-        return cls.ep_from_soup(ep_id, soup)
+        return cls.from_soup(ep_id, soup)
 
     @classmethod
     def from_soup(cls, ep_id, soup):
@@ -307,7 +356,7 @@ class BangumiEpisode(BangumiElement):
             
         Returns:
             BangumiEpisode: object created with data provided
-        """
+        """       
         ep_url = '/ep/{0}'.format(ep_id)
         ep_info = soup.find(href=ep_url).parent
         ep = cls(*cls._extract_ep_info(ep_info))
@@ -365,7 +414,7 @@ class BangumiEpisode(BangumiElement):
             
     @property
     def subject(self):
-        """BangumiSubject: subject that this episode belongs to.
+        """BangumiAnime: subject that this episode belongs to.
         
         setter will raise TypeError for incorrect type
         """
@@ -376,8 +425,8 @@ class BangumiEpisode(BangumiElement):
     
     @subject.setter
     def subject(self, value):
-        if not isinstance(value, BangumiSubject):
-            raise TypeError("Provided value must be a BangumiSubject, got {0}"
+        if not isinstance(value, BangumiAnime):
+            raise TypeError("Provided value must be a BangumiAnime, got {0}"
                             .format(type(value)))
         self._subject = weakref.ref(value)
             

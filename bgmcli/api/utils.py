@@ -128,7 +128,7 @@ def check_response(response):
     Returns:
         bool: True if successful
     """
-    if response.stat_code != 200:
+    if response.status_code != 200:
         return False
     try:
         get_user_id_from_html(response.text)
@@ -136,3 +136,11 @@ def check_response(response):
         return False
     else:
         return True
+    
+    
+def get_subject_type_from_soup(soup):
+    return soup.find(id='navMenuNeue').find(class_='focus')['href'][1:]
+
+
+def get_n_watched_eps_from_soup(soup):
+    return int(soup.find(id='watchedeps')['value'])

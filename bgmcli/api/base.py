@@ -1,6 +1,3 @@
-CUR_VERSION = (0, 0, 1)
-
-
 class BangumiBase(object):
     """Interface for all element and collection classes"""
 

@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+"""
+The subject methods currently only work for anime subjects and subject
+collection methods only work for anime collections
+"""
+
 import re
 from functools import wraps
 import requests
@@ -6,8 +11,8 @@ from bs4 import BeautifulSoup
 from .exception import LoginFailedError, NotLoggedInError
 from .element import BangumiSubject, BangumiEpisode
 from collection import BangumiEpisodeCollection, BangumiSubjectCollection
-from .utils import get_ep_colls_up_to_this, get_encoding_from_html,\
-    get_user_id_from_html, check_response, to_unicode
+from .utils import get_ep_colls_up_to_this, check_response, to_unicode,\
+    get_user_id_from_html, get_encoding_from_html, get_n_watched_eps_from_soup
 
 
 def require_login(method):
@@ -15,7 +20,7 @@ def require_login(method):
     @wraps(method)
     def wrapper(self, *args, **kwargs):
         if not self._logged_in:
-            raise NotLoggedInError
+            raise NotLoggedInError("Please login first!")
         else:
             return method(self, *args, **kwargs)
     return wrapper
@@ -63,7 +68,7 @@ class BangumiSession(object):
             sub_id (str): subject id
 
         Returns:
-            BangumiSubject: object containing data for specified subject
+            BangumiAnime: object containing data for specified subject
         """
         sub_html = self._get_html_for_subject_main(sub_id)
         ep_html = self._get_html_for_subject_eps(sub_id)
@@ -79,7 +84,7 @@ class BangumiSession(object):
         """
         sub_id = self._get_sub_id_for_ep(ep_id)
         html = self._get_html_for_subject_eps(sub_id)
-        return BangumiEpisode.from_html(html, ep_id)
+        return BangumiEpisode.from_html(ep_id, html)
 
     def get_episodes_for_sub(self, sub_id):
         """Get crucial data for all episodes under specified subject
@@ -105,14 +110,16 @@ class BangumiSession(object):
         """
         sub_html = self._get_html_for_subject_main(sub_id)
         ep_html = self._get_html_for_subject_eps(sub_id)
-        return BangumiSubjectCollection.from_html(sub_html, ep_html)
+        sub_coll = BangumiSubjectCollection.from_html(sub_html, ep_html)
+        sub_coll.session = self
+        return sub_coll
 
     def get_sub_collection_with_subject(self, subject):
         """"Get data collection info for specified subject with provided
-        `BangumiSubject` object.
+        `BangumiAnime` object.
 
         Args:
-            subject (BangumiSubject): subject for which to get collection info
+            subject (BangumiAnime): subject for which to get collection info
 
         Returns:
             BangumiSubjectCollection: containing data and collection info for
@@ -123,7 +130,7 @@ class BangumiSession(object):
         ep_html = self._get_html_for_subject_eps(subject.sub_id)
         sub_collection = BangumiSubjectCollection.from_html_with_subject(
             subject, sub_html, ep_html)
-        sub_collection.set_session(self)
+        sub_collection.session = self
         return sub_collection
 
     def get_ep_collection(self, ep_id):
@@ -138,7 +145,9 @@ class BangumiSession(object):
         """
         sub_id = self._get_sub_id_for_ep(ep_id)
         html = self._get_html_for_subject_eps(sub_id)
-        return BangumiEpisodeCollection.from_html(ep_id, html)
+        ep_coll = BangumiEpisodeCollection.from_html(ep_id, html)
+        ep_coll.session = self
+        return ep_coll
 
     def get_ep_collection_with_episode(self, episode):
         """Get collection info for given episode
@@ -154,7 +163,7 @@ class BangumiSession(object):
         html = self._get_html_for_subject_eps(sub_id)
         ep_collection = BangumiEpisodeCollection.from_html_with_ep(episode,
                                                                    html)
-        ep_collection.set_session(self)
+        ep_collection.session = self
         return ep_collection
     
     def set_collection(self, collection):
@@ -162,14 +171,14 @@ class BangumiSession(object):
         collection object
         
         Note:
-            In the case of BangumiSubjectCollection, episode collections
+            In the case of BangumiAnimeCollection, episode collections
             contained will not be set. Need to explicitly call
             set_ep_collection or set_n_watched_eps to set status for
             episode collections.
             
         Args:
-            collection (BangumiSubjectCollection or BangumiEpisodeCollection):
-                the object containing data to update to Bangumi
+            collection (BangumiCollection): the object containing data to
+                update to Bangumi
 
         Returns:
             bool: True if successful. False otherwise.
@@ -220,13 +229,15 @@ class BangumiSession(object):
         if sub_coll.c_status not in BangumiSubjectCollection._VALID_C_STATUS:
             raise ValueError('Corrupted c_status value: ' +
                              str(sub_coll.c_status))
+
         data = {'referer': 'subject', 'interest': sub_coll._c_status,
                 'rating': str(sub_coll.rating) if sub_coll.rating else '',
-                'tags': ' '.join(sub_coll.tags),
+                'tags': u' '.join(sub_coll.tags),
                 'comment': sub_coll.comment, 'update': u'保存'}
-        set_coll_url = '{0}/subject/{1}/interest/update?_gh={2}'.format(
+        set_coll_url = '{0}/subject/{1}/interest/update?gh={2}'.format(
             self._base_url, sub_coll.subject.sub_id, self._gh)
         response = self._session.post(set_coll_url, data)
+
         return check_response(response)
 
     @require_login
@@ -268,6 +279,11 @@ class BangumiSession(object):
                        .format(self._base_url, ep_coll.episode.ep_id,
                                ep_coll.c_status, self._gh))
             response = self._session.get(set_url)
+            # update n_watched_eps in subject collection
+            if ep_coll.sub_collection:
+                soup = BeautifulSoup(response.text, 'html.parser')
+                n_watched_eps = get_n_watched_eps_from_soup(soup)
+                ep_coll.sub_collection.n_watched_eps = n_watched_eps
         return check_response(response)
 
     def remove_collection(self, collection):
@@ -281,33 +297,9 @@ class BangumiSession(object):
         elif isinstance(collection, BangumiEpisodeCollection):
             result = self._remove_ep_collection(collection.episode.ep_id)
         else:
-            raise ValueError("Collection type invalid!")
+            raise TypeError("Collection type invalid!")
         collection._c_status = None
         return result
-
-    @require_login
-    def _set_watched_eps_in_sub(self, ep_colls):
-        """Set all episodes in ep_colls to watched both locally and to Bangumi
-
-        Note:
-            All entries in ep_colls must belong to the same subject collection
-            
-        Returns:
-            bool: True if successful
-        """
-        ep_ids = [ep_c.episode.ep_id for ep_c in ep_colls]
-        base_ep_id = ep_ids[-1]
-        ep_ids_str = ','.join(ep_ids)
-        data = {'ep_id': ep_ids_str}
-        set_url = ('{0}/subject/ep/{1}/status/watched?gh={2}&ajax=1'
-                   .format(self._base_url, base_ep_id, self._gh))
-        response = self._session.post(set_url, data)
-        if check_response(response):
-            for ep_c in ep_colls:
-                ep_c.c_status = 'watched'
-            return True
-        else:
-            return False
         
     def set_n_watched_eps(self, sub_collection):
         """Update number of watched episodes to Bangumi according to provided
@@ -316,7 +308,7 @@ class BangumiSession(object):
         Note: the behavior may be weird sometimes but it's defined on Bangumi
         
         Args:
-            sub_collection (BangumiSubjectCollection): a subject collection
+            sub_collection (BangumiAnimeCollection): a subject collection
                 with c_status > 1 and defined n_watched_eps
                 
         Returns:
@@ -334,6 +326,9 @@ class BangumiSession(object):
             sub_collection.ep_collections = (BangumiEpisodeCollection
                                              .ep_colls_for_sub_from_html(sub,
                                                                          html))
+            for ep_coll in sub_collection.ep_collections:
+                ep_coll.session = sub_collection.session
+                ep_coll.sub_collection = sub_collection
             return True
         else:
             return False
@@ -344,6 +339,40 @@ class BangumiSession(object):
         self._logged_in = False
         self._session.get('{0}/logout/{1}'.format(self._base_url, self._gh))
         self._session.close()
+        
+    @require_login
+    def _set_watched_eps_in_sub(self, ep_colls):
+        """Set all episodes in ep_colls to watched both locally and to Bangumi
+
+        Note:
+            All entries in ep_colls must belong to the same subject collection
+            
+        Returns:
+            bool: True if successful
+        """
+        sub_coll = ep_colls[0].sub_collection
+        for ep_coll in ep_colls:
+            if ep_coll.sub_collection is not sub_coll:
+                raise ValueError("Exists entry in ep_coll not belong to " +
+                                 "same subject collection!")
+        ep_ids = [ep_c.episode.ep_id for ep_c in ep_colls]
+        base_ep_id = ep_ids[-1]
+        ep_ids_str = ','.join(ep_ids)
+        data = {'ep_id': ep_ids_str}
+        set_url = ('{0}/subject/ep/{1}/status/watched?gh={2}&ajax=1'
+                   .format(self._base_url, base_ep_id, self._gh))
+        response = self._session.post(set_url, data)
+        if (response.status_code == 200 and
+            response.text == u'{"status":"ok"}'):
+            # update n_watched_eps as well as ep_collections
+            html = self._get_html_for_subject_main(sub_coll.subject.sub_id)
+            soup = BeautifulSoup(html, 'html.parser')           
+            sub_coll.n_watched_eps = get_n_watched_eps_from_soup(soup)
+            for ep_c in ep_colls:
+                ep_c.c_status = 'watched'
+            return True
+        else:
+            return False
 
     @require_login
     def _remove_sub_collection(self, sub_id):
@@ -408,7 +437,7 @@ class BangumiSession(object):
         if to_unicode('欢迎您回来。现在将转入登录前页面') in response.text:
             self._logged_in = True
         else:
-            raise LoginFailedError()
+            raise LoginFailedError("Login failed.")
 
     @require_login
     def _get_gh(self):

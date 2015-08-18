@@ -3,11 +3,16 @@ import re
 import weakref
 import json
 from functools import wraps
+import pkg_resources
 from bs4 import BeautifulSoup
-from .element import BangumiEpisode, BangumiSubject
+from .element import BangumiEpisode, BangumiAnime, BangumiSubject
 from .utils import get_user_id_from_soup, get_checked_values, to_unicode,\
-    get_ep_colls_up_to_this
-from .base import BangumiBase, CUR_VERSION
+    get_ep_colls_up_to_this, get_subject_type_from_soup,\
+    get_n_watched_eps_from_soup
+from .base import BangumiBase
+
+
+CUR_VERSION = pkg_resources.require("bgmcli")[0].version
 
 
 def require_session(method):
@@ -21,14 +26,14 @@ def require_session(method):
     return wrapper
 
 
-class BangumiCollection(object):
+class BangumiCollection(BangumiBase):
     """Mixin for collection behaviors"""
     
     @property
     def session(self):
         """BangumiSession: session associated for sync
         
-        if it's a BangumiSubjectCollection, setter will set sessions for
+        if it's a BangumiAnimeCollection, setter will set sessions for
         all episode collections for this subject as well
         """
         return self._session
@@ -36,13 +41,14 @@ class BangumiCollection(object):
     @session.setter
     def session(self, session):
         self._session = session
-        if isinstance(self, BangumiSubjectCollection) and self.ep_collections:
+        if isinstance(self, BangumiAnimeCollection) and self.ep_collections:
             for ep_c in self.ep_collections:
                 ep_c._session = session
     
     @require_session
     def sync_collection(self):
-        """Update Bangumi with current collection data
+        """Update Bangumi with current collection data. n_watched_eps is not
+        sync'ed for BangumiAnimeCollection
         
         Returns:
             bool: True if successful
@@ -63,38 +69,53 @@ class BangumiCollection(object):
             AttributeError: if session is not set
         """
         return self._session.remove_collection(self)
+    
+    def __eq__(self, other):
+        """Does not compare BangumiCollection.session,
+        BangumiAnimeCollection.ep_collections,
+        and BangumiEpisodeCollection.sub_collection
+        """
+        if not isinstance(other, self.__class__):
+            return False
+        else:
+            for key, value in self.__dict__.items():
+                if key in ['_session', '_ep_collections', '_sub_collection']:
+                    continue
+                if value != getattr(other, key):
+                    return False
+            return True
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
 
 
-class BangumiSubjectCollection(BangumiCollection, BangumiBase):
-    """Class representing a subject collection
+class BangumiSubjectCollection(BangumiCollection):
+    
+    """Class representing a general subject collection.
 
     Note: 
         The constructor is NOT supposed to be called directly by client code,
         Please use class methods in this class and other methods provided in
-        BangumiSession to create instances of BangumiSubjectCollection
+        BangumiSession to create instances of BangumiAnimeCollection
     """
-
+    
     _VALID_C_STATUS = tuple(range(1, 6))
-
+    
     def __init__(self, subject, c_status=None, rating=None, tags=None,
-                 comment=None, n_watched_eps=None, ep_collections=None):
+                 comment=None):
         self._subject = subject
         self._c_status = c_status
         self._rating = rating
         self._tags = tags if tags else []
         self._comment = comment if comment else u""
-        self._n_watched_eps = n_watched_eps
-        self._ep_collections = list(ep_collections) if ep_collections else []
-        for ep_coll in self.ep_collections:
-            ep_coll.sub_collection = self
         self._session = None
-
+        
     @classmethod
     def from_html(cls, sub_html, ep_html):
-        """Create BangumiSubjectCollection object from html
+        """Create subject collection object from html
         
         Args:
-            sub_html (unicode): html for the subject main page
+            sub_html (unicode): html for the subject's main page
             ep_html (unicode): html for the subject's episodes page
             
         Returns:
@@ -106,10 +127,10 @@ class BangumiSubjectCollection(BangumiCollection, BangumiBase):
 
     @classmethod
     def from_soup(cls, sub_soup, ep_soup):
-        """Create BangumiSubjectCollection object from parsed html
+        """Create subject collection object from parsed html
         
         Args:
-            sub_soup (BeautifulSoup): parsed html for the subject main page
+            sub_soup (BeautifulSoup): parsed html for subject main page
             ep_soup (BeautifulSoup): parsed html for the episodes page
             
         Returns:
@@ -120,7 +141,7 @@ class BangumiSubjectCollection(BangumiCollection, BangumiBase):
 
     @classmethod
     def from_html_with_subject(cls, subject, sub_html, ep_html):
-        """Create BangumiSubjectCollection object from html with provided
+        """Create BangumiAnimeCollection object from html with provided
         subject
         
         Args:
@@ -137,92 +158,20 @@ class BangumiSubjectCollection(BangumiCollection, BangumiBase):
         sub_soup = BeautifulSoup(sub_html, 'html.parser')
         ep_soup = BeautifulSoup(ep_html, 'html.parser')
         return cls.from_soup_with_subject(subject, sub_soup, ep_soup)
-
+    
     @classmethod
     def from_soup_with_subject(cls, subject, sub_soup, ep_soup):
-        """Create BangumiSubjectCollection object from parsed html with
-        provided subject
-        
-        Args:
-            subject (BangumiSubject): subject belonging to the collection
-            sub_soup (BeautifulSoup): parsed html for the subject main page
-            ep_soup (BeautifulSoup): parsed html for the episodes page
-            
-        Returns:
-            BangumiSubjectCollection: subject collection with provided data
-            
-        Raises:
-            ValueError: if provided html is not after login
-        """
-        try:
-            get_user_id_from_soup(sub_soup)
-        except TypeError:
-            raise ValueError("Please provide subject page html after login!")
+        sub_type = get_subject_type_from_soup(sub_soup)
+        if sub_type == 'anime':
+            return BangumiAnimeCollection.from_soup_with_subject(subject,
+                                                                sub_soup,
+                                                                ep_soup)
         else:
-            if sub_soup.find(id='SecTab'):
-                return BangumiSubjectCollection(subject)
-            collect_form = sub_soup.find(id='collectBoxForm')
-            status = int(get_checked_values(
-                collect_form.find(class_='collectType'))[0])
-            rating_container = get_checked_values(
-                collect_form.find(id='interest_rate'))
-            rating = int(rating_container[0]) if rating_container else None
-            tags = collect_form.find(id='tags')['value'].strip().split(' ')
-            comment = collect_form.find(id='comment').text
-            n_watched_eps = int(sub_soup.find(id='watchedeps')['value'])
-            ep_collections = (BangumiEpisodeCollection
-                              .ep_colls_for_sub_from_soup(subject, ep_soup))
-            return cls(subject, status, rating, tags, comment, n_watched_eps,
-                       ep_collections)
-
-    @classmethod
-    def from_json(cls, json_text):
-        """Convert back from json
-        
-        Args:
-            json_text (unicode): json text to convert from
-            
-        Returns:
-            BangumiSubjectCollection: created from data in json text
-        """
-        kwargs = json.loads(json_text)
-        kwargs.pop('version', (0, 0, 1))
-        kwargs = {(key[1:] if key.startswith('_') else key): value
-                  for key, value in kwargs.items()}
-        kwargs['ep_collections'] = [BangumiEpisodeCollection.from_json(j_text)
-                                    for j_text in kwargs['ep_collections']]
-        kwargs['subject'] = BangumiSubject.from_json(kwargs['subject'])
-        sub_coll = cls(**kwargs)
-        sub_coll.subject._eps = [ep_coll.episode for ep_coll
-                                 in sub_coll.ep_collections]
-        for ep_coll in sub_coll.ep_collections:
-            ep_coll.sub_collection = sub_coll
-        for ep in sub_coll.subject.eps:
-            ep.subject = sub_coll.subject
-        return sub_coll
+            raise NotImplementedError
     
-    def to_json(self):
-        """Convert to json
-        
-        Returns:
-            unicode: converted json text
-        """
-        kwargs = self.__dict__.copy()
-        kwargs['version'] = CUR_VERSION
-        kwargs.pop('_session')
-        kwargs['_ep_collections'] = [ep_coll.to_json() for ep_coll in
-                                     kwargs['_ep_collections']]
-        # temporarily drop subject._eps to avoid duplicating information,
-        # since _ep_collections already contains data for episodes
-        sub, eps = kwargs['_subject'], kwargs['_subject']._eps
-        kwargs['_subject']._eps = []
-        kwargs['_subject'] = kwargs['_subject'].to_json()
-        sub._eps = eps
-        return json.dumps(kwargs, ensure_ascii=False)
-
     @property
     def subject(self):
-        """BangumiSubject: subject that this collection is associated with.
+        """BangumiAnime: subject that this collection is associated with.
         
         setter will raise TypeError for incorrect type
         """
@@ -300,6 +249,107 @@ class BangumiSubjectCollection(BangumiCollection, BangumiBase):
             raise TypeError("comment must be a unicode strings, got {0}"
                             .format(type(value)))
         self._comment = value
+
+
+class BangumiAnimeCollection(BangumiSubjectCollection):
+    """Class representing an anime subject collection
+
+    Note: 
+        The constructor is NOT supposed to be called directly by client code,
+        Please use class methods in this class and other methods provided in
+        BangumiSession to create instances of BangumiAnimeCollection
+    """
+
+    def __init__(self, subject, c_status=None, rating=None, tags=None,
+                 comment=None, n_watched_eps=None, ep_collections=None):
+        super(BangumiAnimeCollection, self).__init__(subject, c_status,
+                                                     rating, tags, comment)
+        self._n_watched_eps = n_watched_eps
+        self._ep_collections = list(ep_collections) if ep_collections else []
+        for ep_coll in self.ep_collections:
+            ep_coll.sub_collection = self
+
+    @classmethod
+    def from_soup_with_subject(cls, subject, sub_soup, ep_soup):
+        """Create BangumiAnimeCollection object from parsed html with
+        provided subject
+        
+        Args:
+            subject (BangumiAnime): subject belonging to the collection
+            sub_soup (BeautifulSoup): parsed html for the subject main page
+            ep_soup (BeautifulSoup): parsed html for the episodes page
+            
+        Returns:
+            BangumiAnimeCollection: subject collection with provided data
+            
+        Raises:
+            ValueError: if provided html is not after login
+        """
+        try:
+            get_user_id_from_soup(sub_soup)
+        except TypeError:
+            raise ValueError("Please provide subject page html after login!")
+        else:
+            if sub_soup.find(id='SecTab'):
+                return BangumiAnimeCollection(subject)
+            collect_form = sub_soup.find(id='collectBoxForm')
+            status = int(get_checked_values(
+                collect_form.find(class_='collectType'))[0])
+            rating_container = get_checked_values(
+                collect_form.find(id='interest_rate'))
+            rating = int(rating_container[0]) if rating_container else None
+            tags = collect_form.find(id='tags')['value'].strip().split(' ')
+            comment = collect_form.find(id='comment').text
+            n_watched_eps = get_n_watched_eps_from_soup(sub_soup)
+            ep_collections = (BangumiEpisodeCollection
+                              .ep_colls_for_sub_from_soup(subject, ep_soup))
+            return cls(subject, status, rating, tags, comment, n_watched_eps,
+                       ep_collections)
+
+    @classmethod
+    def from_json(cls, json_text):
+        """Convert back from json
+        
+        Args:
+            json_text (unicode): json text to convert from
+            
+        Returns:
+            BangumiAnimeCollection: created from data in json text
+        """
+        kwargs = json.loads(json_text)
+        kwargs.pop('version', (0, 0, 1))
+        kwargs = {(key[1:] if key.startswith('_') else key): value
+                  for key, value in kwargs.items()}
+        kwargs['ep_collections'] = [BangumiEpisodeCollection.from_json(j_text)
+                                    for j_text in kwargs['ep_collections']]
+        kwargs['subject'] = BangumiAnime.from_json(kwargs['subject'])
+        sub_coll = cls(**kwargs)
+        sub_coll.subject._eps = [ep_coll.episode for ep_coll
+                                 in sub_coll.ep_collections]
+        for ep_coll in sub_coll.ep_collections:
+            ep_coll.sub_collection = sub_coll
+        for ep in sub_coll.subject.eps:
+            ep.subject = sub_coll.subject
+        return sub_coll
+    
+    def to_json(self):
+        """Convert to json
+        
+        Returns:
+            unicode: converted json text
+        """
+        kwargs = self.__dict__.copy()
+        kwargs['version'] = CUR_VERSION
+        kwargs.pop('_session')
+        kwargs['_ep_collections'] = [ep_coll.to_json() for ep_coll in
+                                     kwargs['_ep_collections']]
+        # temporarily drop subject._eps to avoid duplicating information,
+        # since _ep_collections already contains data for episodes
+        sub, eps = kwargs['_subject'], kwargs['_subject']._eps
+        kwargs['_subject']._eps = []
+        kwargs['_subject'] = kwargs['_subject'].to_json()
+        sub._eps = eps
+        return json.dumps(kwargs, ensure_ascii=False)
 
     @property
     def n_watched_eps(self):
@@ -418,9 +468,18 @@ class BangumiSubjectCollection(BangumiCollection, BangumiBase):
             return None
         else:
             return search_result[0]
+    
+    @require_session
+    def sync_n_watched_eps(self):
+        """Sync n_watched_eps, as sync_collection won't do this
+        
+        Returns:
+            bool: True if successful
+        """
+        return self._session.set_n_watched_eps(self)
 
 
-class BangumiEpisodeCollection(BangumiCollection, BangumiBase):
+class BangumiEpisodeCollection(BangumiCollection):
     """Class representing a episode collection
     
     Note:
@@ -429,7 +488,7 @@ class BangumiEpisodeCollection(BangumiCollection, BangumiBase):
         BangumiSession to create instances of BangumiEpisodeCollection
         
     Attributes:
-        sub_collection (BangumiSubjectCollection): subject collections
+        sub_collection (BangumiAnimeCollection): subject collections
             containing this episode collection
     """
 
@@ -514,7 +573,7 @@ class BangumiEpisodeCollection(BangumiCollection, BangumiBase):
             This assumes that the subject already has complete eps
         
         Args:
-            subject (BangumiSubject): the subject to create episode
+            subject (BangumiAnime): the subject to create episode
                 collections for
             html (unicode): the html for the episodes page
             
@@ -533,7 +592,7 @@ class BangumiEpisodeCollection(BangumiCollection, BangumiBase):
             This assumes that the subject already has complete eps
         
         Args:
-            subject (BangumiSubject): the subject to create episode
+            subject (BangumiAnime): the subject to create episode
                 collections for
             soup (BeautifulSoup): the parsed html for the episodes page
             
@@ -611,7 +670,7 @@ class BangumiEpisodeCollection(BangumiCollection, BangumiBase):
             
     @property
     def sub_collection(self):
-        """BangumiSubjectCollection: subject collection containing this
+        """BangumiAnimeCollection: subject collection containing this
         episode collection
         
         setter will raise TypeError for incorrect type
@@ -623,7 +682,7 @@ class BangumiEpisodeCollection(BangumiCollection, BangumiBase):
     
     @sub_collection.setter
     def sub_collection(self, value):
-        if not isinstance(value, BangumiSubjectCollection):
-            raise TypeError("value must be BangumiSubjectCollection, got {0}"
+        if not isinstance(value, BangumiAnimeCollection):
+            raise TypeError("value must be BangumiAnimeCollection, got {0}"
                             .format(type(value)))
         self._sub_collection = weakref.ref(value)
