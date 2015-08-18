@@ -6,3 +6,5 @@ build
 *.sh
 org
 *.pyc
+cover
+.coverage
