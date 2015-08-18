@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>カウボーイビバップ | Bangumi 番组计划</title>
+<meta name="keywords" content="星际牛仔,カウボーイビバップ,ACG,anime,comic,game,music,动漫,音乐,游戏,动画,漫画,番组,bangumi,chii,chobits" />
+<meta name="description" content="カウボーイビバップ 星际牛仔的介绍、章节信息、人物介绍" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://bgm.tv/static/xml/opensearch_bgm.xml" title="Bangumi 番组计划" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon-precomposed" href="/img/ico/ico_ios.png" />
+
+<!--[if lte IE 6]>
+<script src="/js/pngfixed.js" type="text/javascript"></script>
+<script>
+  DD_belatedPNG.fix('.png_bg,img,#wrapper');
+</script>
+<![endif]-->
+
+<link rel="stylesheet" type="text/css" href="/min/g=css?r262" />
+<script type="text/javascript">var SHOW_ROBOT = '0',CHOBITS_UID = 257420, SITE_URL = 'http://bgm.tv';</script>
+</head>
+<body class="bangumi">
+<div id="wrapperNeue" class="wrapperNeue">
+<div id="headerNeue2">
+    <div class="headerNeueInner clearit">
+         <div class="bg musume_4"></div>
+    <a href="/" class="logo">Bangumi 番组计划</a>
+    
+<div id="navNeue2">
+<div id="menuNeue">
+<ul id="navMenuNeue" class="clearit">
+<li><a href="/anime" class="focus chl anime"><span>动画</span></a>
+                <div class="clear"></div>
+<ul class="clearit">
+<li><a href="/anime/chart" class="nav">排行榜</a></li>
+<li><a href="/calendar" class="nav">每日放送</a></li>
+<li><a href="/anime/tag" class="nav">动画标签</a></li>
+<li><a href="/anime/browser" class="nav">分类浏览</a></li>
+<li><a href="/anime/blog" class="nav">动画日志</a></li>
+<li><div class="sep">我看</div></li>
+<li><a href="/anime/list/257420/do" class="nav">在看</a></li>
+<li><a href="/anime/list/257420/wish" class="nav">想看</a></li>
+<li><a href="/anime/list/257420/collect" class="nav">看过</a></li>
+<li><a href="/anime/list/257420/on_hold" class="nav">搁置</a></li>
+<li><a href="/anime/list/257420/dropped" class="nav">抛弃</a></li>
+</ul>
+</li>
+<li><a href="/book" class="top chl"><span>书籍</span></a>
+<div class="clear"></div>
+<ul class="clearit">
+<li><a href="/book/chart" class="nav">排行榜</a></li>
+<li><a href="/book/tag" class="nav">图书标签</a></li>
+<li><a href="/book/browser" class="nav">分类浏览</a></li>
+<li><a href="/book/blog" class="nav">图书日志</a></li>
+<li><div class="sep">我读</div></li>
+<li><a href="/book/list/257420/do" class="nav">在读</a></li>
+<li><a href="/book/list/257420/wish" class="nav">想读</a></li>
+<li><a href="/book/list/257420/collect" class="nav">读过</a></li>
+<li><a href="/book/list/257420/on_hold" class="nav">搁置</a></li>
+<li><a href="/book/list/257420/dropped" class="nav">抛弃</a></li>
+</ul>
+</li>
+<li><a href="/music" class="top chl"><span>音乐</span></a>
+<div class="clear"></div>
+<ul class="clearit">
+<li><a href="/music/chart" class="nav">排行榜</a></li>
+<li><a href="/music/tag" class="nav">音乐标签</a></li>
+<li><a href="/music/browser" class="nav">浏览全部</a></li>
+<li><a href="/music/blog" class="nav">音乐日志</a></li>
+<li><div class="sep">我听</div></li>
+<li><a href="/music/list/257420/do" class="nav">在听</a></li>
+<li><a href="/music/list/257420/wish" class="nav">想听</a></li>
+<li><a href="/music/list/257420/collect" class="nav">听过</a></li>
+<li><a href="/music/list/257420/on_hold" class="nav">搁置</a></li>
+<li><a href="/music/list/257420/dropped" class="nav">抛弃</a></li>
+</ul>
+</li>
+<li><a href="/game" class="top chl"><span>游戏</span></a>
+<div class="clear"></div>
+<ul class="clearit">
+<li><a href="/game/chart" class="nav">排行榜</a></li>
+<li><a href="/game/tag" class="nav">游戏标签</a></li>
+<li><a href="/game/browser" class="nav">平台浏览</a></li>
+<li><a href="/game/blog" class="nav">游戏日志</a></li>
+<li><div class="sep">我玩</div></li>
+<li><a href="/game/list/257420/do" class="nav">在玩</a></li>
+<li><a href="/game/list/257420/wish" class="nav">想玩</a></li>
+<li><a href="/game/list/257420/collect" class="nav">玩过</a></li>
+<li><a href="/game/list/257420/on_hold" class="nav">搁置</a></li>
+<li><a href="/game/list/257420/dropped" class="nav">抛弃</a></li>
+</ul>
+</li>
+<li><a href="/real" class="top chl real"><span>三次元</span></a>
+<div class="clear"></div>
+<ul class="clearit">
+<li><a href="/real/chart" class="nav">排行榜</a></li>
+<li><a href="/real/tag" class="nav">三次元标签</a></li>
+<li><a href="/real/blog" class="nav">三次元日志</a></li>
+<li><a href="/real/browser/platform/jp" class="nav">日剧</a></li>
+<li><a href="/real/browser/platform/en" class="nav">欧美剧</a></li>
+<li><div class="sep">我看</div></li>
+<li><a href="/real/list/257420/do" class="nav">在看</a></li>
+<li><a href="/real/list/257420/wish" class="nav">想看</a></li>
+<li><a href="/real/list/257420/collect" class="nav">看过</a></li>
+<li><a href="/real/list/257420/on_hold" class="nav">搁置</a></li>
+<li><a href="/real/list/257420/dropped" class="nav">抛弃</a></li>
+</ul>
+</li>
+            <li><a href="/mono" class="top"><span>人物</span></a>
+<div class="clear"></div>
+<ul class="clearit">
+<li><a href="/character" class="nav">虚构人物</a></li>
+<li><a href="/person" class="nav">现实人物</a></li>
+<li><div class="sep">我</div></li>
+<li><a href="/mono/update" class="nav">关注人物更新</a></li>
+<li><a href="/user/257420/mono/character" class="nav">收藏的角色</a></li>
+<li><a href="/user/257420/mono/person" class="nav">收藏的人物</a></li>               
+    
+</ul>
+</li>
+<li><a href="/rakuen" class="top_lite"><span>超展开</span></a></li>
+<li><a href="/group"class="top"><span>小组</span></a>
+<div class="clear"></div>
+<ul class="clearit">
+<li><a href="/group/discover" class="nav">随便看看</a></li>
+<li><a href="/group/all" class="nav">所有小组</a></li>
+<li><div class="sep">我</div></li>
+<li><a href="/group/my_topic" class="nav">发表的话题</a></li>
+<li><a href="/group/my_reply" class="nav">回复的话题</a></li>
+<li><a href="/group/mine" class="nav">参加的小组</a></li>
+</ul>
+</li>
+<li><a href="javascript:void(0);" class="top"><span>探索</span></a>
+<div class="clear"></div>
+<ul class="explore clearit">
+
+<li class="single"><a href="/timeline">时空管理局</a></li>       
+                <li class="group">
+<span><a href="/blog">日志</a><a href="/index">目录</a><a href="/wiki">维基人</a></span>
+</li>               
+<li class="group"><span><a href="/magi">MAGI 问答</a><a href="/dollars">Dollars</a></span></li>               
+                <li class="group">
+<span class="root">客户端</span>
+<span><a href="/onair">onAir</a><a href="/group/topic/5155">Mobile</a></span>
+</li>               
+</ul>
+</li>
+<li class="doujin"><a href="http://doujin.bgm.tv">天窗联盟</a></li>
+</ul>   
+</div>
+</div>
+        
+    <div class="idBadgerNeue">
+<a class="avatar" href="http://bgm.tv/user/257420"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/user/s/icon.jpg')"></span></a>
+    
+<ul id="badgeUserPanel">
+        <li><a href="http://bgm.tv/user/257420">时光机</a></li>                    
+        <li><a href="http://bgm.tv/user/257420/blog">日志</a></li>
+        <li><a href="http://bgm.tv/user/257420/mono">人物</a></li>
+        <li><a href="http://bgm.tv/user/257420/index">目录</a></li>
+        <li><a href="http://bgm.tv/user/257420/timeline">时间胶囊</a></li>
+        <li><a href="http://bgm.tv/user/257420/groups">小组</a></li>
+        <li><a href="http://bgm.tv/user/257420/friends">好友</a></li>
+        <li class="row"><a href="http://doujin.bgm.tv/user/257420">天窗专页</a></li>
+        <li class="row"><a href="http://bgm.tv/pm">短信</a> | <a href="http://bgm.tv/settings">设置</a> | <a href="http://bgm.tv/logout/237c7cd1">登出</a></li>
+    </ul>   
+    </div><div id="headerSearch">
+        <form action="/subject_search" method="post">
+    <div class="inner">
+<select name="cat" id="siteSearchSelect">
+<option value="all">全部</option>
+<option value="2" selected="selected">动画</option>
+<option value="1">书籍</option>
+<option value="4">游戏</option>
+<option value="3">音乐</option>
+<option value="6">三次元</option>
+<option value="person">人物</option>          
+</select>
+<input id="search_text" name="search_text" class="textfield" type="text" />
+        <input type="submit" name="submit" value="搜索" class="search" />                 
+    </div>
+</form>
+    </div>     
+    </div>
+</div>
+
+<div id="main" class="png_bg"></div>
+<div id="headerSubject" class="clearit" xmlns:v="http://rdf.data-vocabulary.org/#" typeof="v:Movie">
+<h1 class="nameSingle">
+   <a href="/subject/253" title="星际牛仔" property="v:itemreviewed">カウボーイビバップ</a>
+                 <small class="grey">TV</small>   </h1>
+
+
+        <div class="subjectNav">
+<ul class="navTabs">
+        <li><a href="/subject/253" class="focus">概览</a></li>
+        <li><a href="/subject/253/ep" >章节</a></li>        <li><a href="/subject/253/characters" >角色</a></li>
+        <li><a href="/subject/253/persons" >制作人员</a></li>
+        <li><a href="/subject/253/comments" >吐槽</a></li>        
+        <li><a href="/subject/253/reviews" >评论</a></li>
+        <li><a href="/subject/253/board" >讨论版</a></li>
+        </ul>
+    
+</div>
+</div>
+<div class="mainWrapper"><div class="mainWrapper">
+<div class="columns clearit" xmlns:v="http://rdf.data-vocabulary.org/#" typeof="v:Movie">
+<div id="columnSubjectHomeA" class="column">
+    <div id="bangumiInfo">
+<div class="infobox">
+<div align="center">
+<a href="//lain.bgm.tv/pic/cover/l/c2/4c/253_t3XWb.jpg" title="カウボーイビバップ 星际牛仔" alt="カウボーイビバップ 星际牛仔" class="thickbox cover"><img src="//lain.bgm.tv/pic/cover/c/c2/4c/253_t3XWb.jpg" class="cover" /></a>
+</div>
+<ul id="infobox">
+                            <li><span class="tip">中文名: </span>星际牛仔</li>
+                
+            
+                            <li><span class="tip">话数: </span>26</li>
+                
+            
+                            <li><span class="tip">放送开始: </span>1998年10月23日</li>
+                
+            
+                            <li><span class="tip">放送星期: </span>周五</li>
+                
+            
+                            <li><span class="tip">原作: </span><a href="/person/99" class="l" title="">矢立肇</a></li>
+                
+            
+                            <li><span class="tip">导演: </span><a href="/person/100" class="l" title="渡边信一郎" rel="v:directedBy">渡辺信一郎</a></li>
+                
+            
+                            <li><span class="tip">脚本: </span><a href="/person/49" class="l" title="渡边信一郎">山口亮太</a>、<a href="/person/921" class="l" title="">佐藤大</a>、<a href="/person/226" class="l" title="">村井さだゆき</a>、<a href="/person/103" class="l" title="">信本敬子</a>、<a href="/person/337" class="l" title="">横手美智子</a>、<a href="/person/100" class="l" title="渡边信一郎">渡辺信一郎</a>、<a href="/person/11555" class="l" title="稻荷昭彦">稲荷昭彦</a></li>
+                
+            
+                            <li><span class="tip">分镜: </span><a href="/person/920" class="l" title="冈村天斋">岡村天斎</a>、<a href="/person/12491" class="l" title="">佐藤育郎</a>、<a href="/person/343" class="l" title="山口佑司">山口祐司</a>、<a href="/person/3338" class="l" title="">武井良幸</a>、<a href="/person/456" class="l" title="佐藤顺一">佐藤順一</a>、<a href="/person/560" class="l" title="">赤根和樹</a>、<a href="/person/1742" class="l" title="">森邦宏</a>、<a href="/person/801" class="l" title="">山内重保</a>、<a href="/person/100" class="l" title="渡边信一郎">渡辺信一郎</a>、<a href="/person/1443" class="l" title="">都留稔幸</a>、<a href="/person/2598" class="l" title="饭田马之介">飯田馬之介</a>、<a href="/person/522" class="l" title="本乡充">本郷みつる</a></li>
+                
+            
+                            <li><span class="tip">演出: </span><a href="/person/12491" class="l" title="">佐藤育郎</a>、<a href="/person/3338" class="l" title="">武井良幸</a>、<a href="/person/1742" class="l" title="">森邦宏</a></li>
+                
+            
+                            <li><span class="tip">音乐: </span><a href="/person/101" class="l" title="菅野洋子">菅野よう子</a>、<a href="/person/6766" class="l" title="THE SEATBELTS">シートベルツ</a></li>
+                
+            
+                            <li><span class="tip">人物设定: </span><a href="/person/102" class="l" title="">川元利浩</a></li>
+                
+            
+                            <li><span class="tip">系列构成: </span><a href="/person/103" class="l" title="">信本敬子</a></li>
+                
+            
+                            <li><span class="tip">作画监督: </span><a href="/person/11371" class="l" title="后藤雅巳">後藤雅巳</a>、<a href="/person/102" class="l" title="">川元利浩</a>、<a href="/person/3279" class="l" title="">竹内浩志</a>、<a href="/person/520" class="l" title="">小森高博</a>、<a href="/person/1380" class="l" title="">逢坂浩司</a>、<a href="/person/3650" class="l" title="">菅野宏紀</a>、<a href="/person/287" class="l" title="本桥秀之">本橋秀之</a>、<a href="/person/11569" class="l" title="中田荣治">中田栄治</a></li>
+                
+            
+                            <li><span class="tip">机械设定: </span><a href="/person/9238" class="l" title="">山根公利</a></li>
+                
+            
+                            <li><span class="tip">摄影监督: </span><a href="/person/104" class="l" title="">大神洋一</a></li>
+                
+            
+                            <li><span class="tip">原画: </span><a href="/person/11475" class="l" title="中村丰">中村豊</a>、<a href="/person/2005" class="l" title="杉浦幸二">杉浦幸次</a></li>
+                
+            
+                            <li><span class="tip">主题歌编曲: </span><a href="/person/101" class="l" title="菅野洋子">菅野よう子</a></li>
+                
+            
+                            <li><span class="tip">主题歌作曲: </span><a href="/person/101" class="l" title="菅野洋子">菅野よう子</a></li>
+                
+            
+                            <li><span class="tip">企画: </span><a href="/person/189" class="l" title="日升">サンライズ</a></li>
+                
+            
+                            <li><span class="tip">音响监督: </span><a href="/person/17" class="l" title="">小林克良</a></li>
+                
+            
+                            <li><span class="tip">制片人: </span><a href="/person/3113" class="l" title="">南雅彦</a></li>
+                
+            
+                            <li><span class="tip">制作アシスタント: </span><a href="/person/44" class="l" title="">Bones</a></li>
+                
+            
+                            <li><span class="tip">动画制作: </span><a href="/person/189" class="l" title="日升">サンライズ</a></li>
+                
+            
+                                                                                            <li><span class="tip">别名: </span>Cowboy Bebop</li>
+                        
+                        
+                                                                                <li><span class="tip" style="visibility:hidden;">别名: </span>宇宙牛仔</li>
+                        
+                        
+                                                                                <li><span class="tip" style="visibility:hidden;">别名: </span>赏金猎人</li>
+                        
+                        
+                                                                                <li><span class="tip" style="visibility:hidden;">别名: </span>太空牛仔</li>
+                        
+                        
+                                                                                <li><span class="tip" style="visibility:hidden;">别名: </span>恶男杰特</li>
+                        
+                        
+                                            
+            
+                            <li><span class="tip">官方网站: </span>http://www.cowboybebop.org/</li>
+                
+            
+                            <li><span class="tip">播放电视台: </span>WOWOW、テレビ東京</li>
+                
+            
+                
+                            <li><span class="tip">播放结束: </span>1999-04-23</li>
+                
+            
+                
+                
+                                                                                            <li><span class="tip">テレビ東京版: </span>1998年4月3日 - 1998年6月26日</li>
+                        
+                        
+                                                                                <li><span class="tip" style="visibility:hidden;">テレビ東京版: </span>全12话+总集篇</li>
+                        
+                        
+                                            
+            
+    </ul>
+                
+        <div class="modifyTool">
+        <span class="tip_i">
+                <p><span class="tip">修改：</span><a href="/subject/253/edit" class="l">信息</a> / <a href="/subject/253/upload_img" class="l">封面</a></p>
+        <p><span class="tip">关联：</span><a href="/subject/253/add_related/character" class="l">角色</a> / <a href="/subject/253/add_related/person" class="l">制作人员</a> / <a href="/subject/253/add_related/subject" class="l">条目</a></p>
+                        
+        
+        </span>
+        </div>      
+        </div>
+</div>
+    <div class="SimpleSidePanel">
+<h2>推荐本条目的目录</h2>
+<ul class="groupsLine">                     <li class="clearit"><a href="/user/118604" class="avatar"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/user/s/000/11/86/118604.jpg?r=1399905095')"></span></a>
+        <div class="innerWithAvatar"><a href="/index/15331" class="avatar l">00前</a><br />
+        <small class="grey">by <a href="/user/118604" class="avatar">见事迟</a></small></div>
+        </li>
+                                <li class="clearit"><a href="/user/snakemm" class="avatar"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/user/s/000/16/75/167516.jpg?r=1382555228')"></span></a>
+        <div class="innerWithAvatar"><a href="/index/16163" class="avatar l">个人向年度TOP记录</a><br />
+        <small class="grey">by <a href="/user/snakemm" class="avatar">白夜†幻灯</a></small></div>
+        </li>
+                                <li class="clearit"><a href="/user/rician" class="avatar"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/user/s/000/07/92/79211.jpg?r=1435498340')"></span></a>
+        <div class="innerWithAvatar"><a href="/index/1459" class="avatar l">【自用】假期补番一览表</a><br />
+        <small class="grey">by <a href="/user/rician" class="avatar">asuka</a></small></div>
+        </li>
+                                <li class="clearit"><a href="/user/sha1360" class="avatar"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/user/s/000/05/48/54847.jpg?r=1425815936')"></span></a>
+        <div class="innerWithAvatar"><a href="/index/16389" class="avatar l">2014</a><br />
+        <small class="grey">by <a href="/user/sha1360" class="avatar">Pnyuu</a></small></div>
+        </li>
+                                <li class="clearit"><a href="/user/89771" class="avatar"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/user/s/icon.jpg')"></span></a>
+        <div class="innerWithAvatar"><a href="/index/1565" class="avatar l">日本经典科幻动画</a><br />
+        <small class="grey">by <a href="/user/89771" class="avatar">等一个人</a></small></div>
+        </li>
+                                                                                        </ul>
+<span class="tip_i">/ <a href="/subject/253/index" class="l">更多目录</a>  / <a href="/user/257420/index?add_related=253" class="l">加入我的目录</a></span>
+</div>
+
+<div class="SimpleSidePanel">
+<h2>谁看这部动画? </h2>
+<ul class="groupsLine"><li class="clearit">
+<a href="/user/257420" class="avatar"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/user/s/icon.jpg')"></span></a>
+<div class="innerWithAvatar"><a href="/user/257420" class="avatar">abcde</a><span class="sstars8 starsinfo"></span><br />
+<small class="grey">44分46秒前在看</small></div></li><li class="clearit">
+<a href="/user/250932" class="avatar"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/user/s/icon.jpg')"></span></a>
+<div class="innerWithAvatar"><a href="/user/250932" class="avatar">fender0402</a><br />
+<small class="grey">23小时38分钟前在看</small></div></li><li class="clearit">
+<a href="/user/244216" class="avatar"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/user/s/000/24/42/244216.jpg?r=1434776116')"></span></a>
+<div class="innerWithAvatar"><a href="/user/244216" class="avatar">enenpoi</a><span class="sstars8 starsinfo"></span><br />
+<small class="grey">1天6小时前看过</small></div></li><li class="clearit">
+<a href="/user/joey2005" class="avatar"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/user/s/000/13/77/137747.jpg?r=1411144806')"></span></a>
+<div class="innerWithAvatar"><a href="/user/joey2005" class="avatar">joey2005</a><br />
+<small class="grey">1天7小时前在看</small></div></li><li class="clearit">
+<a href="/user/147527" class="avatar"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/user/s/icon.jpg')"></span></a>
+<div class="innerWithAvatar"><a href="/user/147527" class="avatar">TTMC-NE</a><span class="sstars10 starsinfo"></span><br />
+<small class="grey">1天8小时前看过</small></div></li></ul>
+<span class="tip_i"> / <a href="/subject/253/wishes" class="l">1198人想看</a> / <a href="/subject/253/collections" class="l">2444人看过</a> / <a href="/subject/253/doings" class="l">337人在看</a> / <a href="/subject/253/on_hold" class="l">204人搁置</a> / <a href="/subject/253/dropped" class="l">34人抛弃</a></span>
+</div>
+
+<div class="SimpleSidePanel">
+<h2>喜欢这部动画的会员常去的小组</h2>
+<ul class="groupsLine"><li class="clearit">
+<a href="/group/forum" class="avatar"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/icon/s/000/00/00/2.jpg')"></span></a>
+<div class="innerWithAvatar"><a href="/group/forum" class="avatar">站务论坛</a><br /><small class="feed">1682 位成员</small></div></li>
+<li class="clearit">
+<a href="/group/saraba1st" class="avatar"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/icon/s/000/00/00/28.jpg')"></span></a>
+<div class="innerWithAvatar"><a href="/group/saraba1st" class="avatar">愛撕衣的后花園</a><br /><small class="feed">1816 位成员</small></div></li>
+<li class="clearit">
+<a href="/group/nico" class="avatar"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/icon/s/000/00/00/34.jpg')"></span></a>
+<div class="innerWithAvatar"><a href="/group/nico" class="avatar">nico旁观者</a><br /><small class="feed">3917 位成员</small></div></li>
+<li class="clearit">
+<a href="/group/boring" class="avatar"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/icon/s/000/00/03/364.jpg')"></span></a>
+<div class="innerWithAvatar"><a href="/group/boring" class="avatar">靠谱人生茶话会</a><br /><small class="feed">4033 位成员</small></div></li>
+</ul>
+</div>
+</div>
+<div id="columnSubjectHomeB" class="column">
+   <div id="columnSubjectInHomeB" class="clearit">
+            <div id="subject_detail" class="ll">    
+     
+<div class="subject_prg">
+<span class="tip">观看进度管理</span> <a href="/subject/253/ep" class="l">[全部]</a>:
+<br />
+<ul class="prg_list">                    <li><a href="/ep/519"  id="prg_519" class="load-epinfo epBtnWatched" title="ep.1 アステロイド・ブルース" rel="#prginfo_519">01</a></li>
+            <li><a href="/ep/7027"  id="prg_7027" class="load-epinfo epBtnWatched" title="ep.2 野良犬のストラット" rel="#prginfo_7027">02</a></li>
+            <li><a href="/ep/7028"  id="prg_7028" class="load-epinfo epBtnWatched" title="ep.3 ホンキィ・トンク・ウィメン" rel="#prginfo_7028">03</a></li>
+            <li><a href="/ep/7029"  id="prg_7029" class="load-epinfo epBtnWatched" title="ep.4 ゲイトウェイ・シャッフル" rel="#prginfo_7029">04</a></li>
+            <li><a href="/ep/7030"  id="prg_7030" class="load-epinfo epBtnWatched" title="ep.5 堕天使たちのバラッド" rel="#prginfo_7030">05</a></li>
+            <li><a href="/ep/7031"  id="prg_7031" class="load-epinfo epBtnWatched" title="ep.6 悪魔を憐れむ歌" rel="#prginfo_7031">06</a></li>
+            <li><a href="/ep/7032"  id="prg_7032" class="load-epinfo epBtnWatched" title="ep.7 ヘヴィ・メタル・クイーン" rel="#prginfo_7032">07</a></li>
+            <li><a href="/ep/7033"  id="prg_7033" class="load-epinfo epBtnWatched" title="ep.8 ワルツ・フォー・ヴィーナス" rel="#prginfo_7033">08</a></li>
+            <li><a href="/ep/7034"  id="prg_7034" class="load-epinfo epBtnWatched" title="ep.9 ジャミング・ウィズ・エドワード" rel="#prginfo_7034">09</a></li>
+            <li><a href="/ep/7035"  id="prg_7035" class="load-epinfo epBtnWatched" title="ep.10 ガニメデ慕情" rel="#prginfo_7035">10</a></li>
+            <li><a href="/ep/7036"  id="prg_7036" class="load-epinfo epBtnWatched" title="ep.11 闇夜のヘヴィ・ロック" rel="#prginfo_7036">11</a></li>
+            <li><a href="/ep/7037"  id="prg_7037" class="load-epinfo epBtnWatched" title="ep.12 ジュピター・ジャズ（前編）" rel="#prginfo_7037">12</a></li>
+            <li><a href="/ep/7038"  id="prg_7038" class="load-epinfo epBtnWatched" title="ep.13 ジュピター・ジャズ（後編）" rel="#prginfo_7038">13</a></li>
+            <li><a href="/ep/7039"  id="prg_7039" class="load-epinfo epBtnWatched" title="ep.14 ボヘミアン・ラプソディ" rel="#prginfo_7039">14</a></li>
+            <li><a href="/ep/7040"  id="prg_7040" class="load-epinfo epBtnWatched" title="ep.15 マイ・ファニー・ヴァレンタイン" rel="#prginfo_7040">15</a></li>
+            <li><a href="/ep/7041"  id="prg_7041" class="load-epinfo epBtnWatched" title="ep.16 ブラック・ドッグ・セレナーデ" rel="#prginfo_7041">16</a></li>
+            <li><a href="/ep/7042"  id="prg_7042" class="load-epinfo epBtnWatched" title="ep.17 マッシュルーム・サンバ" rel="#prginfo_7042">17</a></li>
+            <li><a href="/ep/7043"  id="prg_7043" class="load-epinfo epBtnWatched" title="ep.18 スピーク・ライク・ア・チャイルド" rel="#prginfo_7043">18</a></li>
+            <li><a href="/ep/7044"  id="prg_7044" class="load-epinfo epBtnWatched" title="ep.19 ワイルド・ホーセス" rel="#prginfo_7044">19</a></li>
+            <li><a href="/ep/7045"  id="prg_7045" class="load-epinfo epBtnWatched" title="ep.20 道化師の鎮魂歌" rel="#prginfo_7045">20</a></li>
+            <li><a href="/ep/7046"  id="prg_7046" class="load-epinfo epBtnWatched" title="ep.21 ブギ・ウギ・フンシェイ" rel="#prginfo_7046">21</a></li>
+            <li><a href="/ep/7047"  id="prg_7047" class="load-epinfo epBtnWatched" title="ep.22 カウボーイ・ファンク" rel="#prginfo_7047">22</a></li>
+            <li><a href="/ep/7048"  id="prg_7048" class="load-epinfo epBtnWatched" title="ep.23 ブレイン・スクラッチ" rel="#prginfo_7048">23</a></li>
+            <li><a href="/ep/7049"  id="prg_7049" class="load-epinfo epBtnWatched" title="ep.24 ハード・ラック・ウーマン" rel="#prginfo_7049">24</a></li>
+            <li><a href="/ep/7050"  id="prg_7050" class="load-epinfo epBtnQueue" title="ep.25 ザ・リアル・フォークブルース（前編）" rel="#prginfo_7050">25</a></li>
+            <li><a href="/ep/7051"  id="prg_7051" class="load-epinfo epBtnDrop" title="ep.26 ザ・リアル・フォークブルース（後編）" rel="#prginfo_7051">26</a></li>
+            <li class="subtitle"><span>SP</span></li>            <li><a href="/ep/46037"  id="prg_46037" class="load-epinfo epBtnAir" title="ep.0 よせあつめブルース" rel="#prginfo_46037">00</a></li>
+            <li class="subtitle"><span>OP</span></li>            <li><a href="/ep/103232"  id="prg_103232" class="load-epinfo epBtnAir" title="ep.1 Tank!" rel="#prginfo_103232">01</a></li>
+            <li class="subtitle"><span>ED</span></li>            <li><a href="/ep/103233"  id="prg_103233" class="load-epinfo epBtnAir" title="ep.1 THE REAL FOLK BLUES" rel="#prginfo_103233">01</a></li>
+            <li><a href="/ep/103234"  id="prg_103234" class="load-epinfo epBtnAir" title="ep.2 SPACE LION" rel="#prginfo_103234">02</a></li>
+            <li><a href="/ep/103235"  id="prg_103235" class="load-epinfo epBtnAir" title="ep.3 BLUE" rel="#prginfo_103235">03</a></li>
+    </ul>
+<div class="clear"></div>
+<script type="text/javascript">var INTEREST_TYPE = 3;var EpBtn = 'N';var CHOBITS_UID = 257420;</script>
+<script src="/min/g=ajax?r262" type="text/javascript"></script>
+<div id="subject_prg_content"><div id="prginfo_46037" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_46037"></p><a href="/subject/ep/46037/status/watched?gh=237c7cd1" id="Watched_46037" class="ep_status">看过</a><a href="/subject/ep/46037/status/watched?gh=237c7cd1" id="WatchedTill_46037" class="ep_status">看到</a><a href="/subject/ep/46037/status/queue?gh=237c7cd1" id="Queue_46037" class="ep_status">想看</a><a href="/subject/ep/46037/status/drop?gh=237c7cd1" id="Drop_46037" class="ep_status">抛弃</a></div><span class="tip">中文标题:Mish-Mash Blues<br />首播:1998-06-26<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/46037" class="l icons_cmt">讨论</a> <small class="na">(+4)</small></span></span></div><div id="prginfo_519" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_519" class="epBtnCu">看过</p><a href="/subject/ep/519/status/queue?gh=237c7cd1" id="Queue_519" class="ep_status">想看</a><a href="/subject/ep/519/status/drop?gh=237c7cd1" id="Drop_519" class="ep_status">抛弃</a><a href="/subject/ep/519/status/remove?gh=237c7cd1" id="remove_519" class="ep_status">撤消</a></div><span class="tip">中文标题:Asteroid Blues<br />首播:1998-10-23<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/519" class="l icons_cmt">讨论</a> <small class="na">(+17)</small></span></span></div><div id="prginfo_103232" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_103232"></p><a href="/subject/ep/103232/status/watched?gh=237c7cd1" id="Watched_103232" class="ep_status">看过</a><a href="/subject/ep/103232/status/watched?gh=237c7cd1" id="WatchedTill_103232" class="ep_status">看到</a><a href="/subject/ep/103232/status/queue?gh=237c7cd1" id="Queue_103232" class="ep_status">想看</a><a href="/subject/ep/103232/status/drop?gh=237c7cd1" id="Drop_103232" class="ep_status">抛弃</a></div><span class="tip">首播:1998-06-26<br />时长:第0话 - 第26话<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/103232" class="l icons_cmt">讨论</a> <small class="na">(+0)</small></span></span></div><div id="prginfo_103233" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_103233"></p><a href="/subject/ep/103233/status/watched?gh=237c7cd1" id="Watched_103233" class="ep_status">看过</a><a href="/subject/ep/103233/status/watched?gh=237c7cd1" id="WatchedTill_103233" class="ep_status">看到</a><a href="/subject/ep/103233/status/queue?gh=237c7cd1" id="Queue_103233" class="ep_status">想看</a><a href="/subject/ep/103233/status/drop?gh=237c7cd1" id="Drop_103233" class="ep_status">抛弃</a></div><span class="tip">首播:1998-06-26<br />时长:第0话 - 第12话, 第14话 - 第25话<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/103233" class="l icons_cmt">讨论</a> <small class="na">(+0)</small></span></span></div><div id="prginfo_7027" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7027" class="epBtnCu">看过</p><a href="/subject/ep/7027/status/queue?gh=237c7cd1" id="Queue_7027" class="ep_status">想看</a><a href="/subject/ep/7027/status/drop?gh=237c7cd1" id="Drop_7027" class="ep_status">抛弃</a><a href="/subject/ep/7027/status/remove?gh=237c7cd1" id="remove_7027" class="ep_status">撤消</a></div><span class="tip">中文标题:Stray Dog Strut<br />首播:1998-04-03<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7027" class="l icons_cmt">讨论</a> <small class="na">(+13)</small></span></span></div><div id="prginfo_103234" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_103234"></p><a href="/subject/ep/103234/status/watched?gh=237c7cd1" id="Watched_103234" class="ep_status">看过</a><a href="/subject/ep/103234/status/watched?gh=237c7cd1" id="WatchedTill_103234" class="ep_status">看到</a><a href="/subject/ep/103234/status/queue?gh=237c7cd1" id="Queue_103234" class="ep_status">想看</a><a href="/subject/ep/103234/status/drop?gh=237c7cd1" id="Drop_103234" class="ep_status">抛弃</a></div><span class="tip">首播:1998-05-29<br />时长:第13话<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/103234" class="l icons_cmt">讨论</a> <small class="na">(+0)</small></span></span></div><div id="prginfo_7028" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7028" class="epBtnCu">看过</p><a href="/subject/ep/7028/status/queue?gh=237c7cd1" id="Queue_7028" class="ep_status">想看</a><a href="/subject/ep/7028/status/drop?gh=237c7cd1" id="Drop_7028" class="ep_status">抛弃</a><a href="/subject/ep/7028/status/remove?gh=237c7cd1" id="remove_7028" class="ep_status">撤消</a></div><span class="tip">中文标题:Honky Tonk Women<br />首播:1998-04-10<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7028" class="l icons_cmt">讨论</a> <small class="na">(+11)</small></span></span></div><div id="prginfo_103235" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_103235"></p><a href="/subject/ep/103235/status/watched?gh=237c7cd1" id="Watched_103235" class="ep_status">看过</a><a href="/subject/ep/103235/status/watched?gh=237c7cd1" id="WatchedTill_103235" class="ep_status">看到</a><a href="/subject/ep/103235/status/queue?gh=237c7cd1" id="Queue_103235" class="ep_status">想看</a><a href="/subject/ep/103235/status/drop?gh=237c7cd1" id="Drop_103235" class="ep_status">抛弃</a></div><span class="tip">首播:1999-04-23<br />时长:第26话<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/103235" class="l icons_cmt">讨论</a> <small class="na">(+0)</small></span></span></div><div id="prginfo_7029" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7029" class="epBtnCu">看过</p><a href="/subject/ep/7029/status/queue?gh=237c7cd1" id="Queue_7029" class="ep_status">想看</a><a href="/subject/ep/7029/status/drop?gh=237c7cd1" id="Drop_7029" class="ep_status">抛弃</a><a href="/subject/ep/7029/status/remove?gh=237c7cd1" id="remove_7029" class="ep_status">撤消</a></div><span class="tip">中文标题:Gateway Shuffle<br />首播:1998-11-13<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7029" class="l icons_cmt">讨论</a> <small class="na">(+8)</small></span></span></div><div id="prginfo_7030" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7030" class="epBtnCu">看过</p><a href="/subject/ep/7030/status/queue?gh=237c7cd1" id="Queue_7030" class="ep_status">想看</a><a href="/subject/ep/7030/status/drop?gh=237c7cd1" id="Drop_7030" class="ep_status">抛弃</a><a href="/subject/ep/7030/status/remove?gh=237c7cd1" id="remove_7030" class="ep_status">撤消</a></div><span class="tip">中文标题:Ballad Of Fallen Angels<br />首播:1998-11-20<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7030" class="l icons_cmt">讨论</a> <small class="na">(+32)</small></span></span></div><div id="prginfo_7031" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7031" class="epBtnCu">看过</p><a href="/subject/ep/7031/status/queue?gh=237c7cd1" id="Queue_7031" class="ep_status">想看</a><a href="/subject/ep/7031/status/drop?gh=237c7cd1" id="Drop_7031" class="ep_status">抛弃</a><a href="/subject/ep/7031/status/remove?gh=237c7cd1" id="remove_7031" class="ep_status">撤消</a></div><span class="tip">中文标题:Sympathy For The Devil<br />首播:1998-11-27<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7031" class="l icons_cmt">讨论</a> <small class="na">(+15)</small></span></span></div><div id="prginfo_7032" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7032" class="epBtnCu">看过</p><a href="/subject/ep/7032/status/queue?gh=237c7cd1" id="Queue_7032" class="ep_status">想看</a><a href="/subject/ep/7032/status/drop?gh=237c7cd1" id="Drop_7032" class="ep_status">抛弃</a><a href="/subject/ep/7032/status/remove?gh=237c7cd1" id="remove_7032" class="ep_status">撤消</a></div><span class="tip">中文标题:Heavy Metal Queen<br />首播:1998-04-17<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7032" class="l icons_cmt">讨论</a> <small class="na">(+15)</small></span></span></div><div id="prginfo_7033" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7033" class="epBtnCu">看过</p><a href="/subject/ep/7033/status/queue?gh=237c7cd1" id="Queue_7033" class="ep_status">想看</a><a href="/subject/ep/7033/status/drop?gh=237c7cd1" id="Drop_7033" class="ep_status">抛弃</a><a href="/subject/ep/7033/status/remove?gh=237c7cd1" id="remove_7033" class="ep_status">撤消</a></div><span class="tip">中文标题:Waltz For Venus<br />首播:1998-04-24<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7033" class="l icons_cmt">讨论</a> <small class="na">(+13)</small></span></span></div><div id="prginfo_7034" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7034" class="epBtnCu">看过</p><a href="/subject/ep/7034/status/queue?gh=237c7cd1" id="Queue_7034" class="ep_status">想看</a><a href="/subject/ep/7034/status/drop?gh=237c7cd1" id="Drop_7034" class="ep_status">抛弃</a><a href="/subject/ep/7034/status/remove?gh=237c7cd1" id="remove_7034" class="ep_status">撤消</a></div><span class="tip">中文标题:Jamming With Edward<br />首播:1998-05-01<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7034" class="l icons_cmt">讨论</a> <small class="na">(+20)</small></span></span></div><div id="prginfo_7035" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7035" class="epBtnCu">看过</p><a href="/subject/ep/7035/status/queue?gh=237c7cd1" id="Queue_7035" class="ep_status">想看</a><a href="/subject/ep/7035/status/drop?gh=237c7cd1" id="Drop_7035" class="ep_status">抛弃</a><a href="/subject/ep/7035/status/remove?gh=237c7cd1" id="remove_7035" class="ep_status">撤消</a></div><span class="tip">中文标题:Ganymede Elegy<br />首播:1998-05-08<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7035" class="l icons_cmt">讨论</a> <small class="na">(+21)</small></span></span></div><div id="prginfo_7036" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7036" class="epBtnCu">看过</p><a href="/subject/ep/7036/status/queue?gh=237c7cd1" id="Queue_7036" class="ep_status">想看</a><a href="/subject/ep/7036/status/drop?gh=237c7cd1" id="Drop_7036" class="ep_status">抛弃</a><a href="/subject/ep/7036/status/remove?gh=237c7cd1" id="remove_7036" class="ep_status">撤消</a></div><span class="tip">中文标题:Toys In The Attic<br />首播:1998-05-15<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7036" class="l icons_cmt">讨论</a> <small class="na">(+26)</small></span></span></div><div id="prginfo_7037" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7037" class="epBtnCu">看过</p><a href="/subject/ep/7037/status/queue?gh=237c7cd1" id="Queue_7037" class="ep_status">想看</a><a href="/subject/ep/7037/status/drop?gh=237c7cd1" id="Drop_7037" class="ep_status">抛弃</a><a href="/subject/ep/7037/status/remove?gh=237c7cd1" id="remove_7037" class="ep_status">撤消</a></div><span class="tip">中文标题:Jupiter Jazz (PART 1)<br />首播:1998-05-22<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7037" class="l icons_cmt">讨论</a> <small class="na">(+7)</small></span></span></div><div id="prginfo_7038" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7038" class="epBtnCu">看过</p><a href="/subject/ep/7038/status/queue?gh=237c7cd1" id="Queue_7038" class="ep_status">想看</a><a href="/subject/ep/7038/status/drop?gh=237c7cd1" id="Drop_7038" class="ep_status">抛弃</a><a href="/subject/ep/7038/status/remove?gh=237c7cd1" id="remove_7038" class="ep_status">撤消</a></div><span class="tip">中文标题:Jupiter Jazz (PART 2)<br />首播:1998-05-29<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7038" class="l icons_cmt">讨论</a> <small class="na">(+21)</small></span></span></div><div id="prginfo_7039" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7039" class="epBtnCu">看过</p><a href="/subject/ep/7039/status/queue?gh=237c7cd1" id="Queue_7039" class="ep_status">想看</a><a href="/subject/ep/7039/status/drop?gh=237c7cd1" id="Drop_7039" class="ep_status">抛弃</a><a href="/subject/ep/7039/status/remove?gh=237c7cd1" id="remove_7039" class="ep_status">撤消</a></div><span class="tip">中文标题:Bohemian Rhapsody<br />首播:1998-06-05<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7039" class="l icons_cmt">讨论</a> <small class="na">(+13)</small></span></span></div><div id="prginfo_7040" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7040" class="epBtnCu">看过</p><a href="/subject/ep/7040/status/queue?gh=237c7cd1" id="Queue_7040" class="ep_status">想看</a><a href="/subject/ep/7040/status/drop?gh=237c7cd1" id="Drop_7040" class="ep_status">抛弃</a><a href="/subject/ep/7040/status/remove?gh=237c7cd1" id="remove_7040" class="ep_status">撤消</a></div><span class="tip">中文标题:My Funny Valentine<br />首播:1998-06-12<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7040" class="l icons_cmt">讨论</a> <small class="na">(+20)</small></span></span></div><div id="prginfo_7041" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7041" class="epBtnCu">看过</p><a href="/subject/ep/7041/status/queue?gh=237c7cd1" id="Queue_7041" class="ep_status">想看</a><a href="/subject/ep/7041/status/drop?gh=237c7cd1" id="Drop_7041" class="ep_status">抛弃</a><a href="/subject/ep/7041/status/remove?gh=237c7cd1" id="remove_7041" class="ep_status">撤消</a></div><span class="tip">中文标题:Black Dog Serenade<br />首播:1999-02-12<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7041" class="l icons_cmt">讨论</a> <small class="na">(+15)</small></span></span></div><div id="prginfo_7042" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7042" class="epBtnCu">看过</p><a href="/subject/ep/7042/status/queue?gh=237c7cd1" id="Queue_7042" class="ep_status">想看</a><a href="/subject/ep/7042/status/drop?gh=237c7cd1" id="Drop_7042" class="ep_status">抛弃</a><a href="/subject/ep/7042/status/remove?gh=237c7cd1" id="remove_7042" class="ep_status">撤消</a></div><span class="tip">中文标题:Mushroom Samba<br />首播:1999-02-19<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7042" class="l icons_cmt">讨论</a> <small class="na">(+14)</small></span></span></div><div id="prginfo_7043" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7043" class="epBtnCu">看过</p><a href="/subject/ep/7043/status/queue?gh=237c7cd1" id="Queue_7043" class="ep_status">想看</a><a href="/subject/ep/7043/status/drop?gh=237c7cd1" id="Drop_7043" class="ep_status">抛弃</a><a href="/subject/ep/7043/status/remove?gh=237c7cd1" id="remove_7043" class="ep_status">撤消</a></div><span class="tip">中文标题:Speak Like a Child<br />首播:1998-06-19<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7043" class="l icons_cmt">讨论</a> <small class="na">(+36)</small></span></span></div><div id="prginfo_7044" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7044" class="epBtnCu">看过</p><a href="/subject/ep/7044/status/queue?gh=237c7cd1" id="Queue_7044" class="ep_status">想看</a><a href="/subject/ep/7044/status/drop?gh=237c7cd1" id="Drop_7044" class="ep_status">抛弃</a><a href="/subject/ep/7044/status/remove?gh=237c7cd1" id="remove_7044" class="ep_status">撤消</a></div><span class="tip">中文标题:Wild Horses<br />首播:1999-03-05<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7044" class="l icons_cmt">讨论</a> <small class="na">(+16)</small></span></span></div><div id="prginfo_7045" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7045" class="epBtnCu">看过</p><a href="/subject/ep/7045/status/queue?gh=237c7cd1" id="Queue_7045" class="ep_status">想看</a><a href="/subject/ep/7045/status/drop?gh=237c7cd1" id="Drop_7045" class="ep_status">抛弃</a><a href="/subject/ep/7045/status/remove?gh=237c7cd1" id="remove_7045" class="ep_status">撤消</a></div><span class="tip">中文标题:Pierrot Le Fou<br />首播:1999-03-12<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7045" class="l icons_cmt">讨论</a> <small class="na">(+28)</small></span></span></div><div id="prginfo_7046" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7046" class="epBtnCu">看过</p><a href="/subject/ep/7046/status/queue?gh=237c7cd1" id="Queue_7046" class="ep_status">想看</a><a href="/subject/ep/7046/status/drop?gh=237c7cd1" id="Drop_7046" class="ep_status">抛弃</a><a href="/subject/ep/7046/status/remove?gh=237c7cd1" id="remove_7046" class="ep_status">撤消</a></div><span class="tip">中文标题:Boogie Woogie Feng Shui<br />首播:1999-03-19<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7046" class="l icons_cmt">讨论</a> <small class="na">(+13)</small></span></span></div><div id="prginfo_7047" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7047" class="epBtnCu">看过</p><a href="/subject/ep/7047/status/queue?gh=237c7cd1" id="Queue_7047" class="ep_status">想看</a><a href="/subject/ep/7047/status/drop?gh=237c7cd1" id="Drop_7047" class="ep_status">抛弃</a><a href="/subject/ep/7047/status/remove?gh=237c7cd1" id="remove_7047" class="ep_status">撤消</a></div><span class="tip">中文标题:Cowboy Funk<br />首播:1999-03-26<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7047" class="l icons_cmt">讨论</a> <small class="na">(+27)</small></span></span></div><div id="prginfo_7048" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7048" class="epBtnCu">看过</p><a href="/subject/ep/7048/status/queue?gh=237c7cd1" id="Queue_7048" class="ep_status">想看</a><a href="/subject/ep/7048/status/drop?gh=237c7cd1" id="Drop_7048" class="ep_status">抛弃</a><a href="/subject/ep/7048/status/remove?gh=237c7cd1" id="remove_7048" class="ep_status">撤消</a></div><span class="tip">中文标题:Brain Scratch<br />首播:1999-04-02<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7048" class="l icons_cmt">讨论</a> <small class="na">(+25)</small></span></span></div><div id="prginfo_7049" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7049" class="epBtnCu">看过</p><a href="/subject/ep/7049/status/queue?gh=237c7cd1" id="Queue_7049" class="ep_status">想看</a><a href="/subject/ep/7049/status/drop?gh=237c7cd1" id="Drop_7049" class="ep_status">抛弃</a><a href="/subject/ep/7049/status/remove?gh=237c7cd1" id="remove_7049" class="ep_status">撤消</a></div><span class="tip">中文标题:Hard Luck Woman<br />首播:1999-04-09<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7049" class="l icons_cmt">讨论</a> <small class="na">(+38)</small></span></span></div><div id="prginfo_7050" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7050" class="epBtnCu">想看</p><a href="/subject/ep/7050/status/watched?gh=237c7cd1" id="Watched_7050" class="ep_status">看过</a><a href="/subject/ep/7050/status/watched?gh=237c7cd1" id="WatchedTill_7050" class="ep_status">看到</a><a href="/subject/ep/7050/status/drop?gh=237c7cd1" id="Drop_7050" class="ep_status">抛弃</a><a href="/subject/ep/7050/status/remove?gh=237c7cd1" id="remove_7050" class="ep_status">撤消</a></div><span class="tip">中文标题:The Real Folk Blues (PART 1)<br />首播:1999-04-16<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7050" class="l icons_cmt">讨论</a> <small class="na">(+4)</small></span></span></div><div id="prginfo_7051" class="prg_popup"><div class="epStatusTool"><p id="epBtnCu_7051" class="epBtnCu">抛弃</p><a href="/subject/ep/7051/status/watched?gh=237c7cd1" id="Watched_7051" class="ep_status">看过</a><a href="/subject/ep/7051/status/watched?gh=237c7cd1" id="WatchedTill_7051" class="ep_status">看到</a><a href="/subject/ep/7051/status/queue?gh=237c7cd1" id="Queue_7051" class="ep_status">想看</a><a href="/subject/ep/7051/status/remove?gh=237c7cd1" id="remove_7051" class="ep_status">撤消</a></div><span class="tip">中文标题:The Real Folk Blues (PART 2)<br />首播:1999-04-23<br />时长:24m<br /><hr class="board" /><span class="cmt clearit"><a href="/subject/ep/7051" class="l icons_cmt">讨论</a> <small class="na">(+27)</small></span></span></div></div>
+<script type="text/javascript">initSubjectPrgs(253);</script>
+</div>
+                            <div id="subject_summary" class="subject_summary" property="v:summary">2021年，随着超光速航行技术的实现，人类得以在太阳系范围内方便的自由移动，但是由于设计上的失误，这种技术引发了月球的爆炸，无数的月球碎片被吸引向地球，造成了空前绝后的大灾难。存活下来的人类逃离地球，并开始在太阳系各地建立家园。由于这次灾难，国家、政府等权利机构都极为不稳定、治安问题也成为了一个难题。为了在人力资源不足的情况下抓捕罪犯，有些组织开始允许个人抓捕通缉的罪犯并换取奖金，“赏金猎人”这个职业也就由此诞生了。<br />
+<br />
+史派克（Spike）和杰特（Jet）是驾驶飞船Bebop号在宇宙中以捉拿逃犯获取奖金为生的赏金猎人。两人在星际间的旅程中，结识了身负巨债、嗜财如命的美女菲（Faye）和电脑神童艾德（Ed），并收养了拥有高智商的数据狗爱因（Ein）。从此，四人一狗游荡在广阔之宇宙之中，在自己与他人的生活中经历著种种悲欢离合，也寻找著各自的过去。</div>
+                <small class="gery clearit"><a href="#;" id="show_summary"  class="rr l">more...</a></small>
+                        <div class="subject_tag_section">
+<h2 class="subtitle">大家将 カウボーイビバップ 标注为</h2>
+<div class="inner"><a href="/anime/tag/%E8%8F%85%E9%87%8E%E6%B4%8B%E5%AD%90" class="l">菅野洋子</a> <small class="grey">(822)</small> &nbsp; <a href="/anime/tag/%E6%B8%A1%E8%BE%B9%E4%BF%A1%E4%B8%80%E9%83%8E" class="l">渡边信一郎</a> <small class="grey">(739)</small> &nbsp; <a href="/anime/tag/%E6%98%9F%E9%99%85%E7%89%9B%E4%BB%94" class="l">星际牛仔</a> <small class="grey">(414)</small> &nbsp; <a href="/anime/tag/SUNRISE" class="l">SUNRISE</a> <small class="grey">(307)</small> &nbsp; <a href="/anime/tag/cowboy" class="l">cowboy</a> <small class="grey">(302)</small> &nbsp; <a href="/anime/tag/%E7%BB%8F%E5%85%B8" class="l">经典</a> <small class="grey">(250)</small> &nbsp; <a href="/anime/tag/CowboyBebop" class="l">CowboyBebop</a> <small class="grey">(226)</small> &nbsp; <a href="/anime/tag/%E7%A7%91%E5%B9%BB" class="l">科幻</a> <small class="grey">(201)</small> &nbsp; <a href="/anime/tag/%E7%A5%9E%E9%85%8D%E4%B9%90" class="l">神配乐</a> <small class="grey">(201)</small> &nbsp; <a href="/anime/tag/%E6%9E%97%E5%8E%9F%E6%83%A0" class="l">林原惠</a> <small class="grey">(180)</small> &nbsp; <a href="/anime/tag/%E7%A5%9E%E4%BD%9C" class="l">神作</a> <small class="grey">(156)</small> &nbsp; <a href="/anime/tag/TV" class="l">TV</a> <small class="grey">(136)</small> &nbsp; <a href="/anime/tag/%E5%B1%B1%E5%AF%BA%E5%AE%8F%E4%B8%80" class="l">山寺宏一</a> <small class="grey">(114)</small> &nbsp; <a href="/anime/tag/1998" class="l">1998</a> <small class="grey">(72)</small> &nbsp; <a href="/anime/tag/%E5%8E%9F%E5%88%9B" class="l">原创</a> <small class="grey">(31)</small> &nbsp; <a href="/anime/tag/Bebop" class="l">Bebop</a> <small class="grey">(26)</small> &nbsp; <a href="/anime/tag/%E7%A5%9E" class="l">神</a> <small class="grey">(22)</small> &nbsp; <a href="/anime/tag/1998%E5%B9%B410%E6%9C%88" class="l">1998年10月</a> <small class="grey">(20)</small> &nbsp; <a href="/anime/tag/%E8%8F%85%E9%87%8E%E3%82%88%E3%81%86%E5%AD%90" class="l">菅野よう子</a> <small class="grey">(16)</small> &nbsp; <a href="/anime/tag/%E6%B8%A1%E8%BE%BA%E4%BF%A1%E4%B8%80%E9%83%8E" class="l">渡辺信一郎</a> <small class="grey">(16)</small> &nbsp; <a href="/anime/tag/%E5%B7%9D%E5%85%83%E5%88%A9%E6%B5%A9" class="l">川元利浩</a> <small class="grey">(13)</small> &nbsp; <a href="/anime/tag/BONES" class="l">BONES</a> <small class="grey">(12)</small> &nbsp; <a href="/anime/tag/%E9%9F%B3%E6%A8%82GJ" class="l">音樂GJ</a> <small class="grey">(11)</small> &nbsp; <a href="/anime/tag/%E4%BF%A1%E6%9C%AC%E6%95%AC%E5%AD%90" class="l">信本敬子</a> <small class="grey">(10)</small> &nbsp; <a href="/anime/tag/1998%E5%B9%B4" class="l">1998年</a> <small class="grey">(9)</small> &nbsp; <a href="/anime/tag/SF" class="l">SF</a> <small class="grey">(9)</small> &nbsp; <a href="/anime/tag/90%E5%B9%B4%E4%BB%A3" class="l">90年代</a> <small class="grey">(8)</small> &nbsp; <a href="/anime/tag/%E8%A1%A5%E6%97%A7%E7%95%AA" class="l">补旧番</a> <small class="grey">(8)</small> &nbsp; <a href="/anime/tag/%E6%9E%97%E5%8E%9F%E6%83%A0%E7%BE%8E" class="l">林原惠美</a> <small class="grey">(7)</small> &nbsp; <a href="/anime/tag/%E6%9E%97%E5%8E%9F%E3%82%81%E3%81%90%E3%81%BF" class="l">林原めぐみ</a> <small class="grey">(7)</small> &nbsp; </div>
+</div>
+            
+           </div>
+           <div class="rr" style="width:240px;">
+           <div class="SidePanel png_bg">
+<h2>收藏盒</h2>
+    <span class="interest_now">我在看这部动画</span> 
+    <a href="#TB_inline?height=350&amp;width=500&amp;inlineId=panel" id="modifyCollect" title="修改收藏" class="thickbox l">修改</a>     <a href="#;" onclick="eraseSubjectCollect(253, '237c7cd1')" class="l">删除</a><br />
+<hr class="board" />
+佳作<hr class="board" />
+
+<div id="panel" style="display:none;"><div class="collectBox clearit">
+    <form id="collectBoxForm" name="collectBoxForm" method="post" action="/subject/253/interest/update?gh=237c7cd1">
+    <input type="hidden" name="referer" value="subject">
+    <div class="collectType cell">
+        <label><input value="1" id="wish" name="interest" onclick="GenInterestBox('wish')"  type="radio"> 想看</label>&nbsp;&nbsp;
+        <label><input value="2" id="collect" name="interest" onclick="GenInterestBox('collect')"  type="radio"> 看过</label>&nbsp;&nbsp;
+        <label><input value="3" id="do" name="interest" onclick="GenInterestBox('do')" checked="checked" type="radio"> 在看</label>&nbsp;&nbsp;
+        <label><input value="4" id="on_hold" name="interest" onclick="GenInterestBox('on_hold')"  type="radio"> 搁置</label>&nbsp;&nbsp;
+        <label><input value="5" id="dropped" name="interest" onclick="GenInterestBox('dropped')"  type="radio"> 抛弃</label>&nbsp;&nbsp;
+        </div>
+
+<div id="interest_rate" class="cell" style="">
+ 
+<span class="tip">我的评价:</span> <span class="alarm" id="rating-tip"></span>
+        <div class="clearit">
+            <input style="display: none;" id="rating" name="rating" type="radio" class="star rating" value="1" title="不忍直视 1 "  />
+                <input style="display: none;" id="rating" name="rating" type="radio" class="star rating" value="2" title="很差 2 "  />
+                <input style="display: none;" id="rating" name="rating" type="radio" class="star rating" value="3" title="差 3 "  />
+                <input style="display: none;" id="rating" name="rating" type="radio" class="star rating" value="4" title="较差 4 "  />
+                <input style="display: none;" id="rating" name="rating" type="radio" class="star rating" value="5" title="不过不失 5 "  />
+                <input style="display: none;" id="rating" name="rating" type="radio" class="star rating" value="6" title="还行 6 "  />
+                <input style="display: none;" id="rating" name="rating" type="radio" class="star rating" value="7" title="推荐 7 "  />
+                <input style="display: none;" id="rating" name="rating" type="radio" class="star rating" value="8" title="力荐 8 " checked />
+                <input style="display: none;" id="rating" name="rating" type="radio" class="star rating" value="9" title="神作 9 "  />
+                <input style="display: none;" id="rating" name="rating" type="radio" class="star rating" value="10" title="超神作 10 (请谨慎评价)"  />
+                </div>
+</div>
+
+<div class="cell">
+<p class="tip"><label for="tags">标签 (使用半角空格或逗号隔开，至多10个):</label></p>
+<input id="tags" class="inputtext" type="text" size="30" name="tags" value="科幻 TV SUNRISE " />
+    <div class="tagList clearit">
+        <span class="tip_j ll">常用标签：</span>
+        <div class="inner">
+                
+                        <a href="#;" class="btnGray" onclick="chiiLib.subject.addTag('菅野洋子')">菅野洋子</a>
+                                    <a href="#;" class="btnGray" onclick="chiiLib.subject.addTag('渡边信一郎')">渡边信一郎</a>
+                                    <a href="#;" class="btnGray" onclick="chiiLib.subject.addTag('星际牛仔')">星际牛仔</a>
+                                    <a href="#;" class="btnGray" onclick="chiiLib.subject.addTag('SUNRISE')">SUNRISE</a>
+                                    <a href="#;" class="btnGray" onclick="chiiLib.subject.addTag('cowboy')">cowboy</a>
+                                    <a href="#;" class="btnGray" onclick="chiiLib.subject.addTag('经典')">经典</a>
+                                    <a href="#;" class="btnGray" onclick="chiiLib.subject.addTag('CowboyBebop')">CowboyBebop</a>
+                                    <a href="#;" class="btnGray" onclick="chiiLib.subject.addTag('科幻')">科幻</a>
+                                    <a href="#;" class="btnGray" onclick="chiiLib.subject.addTag('神配乐')">神配乐</a>
+                                    <a href="#;" class="btnGray" onclick="chiiLib.subject.addTag('林原惠')">林原惠</a>
+                                    <a href="#;" class="btnGray" onclick="chiiLib.subject.addTag('神作')">神作</a>
+                                    <a href="#;" class="btnGray" onclick="chiiLib.subject.addTag('TV')">TV</a>
+                                    <a href="#;" class="btnGray" onclick="chiiLib.subject.addTag('山寺宏一')">山寺宏一</a>
+                                    <a href="#;" class="btnGray" onclick="chiiLib.subject.addTag('1998')">1998</a>
+                                    <a href="#;" class="btnGray" onclick="chiiLib.subject.addTag('原创')">原创</a>
+                                                                                                                                                                                                                                                                                                                                    </div>
+    </div>    
+    
+    <div class="tagList clearit">
+        <span class="tip_j ll">我的标签：</span>
+        <div class="inner">
+                            <a href="#;" class="btnGray" onclick="chiiLib.subject.addTag('SUNRISE')">SUNRISE</a>
+                                    <a href="#;" class="btnGray" onclick="chiiLib.subject.addTag('TV')">TV</a>
+                                    <a href="#;" class="btnGray" onclick="chiiLib.subject.addTag('科幻')">科幻</a>
+                        </div>
+    </div>          
+    </div> 
+    
+    <div class="cell">
+    <p class="tip"><label for="comment">吐槽 (简评，最多200字):</label></p>
+    <textarea name="comment" id="comment" cols="32" rows="3" class="quick">佳作</textarea>
+    </div>
+    
+    <div id="submitBtnO"><input class="inputBtn" type="submit" name="update" value="保存"/></div>
+
+    </form>
+</div>
+</div>
+    <div class="panelProgress anime clearit">
+        <h4>我的完成度</h4>
+        <div class="progress"><div class="inner" style="width: 96.15%;">&nbsp;<small style="color:#FFF">25/26</small></div></div>
+        <div style="padding:5px 0;">
+        <form method="post" name="merge" action="/subject/set/watched/253">
+        <input type="hidden" name="referer" value="subject">
+                    <input class="inputBtn rr" type="submit" name="submit" value="更新"/>     
+            <div class="prgText">
+            <input id="watchedeps" class="inputtext" type="text" value="25" name="watchedeps" onfocus="this.select()" onmouseover="this.focus()" /> / 26</div>  
+                </form>
+        </div>
+</div>
+<!--[Subject Rating]-->
+<div rel="v:rating">
+<div class="global_rating score9">
+<div class="rateEmo"></div>
+<div class="global_score">
+<span class="number" property="v:average">9.1</span>
+<span property="v:best" content="10.0"></span>
+<span class="description">神作</span><div><small class="grey">Bangumi Anime Ranked:</small><small class="alarm">#2</small></div>
+</div>
+</div>
+<div class="clear"></div>
+
+<p>我的评价:
+<span class="alarm" id="rate-tip">力荐</span></p>
+<form method="post" name="rate-now" action="/subject/253/rate.chii?gh=237c7cd1">
+        <input style="display: none;" id="rate" name="rate" type="radio" class="star rate" value="1" title="不忍直视 1 "  />
+        <input style="display: none;" id="rate" name="rate" type="radio" class="star rate" value="2" title="很差 2 "  />
+        <input style="display: none;" id="rate" name="rate" type="radio" class="star rate" value="3" title="差 3 "  />
+        <input style="display: none;" id="rate" name="rate" type="radio" class="star rate" value="4" title="较差 4 "  />
+        <input style="display: none;" id="rate" name="rate" type="radio" class="star rate" value="5" title="不过不失 5 "  />
+        <input style="display: none;" id="rate" name="rate" type="radio" class="star rate" value="6" title="还行 6 "  />
+        <input style="display: none;" id="rate" name="rate" type="radio" class="star rate" value="7" title="推荐 7 "  />
+        <input style="display: none;" id="rate" name="rate" type="radio" class="star rate" value="8" title="力荐 8 " checked />
+        <input style="display: none;" id="rate" name="rate" type="radio" class="star rate" value="9" title="神作 9 "  />
+        <input style="display: none;" id="rate" name="rate" type="radio" class="star rate" value="10" title="超神作 10 (请谨慎评价)"  />
+    </form>
+<br clear="all" />
+
+<div id="ChartWarpper" align="center">
+<div class="chart_desc" style=""><small class="grey"><span property="v:votes">2238</span> votes</small></div>
+<ul class="horizontalChart"><li><a href="javascript:void(0)" title="961人评分"><span class="label">10</span><span class="count" style="height:42.94%">(961)</span></a></li><li><a href="javascript:void(0)" title="733人评分"><span class="label">9</span><span class="count" style="height:32.75%">(733)</span></a></li><li><a href="javascript:void(0)" title="374人评分"><span class="label">8</span><span class="count" style="height:16.71%">(374)</span></a></li><li><a href="javascript:void(0)" title="107人评分"><span class="label">7</span><span class="count" style="height:4.78%">(107)</span></a></li><li><a href="javascript:void(0)" title="36人评分"><span class="label">6</span><span class="count" style="height:1.61%">(36)</span></a></li><li><a href="javascript:void(0)" title="13人评分"><span class="label">5</span><span class="count" style="height:0.58%">(13)</span></a></li><li><a href="javascript:void(0)" title="3人评分"><span class="label">4</span><span class="count" style="height:0.13%">(3)</span></a></li><li><a href="javascript:void(0)" title="0人评分"><span class="label">3</span><span class="count" style="height:0.00%">(0)</span></a></li><li><a href="javascript:void(0)" title="2人评分"><span class="label">2</span><span class="count" style="height:0.09%">(2)</span></a></li><li><a href="javascript:void(0)" title="9人评分"><span class="label">1</span><span class="count" style="height:0.40%">(9)</span></a></li></ul>
+</div>
+</div>
+<!--[/Subject Rating]-->
+</div>
+           <div class="shareBtn">
+    <span class="shareText">分享</span>
+    <a href="javascript:void(0);" title="分享到新浪微博" class="share share_sina">&nbsp;</a> 
+    <a href="javascript:void(0);" title="分享到豆瓣网" class="share share_douban">&nbsp;</a> 
+    <a href="javascript:void(0);" title="分享到腾讯微博" class="share share_qq">&nbsp;</a>
+    <a href="javascript:void(0);" title="分享到人人网" class="share share_renren">&nbsp;</a>
+    <a href="javascript:void(0);" title="分享到 Twitter" class="share share_twitter">&nbsp;</a>                                                
+</div> 
+           </div>
+        </div>
+        
+<div class="section_line clear"></div>
+
+        <div class="subject_section clearit">
+<h2 class="subtitle">角色介绍</h2>
+<div>
+<ul id="browserItemList" class="browserMedium" style="margin:5px 0 0 0;"><li class="user " style="margin:0pt 0pt 10px;">
+<div class="userContainer"><small class="fade rr">(+6)</small><strong><a href="/character/81" title="アイン / 爱因" class="avatar">
+<span class="userImage"><img src="//lain.bgm.tv/pic/crt/s/e2/7d/81_crt_s71wU.jpg" height="48" width="48" alt="アイン / 爱因" class="avatar"></span>アイン</a></strong>
+        <div><span class="tip_j">
+                <small><span class="badge_job">主角</span></small>                 <span class="tip">爱因</span><br />                                                                CV:                 <a href="/person/3914" rel="v:starring">山寺宏一</a>
+                        </span></div>
+</div>
+</li><li class="user " style="margin:0pt 0pt 10px;">
+<div class="userContainer"><small class="fade rr">(+1)</small><strong><a href="/character/78" title="ジェット・ブラック / 杰特·布莱克" class="avatar">
+<span class="userImage"><img src="//lain.bgm.tv/pic/crt/s/d4/e6/78_crt_VV28f.jpg" height="48" width="48" alt="ジェット・ブラック / 杰特·布莱克" class="avatar"></span>ジェット・ブラック</a></strong>
+        <div><span class="tip_j">
+                <small><span class="badge_job">主角</span></small>                 <span class="tip">杰特·布莱克</span><br />                                                                CV:                 <a href="/person/4045" rel="v:starring">石塚運昇</a>
+                        </span></div>
+</div>
+</li><li class="user " style="margin:0pt 0pt 10px;">
+<div class="userContainer"><small class="fade rr">(+14)</small><strong><a href="/character/77" title="スパイク・スピーゲル / 史派克·斯皮格尔" class="avatar">
+<span class="userImage"><img src="//lain.bgm.tv/pic/crt/s/1a/e3/77_crt_OcFfZ.jpg" height="48" width="48" alt="スパイク・スピーゲル / 史派克·斯皮格尔" class="avatar"></span>スパイク・スピーゲル</a></strong>
+        <div><span class="tip_j">
+                <small><span class="badge_job">主角</span></small>                 <span class="tip">史派克·斯皮格尔</span><br />                                                                CV:                 <a href="/person/3914" rel="v:starring">山寺宏一</a>
+                        </span></div>
+</div>
+</li><li class="user  odd" style="margin:0pt 0pt 10px;">
+<div class="userContainer"><small class="fade rr">(+11)</small><strong><a href="/character/79" title="フェイ・ヴァレンタイン / 菲·瓦伦丁" class="avatar">
+<span class="userImage"><img src="//lain.bgm.tv/pic/crt/s/6e/2a/79_crt_ZIF2u.jpg" height="48" width="48" alt="フェイ・ヴァレンタイン / 菲·瓦伦丁" class="avatar"></span>フェイ・ヴァレンタイン</a></strong>
+        <div><span class="tip_j">
+                <small><span class="badge_job">主角</span></small>                 <span class="tip">菲·瓦伦丁</span><br />                                                                CV:                 <a href="/person/3919" rel="v:starring">林原めぐみ</a>
+                        </span></div>
+</div>
+</li><li class="user " style="margin:0pt 0pt 10px;">
+<div class="userContainer"><small class="fade rr">(+3)</small><strong><a href="/character/80" title="エドワード・ウォン・ハウ・ペペル・チブルスキー4世 / 艾德" class="avatar">
+<span class="userImage"><img src="//lain.bgm.tv/pic/crt/s/a7/6e/80_crt_T8DMp.jpg" height="48" width="48" alt="エドワード・ウォン・ハウ・ペペル・チブルスキー4世 / 艾德" class="avatar"></span>エドワード・ウォン・ハウ・ペペル・チブルスキー4世</a></strong>
+        <div><span class="tip_j">
+                <small><span class="badge_job">主角</span></small>                 <span class="tip">艾德</span><br />                                                                CV:                 <a href="/person/3921" rel="v:starring">多田葵</a>
+                        </span></div>
+</div>
+</li><li class="user " style="margin:0pt 0pt 10px;">
+<div class="userContainer"><small class="fade rr">(+1)</small><strong><a href="/character/2297" title="ビシャス" class="avatar">
+<span class="userImage"><img src="//lain.bgm.tv/pic/crt/s/e0/69/2297_crt_anidb.jpg" height="48" width="48" alt="ビシャス" class="avatar"></span>ビシャス</a></strong>
+        <div><span class="tip_j">
+                <small><span class="badge_job">配角</span></small>                                                                                 CV:                 <a href="/person/3920" rel="v:starring">若本規夫</a>
+                        </span></div>
+</div>
+</li><li class="user  odd" style="margin:0pt 0pt 10px;">
+<div class="userContainer"><small class="fade rr">(+0)</small><strong><a href="/character/21926" title="ロコ" class="avatar">
+<span class="userImage"><img src="//lain.bgm.tv/pic/crt/s/be/1e/21926_crt_uBfof.jpg" height="48" width="48" alt="ロコ" class="avatar"></span>ロコ</a></strong>
+        <div><span class="tip_j">
+                <small><span class="badge_job">配角</span></small>                                                                                 CV:                 <a href="/person/4217" rel="v:starring">中尾隆聖</a>
+                        </span></div>
+</div>
+</li><li class="user " style="margin:0pt 0pt 10px;">
+<div class="userContainer"><small class="fade rr">(+0)</small><strong><a href="/character/21927" title="ステラ" class="avatar">
+<span class="userImage"><img src="//lain.bgm.tv/pic/crt/s/d0/51/21927_crt_HpyJ4.jpg" height="48" width="48" alt="ステラ" class="avatar"></span>ステラ</a></strong>
+        <div><span class="tip_j">
+                <small><span class="badge_job">配角</span></small>                                                                                 CV:                 <a href="/person/3877" rel="v:starring">坂本真綾</a>
+                        </span></div>
+</div>
+</li><li class="user " style="margin:0pt 0pt 10px;">
+<div class="userContainer"><small class="fade rr">(+0)</small><strong><a href="/character/21929" title="アリサ" class="avatar">
+<span class="userImage"><img src="//lain.bgm.tv/pic/crt/s/6c/70/21929_crt_9b99t.jpg" height="48" width="48" alt="アリサ" class="avatar"></span>アリサ</a></strong>
+        <div><span class="tip_j">
+                <small><span class="badge_job">配角</span></small>                                                                                 CV:                 <a href="/person/4008" rel="v:starring">土井美加</a>
+                        </span></div>
+</div>
+</li></ul>
+</div>
+<a href="/subject/253/characters" class="more">更多角色 &raquo;</a></div>
+<div class="section_line"></div>
+        
+        <div class="subject_section">
+<div class="clearit">
+<h2 class="subtitle">关联条目</h2>
+</div>
+<div class="content_inner">
+<ul class="browserCoverMedium clearit"><li class="sep">
+<span class="sub">书籍</span>
+<a href="/subject/83382" title="星际牛仔" class="avatar thumbTip"><span class="avatarNeue avatarSize75" style="background-image:url('//lain.bgm.tv/pic/cover/m/3b/54/83382_aIHwB.jpg')"></span></a>
+<a href="/subject/83382" class="title">カウボーイビバップ</a>
+</li><li >
+<span class="sub"></span>
+<a href="/subject/30969"  class="avatar "><span class="avatarNeue avatarSize75" style="background-image:url('//lain.bgm.tv/pic/cover/m/e6/24/30969_jp.jpg')"></span></a>
+<a href="/subject/30969" class="title">Toshihiro Kawamoto:COWBOY BEBOP Illustrations ~ The Wind ~</a>
+</li><li >
+<span class="sub"></span>
+<a href="/subject/18653"  class="avatar "><span class="avatarNeue avatarSize75" style="background-image:url('//lain.bgm.tv/pic/cover/m/c9/c0/18653_rgzIE.jpg')"></span></a>
+<a href="/subject/18653" class="title">シューティングスタービバップ―カウボーイビバップ</a>
+</li><li class="sep">
+<span class="sub">游戏</span>
+<a href="/subject/18632" title="星际牛仔:追忆的夜曲" class="avatar thumbTip"><span class="avatarNeue avatarSize75" style="background-image:url('//lain.bgm.tv/pic/cover/m/be/19/18632_kkXNx.jpg')"></span></a>
+<a href="/subject/18632" class="title">COWBOY BEBOP 〜追憶の夜曲〜</a>
+</li><li class="sep">
+<span class="sub">番外篇</span>
+<a href="/subject/860" title="星际牛仔 天国之扉" class="avatar thumbTip"><span class="avatarNeue avatarSize75" style="background-image:url('//lain.bgm.tv/pic/cover/m/fc/49/860_iI33p.jpg')"></span></a>
+<a href="/subject/860" class="title">カウボーイビバップ 天国の扉</a>
+</li><li class="sep">
+<span class="sub">其他</span>
+<a href="/subject/125736"  class="avatar "><span class="avatarNeue avatarSize75" style="background-image:url('//lain.bgm.tv/pic/cover/m/97/50/125736_dW4K4.jpg')"></span></a>
+<a href="/subject/125736" class="title">Don't Bother None</a>
+</li><li class="sep">
+<span class="sub">原声集</span>
+<a href="/subject/18311" title="星际牛仔CDBOX" class="avatar thumbTip"><span class="avatarNeue avatarSize75" style="background-image:url('//lain.bgm.tv/pic/cover/m/94/f0/18311_90R9i.jpg')"></span></a>
+<a href="/subject/18311" class="title">COWBOY BEBOP CD BOX</a>
+</li><li >
+<span class="sub"></span>
+<a href="/subject/18305" title="星际牛仔原声集1" class="avatar thumbTip"><span class="avatarNeue avatarSize75" style="background-image:url('//lain.bgm.tv/pic/cover/m/20/d3/18305_jp.jpg')"></span></a>
+<a href="/subject/18305" class="title">COWBOY BEBOP SOUNDTRACK 1</a>
+</li><li >
+<span class="sub"></span>
+<a href="/subject/18304" title="星际牛仔原声集2 - No Disc" class="avatar thumbTip"><span class="avatarNeue avatarSize75" style="background-image:url('//lain.bgm.tv/pic/cover/m/82/10/18304_jp.jpg')"></span></a>
+<a href="/subject/18304" class="title">COWBOY BEBOP SOUNDTRACK 2 - No Disc</a>
+</li><li >
+<span class="sub"></span>
+<a href="/subject/925" title="星际牛仔原声集3 - BLUE" class="avatar thumbTip"><span class="avatarNeue avatarSize75" style="background-image:url('//lain.bgm.tv/pic/cover/m/7f/a7/925_Tv4S1.jpg')"></span></a>
+<a href="/subject/925" class="title">COWBOY BEBOP SOUNDTRACK 3 - BLUE</a>
+</li><li >
+<span class="sub"></span>
+<a href="/subject/18312"  class="avatar "><span class="avatarNeue avatarSize75" style="background-image:url('//lain.bgm.tv/pic/cover/m/b2/f7/18312_jp.jpg')"></span></a>
+<a href="/subject/18312" class="title">COWBOY BEBOP TANK!THE!BEST!</a>
+</li><li class="sep">
+<span class="sub">其他</span>
+<a href="/subject/18307"  class="avatar "><span class="avatarNeue avatarSize75" style="background-image:url('//lain.bgm.tv/pic/cover/m/3f/3d/18307_8fnD8.jpg')"></span></a>
+<a href="/subject/18307" class="title">Cowboy Bebop Remixes: Music for Freelance</a>
+</li><li >
+<span class="sub"></span>
+<a href="/subject/18306"  class="avatar "><span class="avatarNeue avatarSize75" style="background-image:url('//lain.bgm.tv/pic/cover/m/1b/43/18306_jp.jpg')"></span></a>
+<a href="/subject/18306" class="title">COWBOY BEBOP VITAMINLESS</a>
+</li><li >
+<span class="sub"></span>
+<a href="/subject/18658"  class="avatar "><span class="avatarNeue avatarSize75" style="background-image:url('//lain.bgm.tv/pic/cover/m/c1/87/18658_5dm5m.jpg')"></span></a>
+<a href="/subject/18658" class="title">Cowgirl Ed</a>
+</li></ul>  
+</div>
+</div>
+<div class="section_line clear"></div>
+        
+        <div class="subject_section">
+<h2 class="subtitle">喜欢 "カウボーイビバップ" 的会员大概会喜欢</h2>
+<div class="content_inner clearit" align="left">
+<ul class="coversSmall"><li class="clearit">
+<a href="/subject/326" title="攻殻機動隊 S.A.C. 2nd GIG"><span class="pictureFrameGroup"><span class="image"><img src="//lain.bgm.tv/pic/cover/m/a6/66/326_M9f1M.jpg"></span><span class="overlay"></span></span></a>
+<p class="info"><a href="/subject/326" class="l">攻殻機動隊 S.A.C. 2nd GIG</a></p>
+</li>
+<li class="clearit">
+<a href="/subject/324" title="攻殻機動隊 STAND ALONE COMPLEX"><span class="pictureFrameGroup"><span class="image"><img src="//lain.bgm.tv/pic/cover/m/f2/fc/324_psuXk.jpg"></span><span class="overlay"></span></span></a>
+<p class="info"><a href="/subject/324" class="l">攻殻機動隊 STAND ALONE COMPLEX</a></p>
+</li>
+<li class="clearit">
+<a href="/subject/254" title="サムライチャンプルー"><span class="pictureFrameGroup"><span class="image"><img src="//lain.bgm.tv/pic/cover/m/c5/2f/254_6pO8Z.jpg"></span><span class="overlay"></span></span></a>
+<p class="info"><a href="/subject/254" class="l">サムライチャンプルー</a></p>
+</li>
+<li class="clearit">
+<a href="/subject/3627" title="MEMORIES"><span class="pictureFrameGroup"><span class="image"><img src="//lain.bgm.tv/pic/cover/m/2b/f2/3627_3BjuJ.jpg"></span><span class="overlay"></span></span></a>
+<p class="info"><a href="/subject/3627" class="l">MEMORIES</a></p>
+</li>
+<li class="clearit">
+<a href="/subject/237" title="GHOST IN THE SHELL / 攻殻機動隊"><span class="pictureFrameGroup"><span class="image"><img src="//lain.bgm.tv/pic/cover/m/53/9f/237_78UdL.jpg"></span><span class="overlay"></span></span></a>
+<p class="info"><a href="/subject/237" class="l">GHOST IN THE SHELL / 攻殻機動隊</a></p>
+</li>
+<li class="clearit">
+<a href="/subject/340" title="蟲師"><span class="pictureFrameGroup"><span class="image"><img src="//lain.bgm.tv/pic/cover/m/40/00/340_zgE5O.jpg"></span><span class="overlay"></span></span></a>
+<p class="info"><a href="/subject/340" class="l">蟲師</a></p>
+</li>
+<li class="clearit">
+<a href="/subject/839" title="PERFECT BLUE"><span class="pictureFrameGroup"><span class="image"><img src="//lain.bgm.tv/pic/cover/m/8f/7d/839_G1Hio.jpg"></span><span class="overlay"></span></span></a>
+<p class="info"><a href="/subject/839" class="l">PERFECT BLUE</a></p>
+</li>
+<li class="clearit">
+<a href="/subject/860" title="カウボーイビバップ 天国の扉"><span class="pictureFrameGroup"><span class="image"><img src="//lain.bgm.tv/pic/cover/m/fc/49/860_iI33p.jpg"></span><span class="overlay"></span></span></a>
+<p class="info"><a href="/subject/860" class="l">カウボーイビバップ 天国の扉</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section_line clear"></div>
+        <div class="subject_section">
+<div class="rr"><a href="/blog/create?review=253" class="chiiBtn"><span>我来评论这部动画</span></a></div><h2 class="subtitle">"カウボーイビバップ" 的评论</h2>
+<div class="content_inner clearit">
+    <div id="entry_list"><div class="item clearit">
+<p class="cover ll">
+<a href="/blog/270832" title="观看须知"><span class="pictureFrameGroup"><span class="image"><img src="//lain.bgm.tv/pic/user/l/icon.jpg" /></span><span class="overlay"></span></span></a>
+</p>
+<div class="entry">
+<h2 class="title"><a href="/blog/270832" class="l">观看须知</a></h2>
+<div class="time"><span class="tip_j">by <a href="/user/210934" class="l">K</a></span> <small class="time">2015-7-12 05:07</small> <small class="orange">(+11)</small></div>
+<div class="content">这部片作为我评分最高的三作之一，但是是反复观看次数最多的。
+首先很多人都说完美无瑕，我想说剧情真心就A吧，A+都没得，因为港片大家都肯定看多了，主线就是一港片剧情，主线只在第5集有所表现，其他全部靠ED猜，如果你不看ED和第5集，可能对故事主线完全没好感。
+这部片神在 ... <small><a href="/blog/270832" class="l">(more)</a></small></div>
+<!--<div class="tools"><div class="tags">Tags: 动画 </div></div>-->
+</div>
+</div><div class="item clearit">
+<p class="cover ll">
+<a href="/blog/270646" title="星际牛仔文章三篇"><span class="pictureFrameGroup"><span class="image"><img src="//lain.bgm.tv/pic/user/l/000/24/89/248998.jpg?r=1433829465" /></span><span class="overlay"></span></span></a>
+</p>
+<div class="entry">
+<h2 class="title"><a href="/blog/270646" class="l">星际牛仔文章三篇</a></h2>
+<div class="time"><span class="tip_j">by <a href="/user/vxow" class="l">vxow</a></span> <small class="time">2015-6-21 02:11</small> <small class="orange">(+0)</small></div>
+<div class="content">不同时期回忆而写的三篇文章，文风可能略有不同，内容可能有一定重复。
+========================分割线===========================
+太空蓝调
+在定下题目之前，有一个小插曲，我不知道该用星空孤独，亦或是牛仔之梦，再或者根本不需要题目，但最终，我还是选择了大家所选的太 ... <small><a href="/blog/270646" class="l">(more)</a></small></div>
+<!--<div class="tools"><div class="tags">Tags: 动画 </div></div>-->
+</div>
+</div><div class="item clearit">
+<p class="cover ll">
+<a href="/blog/52268" title="See you space cowboy，二十世纪最后的动画"><span class="pictureFrameGroup"><span class="image"><img src="//lain.bgm.tv/pic/user/l/000/05/22/52202.jpg?r=1345292888" /></span><span class="overlay"></span></span></a>
+</p>
+<div class="entry">
+<h2 class="title"><a href="/blog/52268" class="l">See you space cowboy，二十世纪最后的动画</a></h2>
+<div class="time"><span class="tip_j">by <a href="/user/52202" class="l">十六夜咲夜</a></span> <small class="time">2014-7-12 16:59</small> <small class="orange">(+8)</small></div>
+<div class="content">菅野洋子是水，能包容一切，渡边信一郎是火，能杂烩一切，两者相遇，夹杂其中的故事便迸发出令人神往的香气。
+这段杂烩的故事是用单元剧端上餐桌的，一集一个故事，每一集的剧本都展现着自己的风格，或科幻或写实，或港片或公路片，配合着菅野洋子收放自如的音乐，渐渐将bebop号上的 ... <small><a href="/blog/52268" class="l">(more)</a></small></div>
+<!--<div class="tools"><div class="tags">Tags: 动画 </div></div>-->
+</div>
+</div><div class="item clearit">
+<p class="cover ll">
+<a href="/blog/52092" title="阿星评论"><span class="pictureFrameGroup"><span class="image"><img src="//lain.bgm.tv/pic/user/l/icon.jpg" /></span><span class="overlay"></span></span></a>
+</p>
+<div class="entry">
+<h2 class="title"><a href="/blog/52092" class="l">阿星评论</a></h2>
+<div class="time"><span class="tip_j">by <a href="/user/204987" class="l">shaoxing</a></span> <small class="time">2014-6-24 06:10</small> <small class="orange">(+0)</small></div>
+<div class="content">阿星评论阿星评论阿星评论阿星评论 <small><a href="/blog/52092" class="l">(more)</a></small></div>
+<!--<div class="tools"><div class="tags">Tags: 动画 </div></div>-->
+</div>
+</div><div class="item clearit">
+<p class="cover ll">
+<a href="/blog/51552" title="观感"><span class="pictureFrameGroup"><span class="image"><img src="//lain.bgm.tv/pic/user/l/000/03/15/31568.jpg?r=1381221094" /></span><span class="overlay"></span></span></a>
+</p>
+<div class="entry">
+<h2 class="title"><a href="/blog/51552" class="l">观感</a></h2>
+<div class="time"><span class="tip_j">by <a href="/user/haohao69" class="l">好好</a></span> <small class="time">2014-4-25 02:00</small> <small class="orange">(+14)</small></div>
+<div class="content">昨天看完了这部剧，最想说的就是——好想认识导演和配乐！
+本来这部剧得分那么高，也被推荐了，就抱着很大的兴趣去看的。但是前几集基本上只是了解了一下故事背景和故事人物，还有点儿怀疑真的值这么高的分数吗？直到第五集！一下子就被打动了！一下子就被导演的镜头演绎和配 ... <small><a href="/blog/51552" class="l">(more)</a></small></div>
+<!--<div class="tools"><div class="tags">Tags: 动画 </div></div>-->
+</div>
+</div></div>
+<div class="rr"><a href="/subject/253/reviews" class="more">更多影评 »</a></div>
+        
+</div>
+</div>
+<div class="section_line clear"></div>
+<a name="subject_board"></a>
+<div class="subject_section">
+<div class="rr"><a href="#;" onclick="switchDisplay('new_topic');" class="chiiBtn"><span>添加新讨论</span></a></div><h2 class="subtitle">"カウボーイビバップ" 讨论板</h2>
+
+<table class="topic_list" border="0" cellpadding="0" cellspacing="0" style="margin-bottom:0px;"><tbody><tr><td class="odd"><a href="/subject/topic/1289" title="感觉ED的角色多余了呀" class="l">感觉ED的角色多余了呀</a></td><td class="odd" width="15%"><a href="/user/45008">lancer</a></td><td class="odd" width="15%" align="right"><small class="grey">7 replies</small></td><td class="odd" width="15%" align="right"><small class="grey">2011-8-4</small></td></tr><tr><td class="even"><a href="/subject/topic/1352" title="这么神的片子竟然没人讨论" class="l">这么神的片子竟然没人讨论</a></td><td class="even" width="15%"><a href="/user/xsummer">Xsummer</a></td><td class="even" width="15%" align="right"><small class="grey">98 replies</small></td><td class="even" width="15%" align="right"><small class="grey">2011-9-5</small></td></tr><tr><td class="odd"><a href="/subject/topic/4770" title="Cowboy Bebop EYECATCH" class="l">Cowboy Bebop EYECATCH</a></td><td class="odd" width="15%"><a href="/user/cyclope">cyclope</a></td><td class="odd" width="15%" align="right"><small class="grey">2 replies</small></td><td class="odd" width="15%" align="right"><small class="grey">2014-7-20</small></td></tr><tr><td class="even"><a href="/subject/topic/2974" title="渡边叔给fans的福利 BD特典真人短片Don't Bother None" class="l">渡边叔给fans的福利 BD特典真人短片Don't Bother None</a></td><td class="even" width="15%"><a href="/user/9023">61598</a></td><td class="even" width="15%" align="right"><small class="grey">5 replies</small></td><td class="even" width="15%" align="right"><small class="grey">2013-1-19</small></td></tr><tr><td class="odd"><a href="/subject/topic/368" title="cowboy" class="l">cowboy</a></td><td class="odd" width="15%"><a href="/user/w">如月千早</a></td><td class="odd" width="15%" align="right"><small class="grey">0 replies</small></td><td class="odd" width="15%" align="right"><small class="grey">2009-10-6</small></td></tr><tr><td>&nbsp</td><td width="15%"></td><td width="15%"></td><td width="15%" align="right"><a href="/subject/253/board" class="more">更多讨论 »</a></td></tr>
+</tbody></table>
+<a name="new"></a>
+<div id="new_topic" class="light_odd" style="display:none;">
+<h2 class="subtitle">添加新讨论</h2>
+<span class="tip">
+<form id="newTopicForm" name="new_comment" method="post" action="/subject/253/topic/new">
+<input type="hidden" name="formhash" value="237c7cd1">
+<table align="center" width="99%" class="settings">
+<tr><td valign="top" width="10%">标题</td><td valign="top"><input id="title" name="title" class="inputtext" type="text"></td></tr>
+<tr><td valign="top" width="10%">正文</td><td valign="top"><textarea name="content" id="content" cols="45" rows="7" class="reply" onKeyDown="seditor_ctlent(event,'newTopicForm');"></textarea></td></tr>
+<tr>
+<td valign="top" width="10%"></td>
+<td valign="top"><div id="submitBtnO"><input class="inputBtn" value="加上去" name="submit" type="submit"> or <a href="#;" onclick="switchDisplay('new_topic');" class="l">取消</a></div></td>
+</tr>
+</table>
+<br />
+</form>
+</span>
+</div>
+
+</div>
+<div class="section_line clear"></div><div class="subject_section">
+<h2 class="subtitle">吐槽箱</h2><div id="comment_box"><div class="item clearit">
+<a href="/user/257420" class="avatar"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/user/s/icon.jpg')"></span></a>
+<div class="text_main_even">
+<div class="text">
+            <a href="/user/257420" class="l">abcde</a> <small class="grey">@ 44m ago</small> <span class="sstars8 starsinfo"></span>            <p>佳作</p>
+</div>
+<div class="text_bottom"></div>
+</div>
+</div><div class="item clearit">
+<a href="/user/147527" class="avatar"><span class="avatarNeue avatarSize32 rr" style="background-image:url('//lain.bgm.tv/pic/user/s/icon.jpg')"></span></a>
+<div class="text_main_odd">
+<div class="text">
+            <a href="/user/147527" class="l">TTMC-NE</a> <small class="grey">@ 1d 8h ago</small> <span class="sstars10 starsinfo"></span>           <p>配乐，人物刻画，时代刻入感 都做到完美。。 故事衔接也做到恰到好处。 在主角们混乱的生活中 还有一些悠然自在的一部番</p>
+</div>
+<div class="text_bottom"></div>
+</div>
+</div><div class="item clearit">
+<a href="/user/243916" class="avatar"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/user/s/icon.jpg')"></span></a>
+<div class="text_main_even">
+<div class="text">
+            <a href="/user/243916" class="l">莉芮斯</a> <small class="grey">@ 2d 16h ago</small> <span class="sstars8 starsinfo"></span>           <p>我觉得毕竟是银魂灵感来源，真的特别神奇，作者的脑洞到现在看简直不可思议</p>
+</div>
+<div class="text_bottom"></div>
+</div>
+</div><div class="item clearit">
+<a href="/user/light_44" class="avatar"><span class="avatarNeue avatarSize32 rr" style="background-image:url('//lain.bgm.tv/pic/user/s/000/05/41/54176.jpg?r=1316345480')"></span></a>
+<div class="text_main_odd">
+<div class="text">
+            <a href="/user/light_44" class="l">lighthouse 不该</a> <small class="grey">@ 2d 23h ago</small>           <p>我终于开补这部片了哎。目前看下来还是需要静静看，一次看一集。</p>
+</div>
+<div class="text_bottom"></div>
+</div>
+</div><div class="item clearit">
+<a href="/user/peocolator" class="avatar"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/user/s/000/24/60/246028.jpg?r=1431827187')"></span></a>
+<div class="text_main_even">
+<div class="text">
+            <a href="/user/peocolator" class="l">Percolator</a> <small class="grey">@ 2015-8-11 17:54</small>           <p>洋子是什么鬼 233</p>
+</div>
+<div class="text_bottom"></div>
+</div>
+</div><div class="item clearit">
+<a href="/user/258254" class="avatar"><span class="avatarNeue avatarSize32 rr" style="background-image:url('//lain.bgm.tv/pic/user/s/icon.jpg')"></span></a>
+<div class="text_main_odd">
+<div class="text">
+            <a href="/user/258254" class="l">oasis</a> <small class="grey">@ 2015-8-10 15:08</small> <span class="sstars10 starsinfo"></span>           <p>有几集的分镜赞爆了，制作良心</p>
+</div>
+<div class="text_bottom"></div>
+</div>
+</div><div class="item clearit">
+<a href="/user/matrix67" class="avatar"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/user/s/000/06/98/69847.jpg?r=1417755811')"></span></a>
+<div class="text_main_even">
+<div class="text">
+            <a href="/user/matrix67" class="l">MatrixC7</a> <small class="grey">@ 2015-8-10 05:31</small> <span class="sstars10 starsinfo"></span>          <p>SEE YOU SPACE COWBOY</p>
+</div>
+<div class="text_bottom"></div>
+</div>
+</div><div class="item clearit">
+<a href="/user/257616" class="avatar"><span class="avatarNeue avatarSize32 rr" style="background-image:url('//lain.bgm.tv/pic/user/s/000/25/76/257616.jpg?r=1438839897')"></span></a>
+<div class="text_main_odd">
+<div class="text">
+            <a href="/user/257616" class="l">波风奏</a> <small class="grey">@ 2015-8-6 13:48</small> <span class="sstars10 starsinfo"></span>          <p>牛仔赛高</p>
+</div>
+<div class="text_bottom"></div>
+</div>
+</div><div class="item clearit">
+<a href="/user/257523" class="avatar"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/user/s/000/25/75/257523.jpg?r=1438835234')"></span></a>
+<div class="text_main_even">
+<div class="text">
+            <a href="/user/257523" class="l">九湿酱</a> <small class="grey">@ 2015-8-6 12:31</small> <span class="sstars10 starsinfo"></span>          <p>最爱！！！！</p>
+</div>
+<div class="text_bottom"></div>
+</div>
+</div><div class="item clearit">
+<a href="/user/252929" class="avatar"><span class="avatarNeue avatarSize32 rr" style="background-image:url('//lain.bgm.tv/pic/user/s/000/25/29/252929.jpg?r=1438352678')"></span></a>
+<div class="text_main_odd">
+<div class="text">
+            <a href="/user/252929" class="l">Quartincz</a> <small class="grey">@ 2015-8-1 13:36</small> <span class="sstars9 starsinfo"></span>         <p>类单元剧的动画。人物刻画充分到位，bebop号上每个人物都给足了描写，无论是腹黑的菲还是捣蛋天才艾德，所有人都活灵活现挥之不去。主线其实和港片类似，也就是情感纠纷和利益取舍；但通过各种支线慢慢推进，直到解开spike心结，这才是这部作品最神的地方，让你觉得无比惋惜却十分满意。蓝调色彩和太空SF衬托出那男人的浪漫直接秒杀了一大票现在的卖萌秀妹主题，再加上菅野大神带来出色的音乐，难得的佳作！</p>
+</div>
+<div class="text_bottom"></div>
+</div>
+</div></div><a href="/subject/253/comments" class="more">更多吐槽 »</a>
+</div>        
+</div>
+</div><div id="footer">
+<ul id="footerLinks" class="clearit">
+<li class="first">
+    <dl>
+        <dt>关于我们</dt>
+        <dd><a href="http://bgm.tv/about">关于我们</a></dd>
+        <dd><a href="http://bgm.tv/about/guideline">社区指导原则</a><dd>
+        <dd><a href="http://bgm.tv/about/copyright">版权声明</a><dd>        
+        <dd><a href="http://bgm.tv/about/link2us">链接我们</a><dd>
+    </dl>
+</li>
+<li>
+    <dl>
+    <dt>获取帮助</dt>
+        <dd><a href="http://bgm.tv/help/bbcode">BBCode</a></dd>
+        <dd><a href="http://bgm.tv/group/forum">站务论坛</a></dd>
+        <dd><a href="http://bgm.tv/group/issues">BUG追踪</a></dd>
+        <dd><a href="http://bgm.tv/group/doujin">天窗站务</a></dd>      
+    </dl>
+</li>
+<li>
+<dl>
+    <dt>特别推荐</dt>
+        <dd><a href="http://bgm.tv/onair">onAir 客户端</a></dd>
+        <dd><a href="http://bgm.tv/tokei">etokei 绘时计</a></dd>
+        <dd><a href="http://bgm.tv/award/2014">年鉴 2014</a> |  <a href="http://bgm.tv/award/2013">13</a> | <a href="http://bgm.tv/award/2012">12</a> | <a href="http://bgm.tv/award/2011">11</a> | <a href="http://bgm.tv/award/2010">10</a></dd>
+        <dd><a href="http://bgm.tv/group/wiki">番組WIKI計画</a></dd>
+    </dl>
+</li>
+<li class="last">
+    <dl>
+    <dt>更多</dt>
+        <dd><a href="http://bgm.tv/index">目录</a></dd>
+        <dd><a href="http://bgm.tv/wiki">维基人</a></dd>
+        <dd><a href="http://bgm.tv/magi">MAGI 问答</a></dd>   
+        <dd><a href="http://bgm.tv/goodies">周边</a></dd>
+        <dd><a href="http://bgm.tv/dollars">Dollars</a></dd>    
+    </dl>
+</li>
+</ul>
+
+<small class="grey">&copy; 2008-2015 Bangumi (a.k.a.Chobits), some rights reserved</small>
+</div>
+</div></div>
+<div class="homeBg"></div>
+<div id="dock">
+    <div class="content">
+        <ul class="clearit">
+                <li class="first"><a href="http://bgm.tv/user/257420">abcde</a></li>
+        <li><a href="http://bgm.tv/pm">短信</a> | <a href="http://bgm.tv/settings">设置</a> | <a href="http://bgm.tv/logout/237c7cd1" target="_self">登出</a></li>
+                <li class="last"><a href="javascript:void(0);" id="showrobot">&nbsp;</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="robot"  style="display:none;">
+<div id="ukagaka_shell">
+<div class="ui_10 shell_1">
+<div id="ukagaka_voice"></div>
+<div id="robot_balloon" class="ukagaka_balloon_pink">
+<div class="tools"><a href="javascript:void(0);" id="ukagaka_menu"><img src="/img/ukagaka/menu.gif" /></a></div>    <div class="inner">
+<div id="robot_speech" class="speech" >
+那个…这种时候该说什麽好呢…啊？对了…………对不起了。你不是在笑吗！</div>
+<div id="robot_speech_js" class="speech">
+        
+</div>
+</div>
+<div class="ukagaka_balloon_pink_bottom"></div> 
+</div>
+</div>
+</div>
+</div>
+<script src="/min/g=js?r262" type="text/javascript"></script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-4049707-6']);
+    _gaq.push(['_setDomainName', 'none']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+    
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $(document).share({
+        title: '「カウボーイビバップ」(来自 Bangumi 番组计划)',
+        content: "",
+        url: document.URL    });
+});
+</script>
+<script type="text/javascript">chiiLib.subject.init();</script>
+</body></html>

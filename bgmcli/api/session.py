@@ -61,6 +61,12 @@ class BangumiSession(object):
         self._login(email, password)
         self._gh = self._get_gh()
         self.user_id = self._get_user_id()
+        
+    def __enter__(self):
+        return self
+    
+    def __exit__(self, type_, value, traceback):
+        self.logout()
 
     def get_subject(self, sub_id):
         """Get crucial data for specified subject

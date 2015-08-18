@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>カウボーイビバップ 的章节列表</title>
+<meta name="keywords" content="星际牛仔,カウボーイビバップ,ACG,anime,comic,game,music,动漫,音乐,游戏,动画,漫画,番组,bangumi,chii,chobits" />
+<meta name="description" content="カウボーイビバップ 的章节列表" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://bgm.tv/static/xml/opensearch_bgm.xml" title="Bangumi 番组计划" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon-precomposed" href="/img/ico/ico_ios.png" />
+
+<!--[if lte IE 6]>
+<script src="/js/pngfixed.js" type="text/javascript"></script>
+<script>
+  DD_belatedPNG.fix('.png_bg,img,#wrapper');
+</script>
+<![endif]-->
+
+<link rel="stylesheet" type="text/css" href="/min/g=css?r262" />
+<script type="text/javascript">var SHOW_ROBOT = '0',CHOBITS_UID = 257420, SITE_URL = 'http://bgm.tv';</script>
+</head>
+<body class="bangumi">
+<div id="wrapperNeue" class="wrapperNeue">
+<div id="headerNeue2">
+    <div class="headerNeueInner clearit">
+         <div class="bg musume_4"></div>
+    <a href="/" class="logo">Bangumi 番组计划</a>
+    
+<div id="navNeue2">
+<div id="menuNeue">
+<ul id="navMenuNeue" class="clearit">
+<li><a href="/anime" class="focus chl anime"><span>动画</span></a>
+                <div class="clear"></div>
+<ul class="clearit">
+<li><a href="/anime/chart" class="nav">排行榜</a></li>
+<li><a href="/calendar" class="nav">每日放送</a></li>
+<li><a href="/anime/tag" class="nav">动画标签</a></li>
+<li><a href="/anime/browser" class="nav">分类浏览</a></li>
+<li><a href="/anime/blog" class="nav">动画日志</a></li>
+<li><div class="sep">我看</div></li>
+<li><a href="/anime/list/257420/do" class="nav">在看</a></li>
+<li><a href="/anime/list/257420/wish" class="nav">想看</a></li>
+<li><a href="/anime/list/257420/collect" class="nav">看过</a></li>
+<li><a href="/anime/list/257420/on_hold" class="nav">搁置</a></li>
+<li><a href="/anime/list/257420/dropped" class="nav">抛弃</a></li>
+</ul>
+</li>
+<li><a href="/book" class="top chl"><span>书籍</span></a>
+<div class="clear"></div>
+<ul class="clearit">
+<li><a href="/book/chart" class="nav">排行榜</a></li>
+<li><a href="/book/tag" class="nav">图书标签</a></li>
+<li><a href="/book/browser" class="nav">分类浏览</a></li>
+<li><a href="/book/blog" class="nav">图书日志</a></li>
+<li><div class="sep">我读</div></li>
+<li><a href="/book/list/257420/do" class="nav">在读</a></li>
+<li><a href="/book/list/257420/wish" class="nav">想读</a></li>
+<li><a href="/book/list/257420/collect" class="nav">读过</a></li>
+<li><a href="/book/list/257420/on_hold" class="nav">搁置</a></li>
+<li><a href="/book/list/257420/dropped" class="nav">抛弃</a></li>
+</ul>
+</li>
+<li><a href="/music" class="top chl"><span>音乐</span></a>
+<div class="clear"></div>
+<ul class="clearit">
+<li><a href="/music/chart" class="nav">排行榜</a></li>
+<li><a href="/music/tag" class="nav">音乐标签</a></li>
+<li><a href="/music/browser" class="nav">浏览全部</a></li>
+<li><a href="/music/blog" class="nav">音乐日志</a></li>
+<li><div class="sep">我听</div></li>
+<li><a href="/music/list/257420/do" class="nav">在听</a></li>
+<li><a href="/music/list/257420/wish" class="nav">想听</a></li>
+<li><a href="/music/list/257420/collect" class="nav">听过</a></li>
+<li><a href="/music/list/257420/on_hold" class="nav">搁置</a></li>
+<li><a href="/music/list/257420/dropped" class="nav">抛弃</a></li>
+</ul>
+</li>
+<li><a href="/game" class="top chl"><span>游戏</span></a>
+<div class="clear"></div>
+<ul class="clearit">
+<li><a href="/game/chart" class="nav">排行榜</a></li>
+<li><a href="/game/tag" class="nav">游戏标签</a></li>
+<li><a href="/game/browser" class="nav">平台浏览</a></li>
+<li><a href="/game/blog" class="nav">游戏日志</a></li>
+<li><div class="sep">我玩</div></li>
+<li><a href="/game/list/257420/do" class="nav">在玩</a></li>
+<li><a href="/game/list/257420/wish" class="nav">想玩</a></li>
+<li><a href="/game/list/257420/collect" class="nav">玩过</a></li>
+<li><a href="/game/list/257420/on_hold" class="nav">搁置</a></li>
+<li><a href="/game/list/257420/dropped" class="nav">抛弃</a></li>
+</ul>
+</li>
+<li><a href="/real" class="top chl real"><span>三次元</span></a>
+<div class="clear"></div>
+<ul class="clearit">
+<li><a href="/real/chart" class="nav">排行榜</a></li>
+<li><a href="/real/tag" class="nav">三次元标签</a></li>
+<li><a href="/real/blog" class="nav">三次元日志</a></li>
+<li><a href="/real/browser/platform/jp" class="nav">日剧</a></li>
+<li><a href="/real/browser/platform/en" class="nav">欧美剧</a></li>
+<li><div class="sep">我看</div></li>
+<li><a href="/real/list/257420/do" class="nav">在看</a></li>
+<li><a href="/real/list/257420/wish" class="nav">想看</a></li>
+<li><a href="/real/list/257420/collect" class="nav">看过</a></li>
+<li><a href="/real/list/257420/on_hold" class="nav">搁置</a></li>
+<li><a href="/real/list/257420/dropped" class="nav">抛弃</a></li>
+</ul>
+</li>
+            <li><a href="/mono" class="top"><span>人物</span></a>
+<div class="clear"></div>
+<ul class="clearit">
+<li><a href="/character" class="nav">虚构人物</a></li>
+<li><a href="/person" class="nav">现实人物</a></li>
+<li><div class="sep">我</div></li>
+<li><a href="/mono/update" class="nav">关注人物更新</a></li>
+<li><a href="/user/257420/mono/character" class="nav">收藏的角色</a></li>
+<li><a href="/user/257420/mono/person" class="nav">收藏的人物</a></li>               
+    
+</ul>
+</li>
+<li><a href="/rakuen" class="top_lite"><span>超展开</span></a></li>
+<li><a href="/group"class="top"><span>小组</span></a>
+<div class="clear"></div>
+<ul class="clearit">
+<li><a href="/group/discover" class="nav">随便看看</a></li>
+<li><a href="/group/all" class="nav">所有小组</a></li>
+<li><div class="sep">我</div></li>
+<li><a href="/group/my_topic" class="nav">发表的话题</a></li>
+<li><a href="/group/my_reply" class="nav">回复的话题</a></li>
+<li><a href="/group/mine" class="nav">参加的小组</a></li>
+</ul>
+</li>
+<li><a href="javascript:void(0);" class="top"><span>探索</span></a>
+<div class="clear"></div>
+<ul class="explore clearit">
+
+<li class="single"><a href="/timeline">时空管理局</a></li>       
+                <li class="group">
+<span><a href="/blog">日志</a><a href="/index">目录</a><a href="/wiki">维基人</a></span>
+</li>               
+<li class="group"><span><a href="/magi">MAGI 问答</a><a href="/dollars">Dollars</a></span></li>               
+                <li class="group">
+<span class="root">客户端</span>
+<span><a href="/onair">onAir</a><a href="/group/topic/5155">Mobile</a></span>
+</li>               
+</ul>
+</li>
+<li class="doujin"><a href="http://doujin.bgm.tv">天窗联盟</a></li>
+</ul>   
+</div>
+</div>
+        
+    <div class="idBadgerNeue">
+<a class="avatar" href="http://bgm.tv/user/257420"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/user/s/icon.jpg')"></span></a>
+    
+<ul id="badgeUserPanel">
+        <li><a href="http://bgm.tv/user/257420">时光机</a></li>                    
+        <li><a href="http://bgm.tv/user/257420/blog">日志</a></li>
+        <li><a href="http://bgm.tv/user/257420/mono">人物</a></li>
+        <li><a href="http://bgm.tv/user/257420/index">目录</a></li>
+        <li><a href="http://bgm.tv/user/257420/timeline">时间胶囊</a></li>
+        <li><a href="http://bgm.tv/user/257420/groups">小组</a></li>
+        <li><a href="http://bgm.tv/user/257420/friends">好友</a></li>
+        <li class="row"><a href="http://doujin.bgm.tv/user/257420">天窗专页</a></li>
+        <li class="row"><a href="http://bgm.tv/pm">短信</a> | <a href="http://bgm.tv/settings">设置</a> | <a href="http://bgm.tv/logout/237c7cd1">登出</a></li>
+    </ul>   
+    </div><div id="headerSearch">
+        <form action="/subject_search" method="post">
+    <div class="inner">
+<select name="cat" id="siteSearchSelect">
+<option value="all">全部</option>
+<option value="2" selected="selected">动画</option>
+<option value="1">书籍</option>
+<option value="4">游戏</option>
+<option value="3">音乐</option>
+<option value="6">三次元</option>
+<option value="person">人物</option>          
+</select>
+<input id="search_text" name="search_text" class="textfield" type="text" />
+        <input type="submit" name="submit" value="搜索" class="search" />                 
+    </div>
+</form>
+    </div>     
+    </div>
+</div>
+
+<div id="main" class="png_bg"></div>
+<div id="headerSubject" class="clearit" xmlns:v="http://rdf.data-vocabulary.org/#" typeof="v:">
+<h1 class="nameSingle">
+   <a href="/subject/253" title="星际牛仔" property="v:itemreviewed">カウボーイビバップ</a>
+                 <small class="grey">TV</small>   </h1>
+
+
+        <div class="subjectNav">
+<ul class="navTabs">
+        <li><a href="/subject/253" >概览</a></li>
+        <li><a href="/subject/253/ep" class="focus">章节</a></li>        <li><a href="/subject/253/characters" >角色</a></li>
+        <li><a href="/subject/253/persons" >制作人员</a></li>
+        <li><a href="/subject/253/comments" >吐槽</a></li>        
+        <li><a href="/subject/253/reviews" >评论</a></li>
+        <li><a href="/subject/253/board" >讨论版</a></li>
+        </ul>
+    
+</div>
+</div>
+<div class="mainWrapper"><div class="columns clearit">
+<div id="columnInSubjectA" class="column">
+<hr class="board" />
+<div class="rr">
+<a href="/subject/253/ep/create" class="chiiBtn"><span>添加新章节</span></a>
+</div>
+<div class="clear"></div>
+<form method="post" name="edit_ep_batch" action="/subject/253/ep/edit_batch">
+    <input type="hidden" name="formhash" value="237c7cd1">
+    <div class="line_detail">
+<ul class="line_list">
+            <li class="cat">本篇</li>    <li class="line_odd">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/519/status/queue?gh=237c7cd1" id="Queue_519" class="l ep_status">想看</a></li>           <li><a href="/subject/ep/519/status/drop?gh=237c7cd1" id="Drop_519" class="l ep_status">抛弃</a></li>         <li><a href="/subject/ep/519/status/remove?gh=237c7cd1" id="remove_519" class="l ep_status">撤销</a></li>         <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/519#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+17)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/519">1.アステロイド・ブルース</a><span class="tip"> / Asteroid Blues</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="519" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1998-10-23</small>        <small class="grey">/ 讨论:+17</small>
+        <small class="grey"> / <a href="/ep/519/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_even">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7027/status/queue?gh=237c7cd1" id="Queue_7027" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7027/status/drop?gh=237c7cd1" id="Drop_7027" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7027/status/remove?gh=237c7cd1" id="remove_7027" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7027#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+13)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7027">2.野良犬のストラット</a><span class="tip"> / Stray Dog Strut</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7027" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1998-04-03</small>        <small class="grey">/ 讨论:+13</small>
+        <small class="grey"> / <a href="/ep/7027/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_odd">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7028/status/queue?gh=237c7cd1" id="Queue_7028" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7028/status/drop?gh=237c7cd1" id="Drop_7028" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7028/status/remove?gh=237c7cd1" id="remove_7028" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7028#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+11)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7028">3.ホンキィ・トンク・ウィメン</a><span class="tip"> / Honky Tonk Women</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7028" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1998-04-10</small>        <small class="grey">/ 讨论:+11</small>
+        <small class="grey"> / <a href="/ep/7028/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_even">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7029/status/queue?gh=237c7cd1" id="Queue_7029" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7029/status/drop?gh=237c7cd1" id="Drop_7029" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7029/status/remove?gh=237c7cd1" id="remove_7029" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7029#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+8)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7029">4.ゲイトウェイ・シャッフル</a><span class="tip"> / Gateway Shuffle</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7029" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1998-11-13</small>        <small class="grey">/ 讨论:+8</small>
+        <small class="grey"> / <a href="/ep/7029/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_odd">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7030/status/queue?gh=237c7cd1" id="Queue_7030" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7030/status/drop?gh=237c7cd1" id="Drop_7030" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7030/status/remove?gh=237c7cd1" id="remove_7030" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7030#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+32)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7030">5.堕天使たちのバラッド</a><span class="tip"> / Ballad Of Fallen Angels</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7030" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1998-11-20</small>        <small class="grey">/ 讨论:+32</small>
+        <small class="grey"> / <a href="/ep/7030/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_even">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7031/status/queue?gh=237c7cd1" id="Queue_7031" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7031/status/drop?gh=237c7cd1" id="Drop_7031" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7031/status/remove?gh=237c7cd1" id="remove_7031" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7031#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+15)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7031">6.悪魔を憐れむ歌</a><span class="tip"> / Sympathy For The Devil</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7031" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1998-11-27</small>        <small class="grey">/ 讨论:+15</small>
+        <small class="grey"> / <a href="/ep/7031/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_odd">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7032/status/queue?gh=237c7cd1" id="Queue_7032" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7032/status/drop?gh=237c7cd1" id="Drop_7032" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7032/status/remove?gh=237c7cd1" id="remove_7032" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7032#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+15)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7032">7.ヘヴィ・メタル・クイーン</a><span class="tip"> / Heavy Metal Queen</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7032" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1998-04-17</small>        <small class="grey">/ 讨论:+15</small>
+        <small class="grey"> / <a href="/ep/7032/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_even">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7033/status/queue?gh=237c7cd1" id="Queue_7033" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7033/status/drop?gh=237c7cd1" id="Drop_7033" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7033/status/remove?gh=237c7cd1" id="remove_7033" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7033#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+13)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7033">8.ワルツ・フォー・ヴィーナス</a><span class="tip"> / Waltz For Venus</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7033" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1998-04-24</small>        <small class="grey">/ 讨论:+13</small>
+        <small class="grey"> / <a href="/ep/7033/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_odd">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7034/status/queue?gh=237c7cd1" id="Queue_7034" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7034/status/drop?gh=237c7cd1" id="Drop_7034" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7034/status/remove?gh=237c7cd1" id="remove_7034" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7034#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+20)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7034">9.ジャミング・ウィズ・エドワード</a><span class="tip"> / Jamming With Edward</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7034" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1998-05-01</small>        <small class="grey">/ 讨论:+20</small>
+        <small class="grey"> / <a href="/ep/7034/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_even">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7035/status/queue?gh=237c7cd1" id="Queue_7035" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7035/status/drop?gh=237c7cd1" id="Drop_7035" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7035/status/remove?gh=237c7cd1" id="remove_7035" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7035#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+21)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7035">10.ガニメデ慕情</a><span class="tip"> / Ganymede Elegy</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7035" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1998-05-08</small>        <small class="grey">/ 讨论:+21</small>
+        <small class="grey"> / <a href="/ep/7035/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_odd">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7036/status/queue?gh=237c7cd1" id="Queue_7036" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7036/status/drop?gh=237c7cd1" id="Drop_7036" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7036/status/remove?gh=237c7cd1" id="remove_7036" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7036#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+26)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7036">11.闇夜のヘヴィ・ロック</a><span class="tip"> / Toys In The Attic</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7036" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1998-05-15</small>        <small class="grey">/ 讨论:+26</small>
+        <small class="grey"> / <a href="/ep/7036/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_even">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7037/status/queue?gh=237c7cd1" id="Queue_7037" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7037/status/drop?gh=237c7cd1" id="Drop_7037" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7037/status/remove?gh=237c7cd1" id="remove_7037" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7037#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+7)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7037">12.ジュピター・ジャズ（前編）</a><span class="tip"> / Jupiter Jazz (PART 1)</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7037" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1998-05-22</small>        <small class="grey">/ 讨论:+7</small>
+        <small class="grey"> / <a href="/ep/7037/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_odd">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7038/status/queue?gh=237c7cd1" id="Queue_7038" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7038/status/drop?gh=237c7cd1" id="Drop_7038" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7038/status/remove?gh=237c7cd1" id="remove_7038" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7038#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+21)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7038">13.ジュピター・ジャズ（後編）</a><span class="tip"> / Jupiter Jazz (PART 2)</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7038" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1998-05-29</small>        <small class="grey">/ 讨论:+21</small>
+        <small class="grey"> / <a href="/ep/7038/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_even">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7039/status/queue?gh=237c7cd1" id="Queue_7039" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7039/status/drop?gh=237c7cd1" id="Drop_7039" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7039/status/remove?gh=237c7cd1" id="remove_7039" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7039#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+13)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7039">14.ボヘミアン・ラプソディ</a><span class="tip"> / Bohemian Rhapsody</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7039" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1998-06-05</small>        <small class="grey">/ 讨论:+13</small>
+        <small class="grey"> / <a href="/ep/7039/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_odd">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7040/status/queue?gh=237c7cd1" id="Queue_7040" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7040/status/drop?gh=237c7cd1" id="Drop_7040" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7040/status/remove?gh=237c7cd1" id="remove_7040" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7040#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+20)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7040">15.マイ・ファニー・ヴァレンタイン</a><span class="tip"> / My Funny Valentine</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7040" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1998-06-12</small>        <small class="grey">/ 讨论:+20</small>
+        <small class="grey"> / <a href="/ep/7040/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_even">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7041/status/queue?gh=237c7cd1" id="Queue_7041" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7041/status/drop?gh=237c7cd1" id="Drop_7041" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7041/status/remove?gh=237c7cd1" id="remove_7041" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7041#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+15)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7041">16.ブラック・ドッグ・セレナーデ</a><span class="tip"> / Black Dog Serenade</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7041" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1999-02-12</small>        <small class="grey">/ 讨论:+15</small>
+        <small class="grey"> / <a href="/ep/7041/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_odd">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7042/status/queue?gh=237c7cd1" id="Queue_7042" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7042/status/drop?gh=237c7cd1" id="Drop_7042" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7042/status/remove?gh=237c7cd1" id="remove_7042" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7042#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+14)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7042">17.マッシュルーム・サンバ</a><span class="tip"> / Mushroom Samba</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7042" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1999-02-19</small>        <small class="grey">/ 讨论:+14</small>
+        <small class="grey"> / <a href="/ep/7042/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_even">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7043/status/queue?gh=237c7cd1" id="Queue_7043" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7043/status/drop?gh=237c7cd1" id="Drop_7043" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7043/status/remove?gh=237c7cd1" id="remove_7043" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7043#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+36)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7043">18.スピーク・ライク・ア・チャイルド</a><span class="tip"> / Speak Like a Child</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7043" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1998-06-19</small>        <small class="grey">/ 讨论:+36</small>
+        <small class="grey"> / <a href="/ep/7043/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_odd">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7044/status/queue?gh=237c7cd1" id="Queue_7044" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7044/status/drop?gh=237c7cd1" id="Drop_7044" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7044/status/remove?gh=237c7cd1" id="remove_7044" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7044#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+16)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7044">19.ワイルド・ホーセス</a><span class="tip"> / Wild Horses</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7044" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1999-03-05</small>        <small class="grey">/ 讨论:+16</small>
+        <small class="grey"> / <a href="/ep/7044/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_even">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7045/status/queue?gh=237c7cd1" id="Queue_7045" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7045/status/drop?gh=237c7cd1" id="Drop_7045" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7045/status/remove?gh=237c7cd1" id="remove_7045" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7045#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+28)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7045">20.道化師の鎮魂歌</a><span class="tip"> / Pierrot Le Fou</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7045" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1999-03-12</small>        <small class="grey">/ 讨论:+28</small>
+        <small class="grey"> / <a href="/ep/7045/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_odd">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7046/status/queue?gh=237c7cd1" id="Queue_7046" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7046/status/drop?gh=237c7cd1" id="Drop_7046" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7046/status/remove?gh=237c7cd1" id="remove_7046" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7046#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+13)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7046">21.ブギ・ウギ・フンシェイ</a><span class="tip"> / Boogie Woogie Feng Shui</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7046" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1999-03-19</small>        <small class="grey">/ 讨论:+13</small>
+        <small class="grey"> / <a href="/ep/7046/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_even">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7047/status/queue?gh=237c7cd1" id="Queue_7047" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7047/status/drop?gh=237c7cd1" id="Drop_7047" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7047/status/remove?gh=237c7cd1" id="remove_7047" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7047#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+27)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7047">22.カウボーイ・ファンク</a><span class="tip"> / Cowboy Funk</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7047" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1999-03-26</small>        <small class="grey">/ 讨论:+27</small>
+        <small class="grey"> / <a href="/ep/7047/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_odd">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7048/status/queue?gh=237c7cd1" id="Queue_7048" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7048/status/drop?gh=237c7cd1" id="Drop_7048" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7048/status/remove?gh=237c7cd1" id="remove_7048" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7048#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+25)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7048">23.ブレイン・スクラッチ</a><span class="tip"> / Brain Scratch</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7048" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1999-04-02</small>        <small class="grey">/ 讨论:+25</small>
+        <small class="grey"> / <a href="/ep/7048/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_even">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusWatched">看过</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+                        <li><a href="/subject/ep/7049/status/queue?gh=237c7cd1" id="Queue_7049" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/7049/status/drop?gh=237c7cd1" id="Drop_7049" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7049/status/remove?gh=237c7cd1" id="remove_7049" class="l ep_status">撤销</a></li>           <li class="cur">看过</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7049#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+38)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7049">24.ハード・ラック・ウーマン</a><span class="tip"> / Hard Luck Woman</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7049" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1999-04-09</small>        <small class="grey">/ 讨论:+38</small>
+        <small class="grey"> / <a href="/ep/7049/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_odd">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusQueue">想看</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+            <li><a href="/subject/ep/7050/status/watched?gh=237c7cd1" id="Watched_7050" class="l ep_status">看过</a></li>                     <li><a href="/subject/ep/7050/status/drop?gh=237c7cd1" id="Drop_7050" class="l ep_status">抛弃</a></li>           <li><a href="/subject/ep/7050/status/remove?gh=237c7cd1" id="remove_7050" class="l ep_status">撤销</a></li>           <li class="cur">想看</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7050#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+4)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7050">25.ザ・リアル・フォークブルース（前編）</a><span class="tip"> / The Real Folk Blues (PART 1)</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7050" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1999-04-16</small>        <small class="grey">/ 讨论:+4</small>
+        <small class="grey"> / <a href="/ep/7050/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_even">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="statusDrop">抛弃</span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul class="marked">
+            <li><a href="/subject/ep/7051/status/watched?gh=237c7cd1" id="Watched_7051" class="l ep_status">看过</a></li>         <li><a href="/subject/ep/7051/status/queue?gh=237c7cd1" id="Queue_7051" class="l ep_status">想看</a></li>                     <li><a href="/subject/ep/7051/status/remove?gh=237c7cd1" id="remove_7051" class="l ep_status">撤销</a></li>           <li class="cur">抛弃</li>         </ul>
+        </ul>
+                <!--<a href="/ep/7051#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+27)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/7051">26.ザ・リアル・フォークブルース（後編）</a><span class="tip"> / The Real Folk Blues (PART 2)</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="7051" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1999-04-23</small>        <small class="grey">/ 讨论:+27</small>
+        <small class="grey"> / <a href="/ep/7051/edit" class="tip_i">修改</a></small>    </li>
+                <li class="cat">特别篇</li>    <li class="line_odd">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="status"></span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul >
+            <li><a href="/subject/ep/46037/status/watched?gh=237c7cd1" id="Watched_46037" class="l ep_status">看过</a></li>           <li><a href="/subject/ep/46037/status/queue?gh=237c7cd1" id="Queue_46037" class="l ep_status">想看</a></li>           <li><a href="/subject/ep/46037/status/drop?gh=237c7cd1" id="Drop_46037" class="l ep_status">抛弃</a></li>                                 </ul>
+        </ul>
+                <!--<a href="/ep/46037#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+4)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/46037">SP0.よせあつめブルース</a><span class="tip"> / Mish-Mash Blues</span> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="46037" type="checkbox" disabled="" />        
+        <small class="grey">时长:24m / 首播:1998-06-26</small>        <small class="grey">/ 讨论:+4</small>
+        <small class="grey"> / <a href="/ep/46037/edit" class="tip_i">修改</a></small>    </li>
+                <li class="cat">OP</li>    <li class="line_even">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="status"></span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul >
+            <li><a href="/subject/ep/103232/status/watched?gh=237c7cd1" id="Watched_103232" class="l ep_status">看过</a></li>         <li><a href="/subject/ep/103232/status/queue?gh=237c7cd1" id="Queue_103232" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/103232/status/drop?gh=237c7cd1" id="Drop_103232" class="l ep_status">抛弃</a></li>                                   </ul>
+        </ul>
+                <!--<a href="/ep/103232#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+0)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/103232">OP1.Tank!</a> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="103232" type="checkbox" disabled="" />        
+        <small class="grey">时长:第0话 - 第26话 / 首播:1998-06-26</small>        <small class="grey">/ 讨论:+0</small>
+        <small class="grey"> / <a href="/ep/103232/edit" class="tip_i">修改</a></small>    </li>
+                <li class="cat">ED</li>    <li class="line_odd">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="status"></span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul >
+            <li><a href="/subject/ep/103233/status/watched?gh=237c7cd1" id="Watched_103233" class="l ep_status">看过</a></li>         <li><a href="/subject/ep/103233/status/queue?gh=237c7cd1" id="Queue_103233" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/103233/status/drop?gh=237c7cd1" id="Drop_103233" class="l ep_status">抛弃</a></li>                                   </ul>
+        </ul>
+                <!--<a href="/ep/103233#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+0)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/103233">ED1.THE REAL FOLK BLUES</a> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="103233" type="checkbox" disabled="" />        
+        <small class="grey">时长:第0话 - 第12话, 第14话 - 第25话 / 首播:1998-06-26</small>        <small class="grey">/ 讨论:+0</small>
+        <small class="grey"> / <a href="/ep/103233/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_even">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="status"></span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul >
+            <li><a href="/subject/ep/103234/status/watched?gh=237c7cd1" id="Watched_103234" class="l ep_status">看过</a></li>         <li><a href="/subject/ep/103234/status/queue?gh=237c7cd1" id="Queue_103234" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/103234/status/drop?gh=237c7cd1" id="Drop_103234" class="l ep_status">抛弃</a></li>                                   </ul>
+        </ul>
+                <!--<a href="/ep/103234#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+0)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/103234">ED2.SPACE LION</a> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="103234" type="checkbox" disabled="" />        
+        <small class="grey">时长:第13话 / 首播:1998-05-29</small>        <small class="grey">/ 讨论:+0</small>
+        <small class="grey"> / <a href="/ep/103234/edit" class="tip_i">修改</a></small>    </li>
+        <li class="line_odd">
+        <cite>
+                <ul class="listEpPrgManager">        
+        <span class="status"></span>        
+        <a href="javascript:void(0);" class="prgCheckIn"></a>
+            <ul >
+            <li><a href="/subject/ep/103235/status/watched?gh=237c7cd1" id="Watched_103235" class="l ep_status">看过</a></li>         <li><a href="/subject/ep/103235/status/queue?gh=237c7cd1" id="Queue_103235" class="l ep_status">想看</a></li>         <li><a href="/subject/ep/103235/status/drop?gh=237c7cd1" id="Drop_103235" class="l ep_status">抛弃</a></li>                                   </ul>
+        </ul>
+                <!--<a href="/ep/103235#comment_list" class="tip icons_cmt">讨论</a> <small class="na">(+0)</small>-->
+        </cite>
+        <h6>
+        <span class="epAirStatus" title="已放送"><span class="Air"></span></span>        <a href="/ep/103235">ED3.BLUE</a> </h6>
+        
+        <input class="checkbox" name="ep_mod[]" value="103235" type="checkbox" disabled="" />        
+        <small class="grey">时长:第26话 / 首播:1999-04-23</small>        <small class="grey">/ 讨论:+0</small>
+        <small class="grey"> / <a href="/ep/103235/edit" class="tip_i">修改</a></small>    </li>
+    <li class="line_even clearit" style="padding:5px;">
+<cite>
+<input class="inputBtn" value="批量修改" name="submit" type="submit">
+    </cite>
+<input class="checkbox" name="chkall" onclick="checkall(this.form, 'ep_mod', 'chkall')" type="checkbox"> <span class="tip">全选(每次最多20条)</span></li></ul>
+</div>
+
+</form></div>
+
+<div id="columnInSubjectB" class="column"><div id="subject_inner_info" class="menu_inner clearit">
+<a href="/subject/253" title="カウボーイビバップ" class="avatar"><img src="//lain.bgm.tv/pic/cover/g/c2/4c/253_t3XWb.jpg" class="avatar ll">カウボーイビバップ</a>
+<div class="inner">
+<ul>
+<li><a href="/subject/253" class="l">/ 返回条目页面</a></li>
+</ul>
+</div>
+</div>
+<div class="menu_inner">
+<a href="/group/topic/8467" class="l">/ 报告错误章节信息</a>
+</div>
+</div>
+</div><div id="footer">
+<ul id="footerLinks" class="clearit">
+<li class="first">
+    <dl>
+        <dt>关于我们</dt>
+        <dd><a href="http://bgm.tv/about">关于我们</a></dd>
+        <dd><a href="http://bgm.tv/about/guideline">社区指导原则</a><dd>
+        <dd><a href="http://bgm.tv/about/copyright">版权声明</a><dd>        
+        <dd><a href="http://bgm.tv/about/link2us">链接我们</a><dd>
+    </dl>
+</li>
+<li>
+    <dl>
+    <dt>获取帮助</dt>
+        <dd><a href="http://bgm.tv/help/bbcode">BBCode</a></dd>
+        <dd><a href="http://bgm.tv/group/forum">站务论坛</a></dd>
+        <dd><a href="http://bgm.tv/group/issues">BUG追踪</a></dd>
+        <dd><a href="http://bgm.tv/group/doujin">天窗站务</a></dd>      
+    </dl>
+</li>
+<li>
+<dl>
+    <dt>特别推荐</dt>
+        <dd><a href="http://bgm.tv/onair">onAir 客户端</a></dd>
+        <dd><a href="http://bgm.tv/tokei">etokei 绘时计</a></dd>
+        <dd><a href="http://bgm.tv/award/2014">年鉴 2014</a> |  <a href="http://bgm.tv/award/2013">13</a> | <a href="http://bgm.tv/award/2012">12</a> | <a href="http://bgm.tv/award/2011">11</a> | <a href="http://bgm.tv/award/2010">10</a></dd>
+        <dd><a href="http://bgm.tv/group/wiki">番組WIKI計画</a></dd>
+    </dl>
+</li>
+<li class="last">
+    <dl>
+    <dt>更多</dt>
+        <dd><a href="http://bgm.tv/index">目录</a></dd>
+        <dd><a href="http://bgm.tv/wiki">维基人</a></dd>
+        <dd><a href="http://bgm.tv/magi">MAGI 问答</a></dd>   
+        <dd><a href="http://bgm.tv/goodies">周边</a></dd>
+        <dd><a href="http://bgm.tv/dollars">Dollars</a></dd>    
+    </dl>
+</li>
+</ul>
+
+<small class="grey">&copy; 2008-2015 Bangumi (a.k.a.Chobits), some rights reserved</small>
+</div>
+</div></div>
+<div class="homeBg"></div>
+<div id="dock">
+    <div class="content">
+        <ul class="clearit">
+                <li class="first"><a href="http://bgm.tv/user/257420">abcde</a></li>
+        <li><a href="http://bgm.tv/pm">短信</a> | <a href="http://bgm.tv/settings">设置</a> | <a href="http://bgm.tv/logout/237c7cd1" target="_self">登出</a></li>
+                <li class="last"><a href="javascript:void(0);" id="showrobot">&nbsp;</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="robot"  style="display:none;">
+<div id="ukagaka_shell">
+<div class="ui_10 shell_1">
+<div id="ukagaka_voice"></div>
+<div id="robot_balloon" class="ukagaka_balloon_pink">
+<div class="tools"><a href="javascript:void(0);" id="ukagaka_menu"><img src="/img/ukagaka/menu.gif" /></a></div>    <div class="inner">
+<div id="robot_speech" class="speech" >
+死去的人不需要花。被花所拯救的是留下来的人。</div>
+<div id="robot_speech_js" class="speech">
+        
+</div>
+</div>
+<div class="ukagaka_balloon_pink_bottom"></div> 
+</div>
+</div>
+</div>
+</div>
+<script src="/min/g=js?r262" type="text/javascript"></script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-4049707-6']);
+    _gaq.push(['_setDomainName', 'none']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+    
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+
+</body></html><script type="text/javascript"> 
+var EpBtn = '';
+$('a.ep_status').bind('click', function(e) {
+chiiLib.home.epStatusClick(e.target);
+return false;
+});
+</script>

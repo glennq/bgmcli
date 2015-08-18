@@ -496,7 +496,7 @@ class BangumiEpisodeCollection(BangumiCollection):
 
     def __init__(self, episode, c_status=None, sub_collection=None):
         self._episode = episode
-        self._c_status = c_status
+        self._c_status = c_status if c_status else None
         self._sub_collection = (weakref.ref(sub_collection)
                                 if sub_collection else None)
         self._session = None
