@@ -6,11 +6,12 @@ import re
 from functools import wraps
 import requests
 from bs4 import BeautifulSoup
-from .exception import LoginFailedError, NotLoggedInError
+from .exception import LoginFailedError, NotLoggedInError, RequestFailedError
 from .element import BangumiSubject, BangumiEpisode
 from collection import BangumiEpisodeCollection, BangumiSubjectCollection
 from .utils import get_ep_colls_up_to_this, check_response, to_unicode,\
-    get_user_id_from_html, get_encoding_from_html, get_n_watched_eps_from_soup
+    get_user_id_from_html, get_encoding_from_html, get_n_pages,\
+    get_n_watched_eps_from_soup
 
 
 def require_login(method):
@@ -31,10 +32,6 @@ class BangumiSession(object):
     Note:
         The subject methods currently only work for anime subjects and subject
         collection methods only work for anime collections
-    
-    Attributes:
-        email (str): email address used for login
-        user_id (str): user id
     """
 
     _VALID_DOMAIN = ('bgm.tv', 'bangumi.tv', 'chii.in')
@@ -43,7 +40,7 @@ class BangumiSession(object):
         """Constructs a `BangumiSession`
 
         Args:
-            email (str): the login email address
+            email (str): the login _email address
             password (str): the password for login
             domain (str): the domain to use for login must be one of
                           ['bgm.tv', 'bangumi.tv', 'chii.in']
@@ -58,11 +55,11 @@ class BangumiSession(object):
         self._session = requests.Session()
         self._base_url = (domain if domain.startswith('http://')
                           else 'http://' + domain)
-        self.email = email
+        self._email = email
         self._logged_in = False
         self._login(email, password)
         self._gh = self._get_gh()
-        self.user_id = self._get_user_id()
+        self._user_id = self._get_user_id()
         
     def __enter__(self):
         return self
@@ -205,7 +202,6 @@ class BangumiSession(object):
                             "BangumiEpisodeCollection, got {0}"
                             .format(type(collection)))
 
-    @require_login
     def set_sub_collection(self, sub_coll):
         """Update the collection info on Bangumi according to provided
         BangumiSubjectCollection object
@@ -244,11 +240,10 @@ class BangumiSession(object):
                 'comment': sub_coll.comment, 'update': u'保存'}
         set_coll_url = '{0}/subject/{1}/interest/update?gh={2}'.format(
             self._base_url, sub_coll.subject.sub_id, self._gh)
-        response = self._session.post(set_coll_url, data)
+        response = self._post(set_coll_url, data)
 
         return check_response(response)
 
-    @require_login
     def set_ep_collection(self, ep_coll):
         """Update the collection info on Bangumi according to provided
         BangumiEpisodeCollection object
@@ -286,7 +281,7 @@ class BangumiSession(object):
             set_url = ('{0}/subject/ep/{1}/status/{2}?gh={3}'
                        .format(self._base_url, ep_coll.episode.ep_id,
                                ep_coll.c_status, self._gh))
-            response = self._session.get(set_url)
+            response = self._get(set_url)
             # update n_watched_eps in subject collection
             if ep_coll.sub_collection:
                 soup = BeautifulSoup(response.text, 'html.parser')
@@ -340,6 +335,39 @@ class BangumiSession(object):
             return True
         else:
             return False
+        
+    def get_sub_id_list(self, sub_type, c_status, user_id=None):
+        """Get a list of subjects in specified c_status and with specified
+        sub_type
+        
+        Args:
+            sub_type (str): must be among 'anime', 'book', 'game', 'real'
+            c_status (int): as in c_status of BangumiSubjectCollection, must
+                be int >= 1 and <= 5
+            user_id (str): user id to get list for
+        
+        Returns:
+            list[str]: list of subject ids as specified
+        """
+        if sub_type not in ('anime', 'book', 'game', 'real'):
+            raise ValueError("Invalid subject type provided: {0}"
+                             .format(sub_type))
+        if c_status not in range(1, 6):
+            raise ValueError("Invalid c_status provided: {0}"
+                             .format(c_status))
+        if not user_id:
+            user_id = self._user_id
+        c_status_map = {1: 'wish', 2: 'collect', 3: 'do', 4: 'on_hold',
+                        5: 'dropped'}
+        text_c_status = c_status_map[c_status]
+        url = '{0}/{1}/list/{2}/{3}'.format(self._base_url, sub_type, user_id,
+                                            text_c_status)
+        response = self._get(url)
+        n_pages = get_n_pages(response.text)
+        sub_ids = []
+        for p in xrange(1, n_pages + 1):
+            sub_ids += self._get_sub_id_list_on_page(url, p)
+        return sub_ids
 
     @require_login
     def logout(self):
@@ -348,7 +376,18 @@ class BangumiSession(object):
         self._session.get('{0}/logout/{1}'.format(self._base_url, self._gh))
         self._session.close()
         
-    @require_login
+    @property
+    def user_id(self):
+        """str: user id
+        """
+        return self._user_id
+    
+    @property
+    def email(self):
+        """str: email address used for login
+        """
+        return self._email
+        
     def _set_watched_eps_in_sub(self, ep_colls):
         """Set all episodes in ep_colls to watched both locally and to Bangumi
 
@@ -369,7 +408,7 @@ class BangumiSession(object):
         data = {'ep_id': ep_ids_str}
         set_url = ('{0}/subject/ep/{1}/status/watched?gh={2}&ajax=1'
                    .format(self._base_url, base_ep_id, self._gh))
-        response = self._session.post(set_url, data)
+        response = self._post(set_url, data)
         if (response.status_code == 200 and
             response.text == u'{"status":"ok"}'):
             # update n_watched_eps as well as ep_collections
@@ -382,37 +421,32 @@ class BangumiSession(object):
         else:
             return False
 
-    @require_login
     def _remove_sub_collection(self, sub_id):
         rm_url = '{0}/subject/{1}/remove?gh={2}'.format(self._base_url,
                                                          sub_id, self._gh)
-        response = self._session.get(rm_url)
+        response = self._get(rm_url)
         return check_response(response)
 
-    @require_login
     def _remove_ep_collection(self, ep_id):
         rm_url = ('{0}/subject/ep/{1}/status/remove?gh={2}'
                   .format(self._base_url, ep_id, self._gh))
-        response = self._session.get(rm_url)
+        response = self._get(rm_url)
         return check_response(response)
 
-    @require_login
     def _set_n_watched_eps(self, sub_id, n_watched_eps):
         set_url = '{0}/subject/set/watched/{1}'.format(self._base_url, sub_id)
         data = {'referer': 'subject', 'submit': u'更新',
                 'watchedeps': str(n_watched_eps)}
-        response = self._session.post(set_url, data)
+        response = self._post(set_url, data)
         return check_response(response)
 
-    @require_login
     def _get_user_id(self):
-        response = self._session.get(self._base_url)
+        response = self._get(self._base_url)
         return get_user_id_from_html(response.text)
 
-    @require_login
     def _get_html_for_ep(self, ep_id):
         ep_url = '{0}/ep/{1}'.format(self._base_url, ep_id)
-        response = self._session.get(ep_url)
+        response = self._get(ep_url)
         response.encoding = get_encoding_from_html(response.text)
         return response.text
 
@@ -422,19 +456,27 @@ class BangumiSession(object):
         sub_id = soup.find(id='subject_inner_info').a['href'].split('/')[-1]
         return sub_id
 
-    @require_login
     def _get_html_for_subject_main(self, sub_id):
         sub_url = '{0}/subject/{1}'.format(self._base_url, sub_id)
-        response = self._session.get(sub_url)
+        response = self._get(sub_url)
         response.encoding = get_encoding_from_html(response.text)
         return response.text
 
-    @require_login
     def _get_html_for_subject_eps(self, sub_id):
         sub_url = '{0}/subject/{1}/ep'.format(self._base_url, sub_id)
-        response = self._session.get(sub_url)
+        response = self._get(sub_url)
         response.encoding = get_encoding_from_html(response.text)
         return response.text
+    
+    def _get_sub_id_list_on_page(self, url, page):
+        page_url = '{0}?page={1}'.format(url, page)
+        response = self._get(page_url)
+        if response.status_code != 200:
+            raise RequestFailedError("Request Failed")
+        response.encoding = get_encoding_from_html(response.text)
+        soup = BeautifulSoup(response.text, 'html.parser')
+        items = soup.find(id='browserItemList').find_all('li')
+        return [i['id'].split('_')[-1] for i in items]
 
     def _login(self, email, password):
         data = {'email': email, 'password': password,
@@ -445,12 +487,20 @@ class BangumiSession(object):
         if to_unicode('欢迎您回来。现在将转入登录前页面') in response.text:
             self._logged_in = True
         else:
+            print response.text
             raise LoginFailedError("Login failed.")
 
-    @require_login
     def _get_gh(self):
-        response = self._session.get(self._base_url)
+        response = self._get(self._base_url)
         match_result = re.search(
             '<a href="{0}/logout/(.*?)">'.format(self._base_url),
             response.text)
         return match_result.group(1)
+    
+    @require_login
+    def _get(self, url):
+        return self._session.get(url)
+    
+    @require_login
+    def _post(self, url, data):
+        return self._session.post(url, data)

@@ -196,4 +196,12 @@ class BangumiSessionTest(unittest.TestCase):
         new_sub_coll = self._session.get_sub_collection("253")
         self.assertEqual(26, new_sub_coll.n_watched_eps)
         
+    def test_get_sub_id_list(self):
+        with self.assertRaises(ValueError):
+            self._session.get_sub_id_list('invalid', 3)
+        with self.assertRaises(ValueError):
+            self._session.get_sub_id_list('anime', 6)
+        sub_ids = self._session.get_sub_id_list('anime', 4)
+        self.assertEqual(['1451', '45241', '8484'], sub_ids)
+        
             

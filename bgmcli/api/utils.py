@@ -142,8 +142,23 @@ def check_response(response):
     
     
 def get_subject_type_from_soup(soup):
+    """Get the type of subject from the page provided"""
     return soup.find(id='navMenuNeue').find(class_='focus')['href'][1:]
 
 
 def get_n_watched_eps_from_soup(soup):
+    """Get number of watched episodes"""
     return int(soup.find(id='watchedeps')['value'])
+
+def get_n_pages(html):
+    """Get number of pages for a multipage collection list"""
+    soup = BeautifulSoup(html, 'html.parser')
+    pages = soup.find(id='multipage').find_all(class_='p')
+    if not pages:
+        return 1
+    cur_page = int(soup.find(id='multipage').find(class_='p_cur').text)
+    avail_pages = [int(p['href'].rsplit('=')[-1]) for p in pages]
+    return max(avail_pages + [cur_page])
+        
+    
+        

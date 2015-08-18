@@ -75,8 +75,10 @@ class BangumiElement(BangumiBase):
 
 class BangumiSubject(BangumiElement):
     """"The class representing a general subject.
-    A subject is an anime or manga or game title, which may contain a number
-    of episodes (for anime) or volumes (for manga)
+    A subject is an anime or book or game title, which may contain a number
+    of episodes (for anime) or volumes (for manga).
+    In Bangumi, there are four kinds of subjects, namely 'anime', 'book',
+    'game' and 'real'.
     
     Note:
         This abstract class is NOT supposed to be instantiated
@@ -92,6 +94,7 @@ class BangumiSubject(BangumiElement):
     sub_id = FixedAttribute()
     title = FixedAttribute()
     ch_title = FixedAttribute()
+    _SUB_TYPE = None
     
     def __init__(self, sub_id, title=None, ch_title=None):
         self._sub_id = sub_id
@@ -134,6 +137,8 @@ class BangumiAnime(BangumiSubject):
             NOT supposed to be modified.
         other_info (dict): key-values for other info
     """
+    
+    _SUB_TYPE = 'anime'
 
     def __init__(self, sub_id, title=None, ch_title=None, n_eps=None,
                  eps=None):

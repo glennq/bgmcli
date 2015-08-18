@@ -15,6 +15,13 @@ class NotLoggedInError(BangumiCLIException):
     pass
 
 
-class LoginFailedError(BangumiCLIException):
+class RequestFailedError(BangumiCLIException):
+    """Exception raised when failed to get necessary data"""
+
+
+class LoginFailedError(RequestFailedError):
     """Exception raised when login failed at construction of BangumiSession"""
     pass
+
+
+
