@@ -268,7 +268,7 @@ class BangumiSession(object):
             raise ValueError('Corrupted c_status value: {0}'
                              .format(ep_coll.c_status))
         if ep_coll.c_status == 'watched_up_to':
-            if not ep_coll.sub_collection:
+            if ep_coll.sub_collection is None:
                 raise AttributeError("Containing subject collection not " +
                                      "defined for c_status 'watched_up_to'")
             else:

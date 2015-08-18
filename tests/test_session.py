@@ -32,6 +32,10 @@ class BangumiSessionTest(unittest.TestCase):
         sub_coll.rating = 8
         sub_coll.n_watched_eps = 26
 
+    def test_constructor_exception(self):
+        with self.assertRaises(ValueError):
+            BangumiSession('glennqjy@gmail.com', '15263748', 'abc.com')
+
     def test_get_subject_anime(self):
         subject = self._session.get_subject("253")
         self.assertEqual("253", subject.sub_id)
@@ -149,6 +153,25 @@ class BangumiSessionTest(unittest.TestCase):
         ep_coll.sync_collection()
         new_ep_coll = self._session.get_ep_collection(ep_coll.episode.ep_id)
         self.assertEqual(ep_coll.c_status, new_ep_coll.c_status)
+        
+    def test_set_ep_collection_watched_up_to(self):
+        sub_coll = self._session.get_sub_collection("253")
+        if sub_coll.c_status != 3:
+            sub_coll.c_status = 3
+            sub_coll.sync_collection()
+        up_to = 6
+        ep_coll = sub_coll.ep_collections[up_to]
+        ep_coll.remove_with_sync()
+        ep_coll.c_status = 'watched_up_to'
+
+        with self.assertRaises(AttributeError):
+            ep_coll._sub_collection = None
+            self._session.set_ep_collection(ep_coll)
+        
+        ep_coll.sub_collection = sub_coll
+        self.assertTrue(self._session.set_ep_collection(ep_coll))
+        for i in range(up_to + 1):
+            self.assertEqual('watched', sub_coll.ep_collections[i].c_status)
         
     def test_remove_collection_exception(self):
         with self.assertRaises(TypeError):
