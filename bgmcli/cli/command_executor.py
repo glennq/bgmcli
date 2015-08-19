@@ -16,6 +16,7 @@ class CommandExecutorIndex(object):
     """
 
     command_executors_map = {}
+    valid_commands = []
     
     @classmethod
     def get_command_executor(cls, command_head):
@@ -27,18 +28,20 @@ class CommandExecutorIndex(object):
         Returns:
             CommandExecutorMeta: a subclass of BaseCommandExecutor
         """
-        executor_class = globals()[cls.command_executors_map[command_head]]
+        executor_class = cls.command_executors_map[command_head]
         return executor_class
-    
-    
+
+
 class CommandExecutorMeta(type):
     """Meta class for BaseCommandExecutor, registers subclasses of
     BaseCommandExecutor in CommandExecutorFactory
     """
     def __new__(meta, name, bases, class_dict):  # @NoSelf
-        for key in class_dict['_VALID_COMMANDS']:
-            CommandExecutorIndex.command_executors_map.update({key: name})
         cls = type.__new__(meta, name, bases, class_dict) 
+        for key in class_dict['_VALID_COMMANDS']:
+            CommandExecutorIndex.command_executors_map.update({key: cls})
+        (CommandExecutorIndex.valid_commands
+         .extend(class_dict['_VALID_COMMANDS']))
         return cls
 
 

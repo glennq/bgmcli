@@ -98,13 +98,13 @@ class SubjectCollectionMeta(type):
     BangumiSubjectIndex
     """
     def __new__(meta, name, bases, class_dict):  # @NoSelf
-        (BangumiSubjectCollectionFactory.sub_type_subclass_map
-         .update({class_dict['_SUB_TYPE']: name}))
         cls = type.__new__(meta, name, bases, class_dict) 
+        (BangumiSubjectCollectionFactory.sub_type_subclass_map
+         .update({class_dict['_SUB_TYPE']: cls}))
         return cls
     
     
-class BangumiSubjectCollectionFactory(object):
+class BangumiSubjectCollectionFactory(BangumiSubjectFactory):
     """A factory class that identifies which subclass of
     BangumiSubjectCollection need to be instantiated
     
@@ -112,18 +112,8 @@ class BangumiSubjectCollectionFactory(object):
         sub_type_subclass_map (dict): a mapping from subject type to the
             subclass name that defines this kind of subject collection
     """
+    
     sub_type_subclass_map = {}
-    
-    @classmethod
-    def from_html(cls, sub_html, ep_html):
-        sub_soup = BeautifulSoup(sub_html, 'html.parser')
-        ep_soup = BeautifulSoup(ep_html, 'html.parser')
-        return cls.from_soup(sub_soup, ep_soup)
-    
-    @classmethod
-    def from_soup(cls, sub_soup, ep_soup):
-        subject = BangumiSubjectFactory.from_soup(sub_soup, ep_soup)
-        return cls.from_soup_with_subject(subject, sub_soup, ep_soup)
     
     @classmethod
     def from_html_with_subject(cls, subject, sub_html, ep_html):
@@ -136,7 +126,7 @@ class BangumiSubjectCollectionFactory(object):
         sub_type = get_subject_type_from_soup(sub_soup)
         if sub_type not in cls.sub_type_subclass_map:
             raise NotImplementedError
-        subclass = globals()[cls.sub_type_subclass_map[sub_type]]
+        subclass = cls.sub_type_subclass_map[sub_type]
         return subclass.from_soup_with_subject(subject, sub_soup, ep_soup)
 
 
@@ -534,6 +524,7 @@ class BangumiAnimeCollection(BangumiSubjectCollection):
             ep_type, ep_num = re.search('([a-zA-Z]*)([0-9]+)',
                                             ep_info).groups()
             ep_num = int(ep_num)
+            ep_type = ep_type.upper()
             search_result = [ep_c for ep_c in self.ep_collections
                              if ep_c.episode.ep_num == ep_num
                              and ep_c.episode.ep_type == ep_type]

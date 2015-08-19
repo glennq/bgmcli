@@ -72,9 +72,9 @@ class SubjectMeta(type):
     BangumiSubjectIndex
     """
     def __new__(meta, name, bases, class_dict):  # @NoSelf
-        (BangumiSubjectFactory.sub_type_subclass_map
-         .update({class_dict['_SUB_TYPE']: name}))
         cls = type.__new__(meta, name, bases, class_dict) 
+        (BangumiSubjectFactory.sub_type_subclass_map
+         .update({class_dict['_SUB_TYPE']: cls}))
         return cls
     
     
@@ -99,7 +99,7 @@ class BangumiSubjectFactory(object):
         sub_type = get_subject_type_from_soup(sub_soup)
         if sub_type not in cls.sub_type_subclass_map:
             raise NotImplementedError
-        subclass = globals()[cls.sub_type_subclass_map[sub_type]]
+        subclass = cls.sub_type_subclass_map[sub_type]
         return subclass.from_soup(sub_soup, ep_soup)
 
 

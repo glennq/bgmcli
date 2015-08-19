@@ -9,9 +9,10 @@ class CLIBackend(object):
     to and results from API
     """
     
-    _VALID_COMMANDS = ['kandao', 'kanguo', 'xiangkan', 'paoqi', 'chexiao',
-                       'watched-up-to', 'watched', 'drop', 'want-to-watch',
-                       'remove', 'ls-watching', 'ls-zaikan', 'ls-eps', 'undo']
+    _VALID_COMMANDS = CommandExecutorIndex.valid_commands
+#     ['kandao', 'kanguo', 'xiangkan', 'paoqi', 'chexiao',
+#                        'watched-up-to', 'watched', 'drop', 'want-to-watch',
+#                        'remove', 'ls-watching', 'ls-zaikan', 'ls-eps', 'undo']
     
     def __init__(self, email, password):
         self._session = BangumiSession(email, password)
@@ -23,6 +24,8 @@ class CLIBackend(object):
     
     def execute_command(self, command):
         parsed = command.strip().split()
+        if not parsed:
+            return
         if parsed[0] not in self._VALID_COMMANDS:
             raise InvalidCommandError("Got invalid command: {0}"
                                       .format(parsed[0]))

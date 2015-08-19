@@ -6,6 +6,7 @@ from prompt_toolkit.history import History
 from prompt_toolkit.contrib.completers import WordCompleter
 from bgmcli.cli.exception import ConfigError
 from bgmcli.cli.backend import CLIBackend
+from bgmcli.cli.exception import CommandError
 
 
 def read_config():
@@ -38,7 +39,10 @@ def run():
             # Control-D pressed.
             break
         else:
-            backend.execute_command(text)
+            try:
+                backend.execute_command(text)
+            except CommandError as e:
+                print e
 
 
 if __name__ == '__main__':
