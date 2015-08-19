@@ -1,7 +1,30 @@
 from __future__ import unicode_literals
+from prompt_toolkit.key_binding.manager import KeyBindingManager
 from ..api import BangumiSession
 from .exception import InvalidCommandError
 from .command_executor import CommandExecutorIndex
+
+
+class AutoCorrector(object):
+    key_bindings_manager = KeyBindingManager()
+    corrections = {}
+
+    @key_bindings_manager.registry.add_binding(' ')
+    @classmethod
+    def _(cls, event):
+        """
+        When space is pressed, we check the word before the cursor, and
+        autocorrect that.
+        """
+        b = event.cli.current_buffer
+        w = b.document.get_word_before_cursor()
+
+        if w is not None:
+            if w in cls.corrections:
+                b.delete_before_cursor(count=len(w))
+                b.insert_text(cls.corrections[w])
+
+        b.insert_text(' ')
 
 
 class CLIBackend(object):
@@ -16,9 +39,9 @@ class CLIBackend(object):
     
     def __init__(self, email, password):
         self._session = BangumiSession(email, password)
-        sub_ids = self._session.get_sub_id_list('anime', 3)
-        self._watching = [self._session.get_sub_collection(sub_id)
-                          for sub_id in sub_ids]
+        self._watching = self._session.get_dummy_collections('anime', 3)
+        for coll in self._watching:
+            AutoCorrector.corrections.update({coll.ch_title, coll.title})
         self._titles = set()
         self._update_titles()
     

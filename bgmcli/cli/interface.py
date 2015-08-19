@@ -5,7 +5,7 @@ from prompt_toolkit.shortcuts import get_input
 from prompt_toolkit.history import History
 from prompt_toolkit.contrib.completers import WordCompleter
 from bgmcli.cli.exception import ConfigError
-from bgmcli.cli.backend import CLIBackend
+from bgmcli.cli.backend import CLIBackend, AutoCorrector
 from bgmcli.cli.exception import CommandError
 
 
@@ -31,10 +31,12 @@ def run():
     history = History()
     completer = get_completer(backend.get_completion_list())
     user_id = backend.get_user_id()
+
     while True:
         try:
             text = get_input(user_id + '> ', completer=completer,
-                             history=history, on_abort=AbortAction.RETRY)
+                             history=history, on_abort=AbortAction.RETRY,
+                             key_bindings_registry=AutoCorrector.key_bindings_manager.registry)
         except EOFError:
             # Control-D pressed.
             break
@@ -42,7 +44,7 @@ def run():
             try:
                 backend.execute_command(text)
             except CommandError as e:
-                print e
+                print e.message
 
 
 if __name__ == '__main__':

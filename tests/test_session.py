@@ -196,12 +196,22 @@ class BangumiSessionTest(unittest.TestCase):
         new_sub_coll = self._session.get_sub_collection("253")
         self.assertEqual(26, new_sub_coll.n_watched_eps)
         
-    def test_get_sub_id_list(self):
+    def test_get_dummy_collections(self):
         with self.assertRaises(ValueError):
-            self._session.get_sub_id_list('invalid', 3)
+            self._session.get_dummy_collections('invalid', 3)
         with self.assertRaises(ValueError):
-            self._session.get_sub_id_list('anime', 6)
-        sub_ids = self._session.get_sub_id_list('anime', 4)
+            self._session.get_dummy_collections('anime', 6)
+        dummy_colls = self._session.get_dummy_collections('anime', 4)
+        sub_ids = [coll.subject.id_ for coll in dummy_colls]
+        titles = [coll.subject.title for coll in dummy_colls]
+        ch_titles = [coll.subject.ch_title for coll in dummy_colls]
+        c_statuses = [coll.c_status for coll in dummy_colls]
+        ratings = [coll.rating for coll in dummy_colls]
         self.assertEqual(['1451', '45241', '8484'], sub_ids)
-        
+        self.assertEqual([u'東のエデン', u'ベルセルク  黄金時代篇III 降臨',
+                          u'機動警察パトレイバー'], titles)
+        self.assertEqual([u'东之伊甸', u'剑风传奇 黄金时代篇III 降临', u'机动警察'],
+                         ch_titles)
+        self.assertEqual([4, 4, 4], c_statuses)
+        self.assertEqual([6, 6, 7], ratings)
             

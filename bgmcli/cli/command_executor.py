@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 from .exception import WrongCommandExcecutorError, InvalidCommandError
+from bgmcli.api.collection import BangumiDummySubjectCollection
 
 
 class CommandExecutorIndex(object):
@@ -74,9 +75,18 @@ class BaseCommandExecutor(object):
             names = ([sub.title, sub.ch_title] +
                      sub.other_info.get('aliases', []))
             if name in names:
-                return coll
+                return self._update_collection(coll)
         return None
     
+    def _update_collection(self, coll):
+        if (isinstance(coll, BangumiDummySubjectCollection) and
+            coll in self._collections):
+            new_coll = coll.to_regular_collection()
+            self._collections.remove(coll)
+            self._collections.append(new_coll)
+            return new_coll
+        else:
+            return coll
     
 class WatchedCommandExecutor(BaseCommandExecutor):
 
@@ -93,6 +103,7 @@ class WatchedCommandExecutor(BaseCommandExecutor):
         if not coll:
             raise InvalidCommandError("Subject name {0} not found"
                                       .format(self._parsed[1]))
+
         if self._length == 2:
             coll.c_status = 2
             coll.sync_collection()

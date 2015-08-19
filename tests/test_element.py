@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 import unittest
 import os
+from bs4 import BeautifulSoup
 from bgmcli.api import BangumiSession
-from bgmcli.api.element import BangumiAnime, BangumiEpisode
+from bgmcli.api.element import BangumiAnime, BangumiEpisode,\
+    BangumiDummySubject
 from test_utils import module_path
 
 
@@ -130,3 +132,27 @@ class BangumiAnimeTest(unittest.TestCase):
             sub_coll_other = session.get_sub_collection(self._id_)
             self.assertIs(session, sub_coll.session)
             self.assertEqual(sub_coll, sub_coll_other)
+            
+
+class BangumiDummySubjectTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        path = os.path.split(module_path(cls.setUpClass))[0]
+        on_hold_html_path = os.path.join(path, 'on_hold_page')
+        with open(on_hold_html_path) as f:
+            on_hold_html = f.read()
+        cls.soup = BeautifulSoup(on_hold_html, 'html.parser')
+        cls.sub_ids = ['1451', '45241', '8484']
+        cls.titles = [u'東のエデン', u'ベルセルク  黄金時代篇III 降臨',
+                      u'機動警察パトレイバー']
+        cls.ch_titles = [u'东之伊甸', u'剑风传奇 黄金时代篇III 降临', u'机动警察']
+    
+    def test_from_soup_for_li(self):
+        items = self.soup.find(id='browserItemList').find_all('li')
+        subs =  [BangumiDummySubject.from_soup_for_li(i) for i in items]
+        sub_ids = [sub.id_ for sub in subs]
+        titles = [sub.title for sub in subs]
+        ch_titles = [sub.ch_title for sub in subs]
+        self.assertEqual(self.sub_ids, sub_ids)
+        self.assertEqual(self.titles, titles)
+        self.assertEqual(self.ch_titles, ch_titles)

@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 from .exception import LoginFailedError, NotLoggedInError, RequestFailedError
 from .element import BangumiEpisode, BangumiSubjectFactory
 from .collection import BangumiEpisodeCollection, BangumiSubjectCollection,\
-    BangumiSubjectCollectionFactory
+    BangumiSubjectCollectionFactory, BangumiDummySubjectCollection
 from .utils import get_ep_colls_up_to_this, check_response, to_unicode,\
     get_user_id_from_html, get_encoding_from_html, get_n_pages,\
     get_n_watched_eps_from_soup
@@ -338,9 +338,9 @@ class BangumiSession(object):
         else:
             return False
         
-    def get_sub_id_list(self, sub_type, c_status, user_id=None):
-        """Get a list of subjects in specified c_status and with specified
-        sub_type
+    def get_dummy_collections(self, sub_type, c_status, user_id=None):
+        """Get a list of dummy collections with basic information for
+        subjects in specified c_status and with specified sub_type
         
         Args:
             sub_type (str): must be among 'anime', 'book', 'game', 'real'
@@ -349,7 +349,7 @@ class BangumiSession(object):
             user_id (str): user id to get list for
         
         Returns:
-            list[str]: list of subject ids as specified
+            list[tuple(str)]: list of subject basic information as specified
         """
         if sub_type not in ('anime', 'book', 'game', 'real'):
             raise ValueError("Invalid subject type provided: {0}"
@@ -366,10 +366,12 @@ class BangumiSession(object):
                                             text_c_status)
         response = self._get(url)
         n_pages = get_n_pages(response.text)
-        sub_ids = []
+        dummy_colls = []
         for p in xrange(1, n_pages + 1):
-            sub_ids += self._get_sub_id_list_on_page(url, p)
-        return sub_ids
+            dummy_colls += self._get_dummy_colls_on_page(url, p, c_status)
+        for coll in dummy_colls:
+            coll.session = self
+        return dummy_colls
 
     @require_login
     def logout(self):
@@ -470,7 +472,7 @@ class BangumiSession(object):
         response.encoding = get_encoding_from_html(response.text)
         return response.text
     
-    def _get_sub_id_list_on_page(self, url, page):
+    def _get_dummy_colls_on_page(self, url, page, c_status):
         page_url = '{0}?page={1}'.format(url, page)
         response = self._get(page_url)
         if response.status_code != 200:
@@ -478,7 +480,9 @@ class BangumiSession(object):
         response.encoding = get_encoding_from_html(response.text)
         soup = BeautifulSoup(response.text, 'html.parser')
         items = soup.find(id='browserItemList').find_all('li')
-        return [i['id'].split('_')[-1] for i in items]
+        return [BangumiDummySubjectCollection.from_soup_for_li(i, c_status)
+                for i in items]
+
 
     def _login(self, email, password):
         data = {'email': email, 'password': password,

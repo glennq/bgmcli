@@ -20,12 +20,16 @@ class BangumiElement(BangumiBase):
     
     Note:
         This abstract class is NOT supposed to be instantiated
+        
+    Attributes:
+        other_info (dict): other information for this element
     """
     
     def __init__(self, id_, title=None, ch_title=None):
         self._id_ = id_
         self._title = title
         self._ch_title = ch_title
+        self.other_info = {}
         
     @property
     def id_(self):
@@ -104,14 +108,14 @@ class BangumiSubjectFactory(object):
 
 
 class BangumiSubject(BangumiElement):
-    """"The class representing a general subject.
+    """The class representing a general subject.
     A subject is an anime or book or game title, which may contain a number
     of episodes (for anime) or volumes (for manga).
     In Bangumi, there are four kinds of subjects, namely 'anime', 'book',
     'game' and 'real'.
     
     Note:
-        This abstract class is NOT supposed to be instantiated
+        This class is typically not to be instantiated
     """
 
     __metaclass__ = SubjectMeta
@@ -133,14 +137,34 @@ class BangumiSubject(BangumiElement):
         ep_soup = BeautifulSoup(ep_html, 'html.parser')
         return cls.from_soup(sub_soup, ep_soup)
     
-#     @classmethod
-#     def from_soup(cls, sub_soup, ep_soup):
-#         sub_type = get_subject_type_from_soup(sub_soup)
-#         if sub_type == 'anime':
-#             return BangumiAnime.from_soup(sub_soup, ep_soup)
-#         else:
-#             raise NotImplementedError
+    
+class BangumiDummySubject(BangumiSubject):
+    """The class representing a dummy subject, which is a subject parsed
+    from user collection lists. It's dummy because it does not contain
+    episode/progress information
+    
+    Note:
+        Please do not use it for unintended purposes
+    """
 
+    _SUB_TYPE = None
+    
+    @classmethod
+    def from_soup_for_li(cls, soup_for_li):
+        """Create BangumiDummySubject from parsed html of a <li> tag that
+        contains information for this subject on a collection list
+        
+        Args:
+            soup_for_li (bs4.element.Tag): <li> tag containing necessary data
+            
+        Returns:
+            BangumiDummySubject: subject created
+        """
+        sub_id = soup_for_li['id'].split('_')[-1]
+        ch_title = soup_for_li.h3.a.text
+        title = soup_for_li.h3.small.text
+        return cls(sub_id, title, ch_title)
+ 
 
 class BangumiAnime(BangumiSubject):
     """Class representing an anime subject
@@ -164,7 +188,6 @@ class BangumiAnime(BangumiSubject):
         self._eps = list(eps) if eps else []
         for ep in self.eps:
             ep.subject = self
-        self.other_info = {}
 
     @classmethod
     def from_soup(cls, sub_soup, ep_soup):
@@ -321,7 +344,6 @@ class BangumiEpisode(BangumiElement):
         self._title = title if title else ""
         self._ch_title = ch_title if ch_title else ""
         self._subject = weakref.ref(subject) if subject else None
-        self.other_info = {}
 
     @classmethod
     def eps_from_html(cls, html):

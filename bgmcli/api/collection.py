@@ -7,7 +7,8 @@ import json
 from functools import wraps
 import pkg_resources
 from bs4 import BeautifulSoup
-from .element import BangumiEpisode, BangumiAnime, BangumiSubjectFactory
+from .element import BangumiEpisode, BangumiAnime, BangumiSubjectFactory,\
+    BangumiDummySubject
 from .utils import get_user_id_from_soup, get_checked_values, to_unicode,\
     get_ep_colls_up_to_this, get_subject_type_from_soup,\
     get_n_watched_eps_from_soup
@@ -209,16 +210,6 @@ class BangumiSubjectCollection(BangumiCollection):
         ep_soup = BeautifulSoup(ep_html, 'html.parser')
         return cls.from_soup_with_subject(subject, sub_soup, ep_soup)
     
-#     @classmethod
-#     def from_soup_with_subject(cls, subject, sub_soup, ep_soup):
-#         sub_type = get_subject_type_from_soup(sub_soup)
-#         if sub_type == 'anime':
-#             return BangumiAnimeCollection.from_soup_with_subject(subject,
-#                                                                 sub_soup,
-#                                                                 ep_soup)
-#         else:
-#             raise NotImplementedError
-    
     @property
     def subject(self):
         """BangumiAnime: subject that this collection is associated with.
@@ -299,6 +290,54 @@ class BangumiSubjectCollection(BangumiCollection):
             raise TypeError("comment must be a unicode strings, got {0}"
                             .format(type(value)))
         self._comment = value
+
+
+class BangumiDummySubjectCollection(BangumiSubjectCollection):
+    """The class representing a dummy subject collection, which is one parsed
+    from user collection lists. It's dummy because it does not contain
+    episode/progress information
+    
+    Note:
+        Please do not use it for unintended purposes
+    """
+    
+    _SUB_TYPE = None
+    
+    @classmethod
+    def from_soup_for_li(cls, soup_for_li, c_status):
+        """Create BangumiDummySubjectCollection from parsed html of a <li> tag
+        that contains information for this subject on a collection list
+        
+        Args:
+            soup_for_li (bs4.element.Tag): <li> tag containing necessary data
+            c_status (int): this has to be given as it's contained in <li> tag
+            
+        Returns:
+            BangumiDummySubjectCollection: subject collection created
+        """
+        subject = BangumiDummySubject.from_soup_for_li(soup_for_li)
+        rating_soup = soup_for_li.find('span', class_='starsinfo')
+        rating = int(rating_soup['class'][0][6:]) if rating_soup else None
+        tags_soup = soup_for_li.find('span', class_='tip')
+        tags = tags_soup.text.split()[1:] if tags_soup else None
+        comment_soup = soup_for_li.find(id='comment_box')
+        comment = (comment_soup.find(class_='text').text if comment_soup
+                   else None)
+        return cls(subject, c_status, rating, tags, comment)
+    
+    @require_session
+    def to_regular_collection(self):
+        new_coll = self.session.get_sub_collection(self.subject.id_)
+        for key, value in self.subject.other_info.items():
+            if key not in new_coll.subject.other_info:
+                new_coll.subject.other_info[key] = value
+            elif (isinstance(value, set) and
+                  isinstance(new_coll.subject.other_info[key], set)):
+                new_coll.subject.other_info[key].update(value)
+            elif (isinstance(value, list) and
+                  isinstance(new_coll.subject.other_info[key], list)):
+                new_coll.subject.other_info[key].extend(value)
+        return new_coll
 
 
 class BangumiAnimeCollection(BangumiSubjectCollection):
@@ -623,9 +662,12 @@ class BangumiEpisodeCollection(BangumiCollection):
             BangumiEpisodeCollection: object created with data provided
         """
         ep_href = '/ep/{0}'.format(episode.id_)
-        c_status = (soup.find(href=ep_href).parent.parent
-                    .find(class_='listEpPrgManager')
-                    .span['class'][0][6:].lower())
+        c_status_soup = (soup.find(href=ep_href).parent.parent
+                        .find(class_='listEpPrgManager'))
+        if c_status_soup:
+            c_status = c_status_soup.span['class'][0][6:].lower()
+        else:
+            c_status = None
         return cls(episode, c_status)
 
     @classmethod

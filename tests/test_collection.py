@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 import os
 import unittest
+from bs4 import BeautifulSoup
 from bgmcli.api import BangumiSession
 from bgmcli.api.element import BangumiEpisode, BangumiAnime
 from bgmcli.api.collection import BangumiAnimeCollection,\
-    BangumiEpisodeCollection
+    BangumiEpisodeCollection, BangumiDummySubjectCollection
 from test_utils import module_path
     
 
@@ -20,19 +21,19 @@ class BangumiEpisodeCollectionTest(unittest.TestCase):
             cls._sub_html = f.read()
         cls._c_statuses = ['watched'] * 24 + ['queue', 'drop'] + [None] * 5
         cls._id_ = "253"
-        
+         
     def test_from_html(self):
         ep_id = "519"
         ep_coll = BangumiEpisodeCollection.from_html(ep_id, self._ep_html)
         self.assertEqual(self._c_statuses[0], ep_coll.c_status)
-        
+         
     def test_from_html_with_ep(self):
         ep_id = "519"
         ep = BangumiEpisode.from_html(ep_id, self._ep_html)
         ep_coll = BangumiEpisodeCollection.from_html_with_ep(ep,
                                                              self._ep_html)
         self.assertEqual(self._c_statuses[0], ep_coll.c_status)
-        
+         
     def test_ep_colls_for_sub_from_html(self):
         sub = BangumiAnime.from_html(self._sub_html, self._ep_html)
         ep_colls = (BangumiEpisodeCollection
@@ -40,14 +41,14 @@ class BangumiEpisodeCollectionTest(unittest.TestCase):
         c_statuses = [ep_coll.c_status for ep_coll in ep_colls]
         for c_status, c_status_expected in zip(c_statuses, self._c_statuses):
             self.assertEqual(c_status_expected, c_status)
-            
+             
     def test_from_to_json(self):
         ep_id = "519"
         ep_coll = BangumiEpisodeCollection.from_html(ep_id, self._ep_html)
         json_text = ep_coll.to_json()
         ep_coll_new = BangumiEpisodeCollection.from_json(json_text)
         self.assertEqual(ep_coll, ep_coll_new)
-        
+         
     def test_c_status(self):
         ep_id = "519"
         ep_coll = BangumiEpisodeCollection.from_html(ep_id, self._ep_html)
@@ -56,15 +57,15 @@ class BangumiEpisodeCollectionTest(unittest.TestCase):
         self.assertEqual('watched', ep_coll.c_status)
         ep_coll.c_status = 'drop'
         self.assertEqual('drop', ep_coll.c_status)
-        
+         
     def test_sub_collection(self):
         ep_id = "519"
         ep_coll = BangumiEpisodeCollection.from_html(ep_id, self._ep_html)
         self.assertIsNone(ep_coll.sub_collection)
         with self.assertRaises(TypeError):
             ep_coll.sub_collection = ep_coll
-            
-
+             
+ 
 class BangumiAnimeCollectionTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -81,14 +82,14 @@ class BangumiAnimeCollectionTest(unittest.TestCase):
         cls._tags = [u'科幻', u'TV', u'SUNRISE']
         cls._comment = u'佳作'
         cls._n_watched_eps = 25
-        
+         
     def test_from_html(self):
         sub_coll = BangumiAnimeCollection.from_html(self._sub_html,
                                                     self._ep_html)
         for name in ['_c_status', '_rating', '_tags', '_comment',
                      '_n_watched_eps']:
             self.assertEqual(getattr(self, name), getattr(sub_coll, name))
-            
+             
     def test_from_html_with_subject(self):
         sub = BangumiAnime.from_html(self._sub_html, self._ep_html)
         sub_coll = (BangumiAnimeCollection
@@ -97,14 +98,14 @@ class BangumiAnimeCollectionTest(unittest.TestCase):
         for name in ['_c_status', '_rating', '_tags', '_comment',
                      '_n_watched_eps']:
             self.assertEqual(getattr(self, name), getattr(sub_coll, name))
-            
+             
     def test_from_to_json(self):
         sub_coll = BangumiAnimeCollection.from_html(self._sub_html,
                                                     self._ep_html)
         json_text = sub_coll.to_json()
         sub_coll_new = BangumiAnimeCollection.from_json(json_text)
         self.assertEqual(sub_coll, sub_coll_new)
-        
+         
     def test_n_watched_eps(self):
         sub_coll = BangumiAnimeCollection.from_html(self._sub_html,
                                                     self._ep_html)
@@ -112,13 +113,13 @@ class BangumiAnimeCollectionTest(unittest.TestCase):
             sub_coll.n_watched_eps = -1
         with self.assertRaises(ValueError):
             sub_coll.n_watched_eps = sub_coll.subject.n_eps + 10
-            
+             
     def test_ep_collections(self):
         sub_coll = BangumiAnimeCollection.from_html(self._sub_html,
                                                     self._ep_html)
         with self.assertRaises(TypeError):
             sub_coll.ep_collections = [sub_coll]
-            
+             
     def test_find_ep_coll(self):
         sub_coll = BangumiAnimeCollection.from_html(self._sub_html,
                                                     self._ep_html)
@@ -127,7 +128,7 @@ class BangumiAnimeCollectionTest(unittest.TestCase):
         self.assertEqual(sub_coll.ep_collections[-1],
                          sub_coll.find_ep_coll("ED3"))
         self.assertIsNone(sub_coll.find_ep_coll("ED5"))
-        
+         
     def test_watched_up_to_with_sync(self):
         with BangumiSession('glennqjy@gmail.com', '15263748') as session:
             sub_coll = session.get_sub_collection("265")
@@ -138,7 +139,7 @@ class BangumiAnimeCollectionTest(unittest.TestCase):
                 sub_coll.ep_collections[1].remove_with_sync()
             else:
                 self.fail()
-            
+             
             self.assertEqual('queue', sub_coll.ep_collections[0].c_status)
             self.assertEqual(None, sub_coll.ep_collections[1].c_status)
             with self.assertRaises(ValueError):
@@ -150,18 +151,51 @@ class BangumiAnimeCollectionTest(unittest.TestCase):
                 sub_coll.watched_up_to_with_sync("SP10")
             with self.assertRaises(TypeError):
                 sub_coll.watched_up_to_with_sync(sub_coll)
-                
+                 
             sub_coll.watched_up_to_with_sync("EP2")
             for i in range(2):
                 self.assertEqual('watched',
                                  sub_coll.ep_collections[i].c_status)
-                
+                 
     def set_up_sub_coll(self, sub_coll):
         sub_coll.c_status = 3
         sub_coll.comment = u'佳作'
         sub_coll.tags = [u'科幻', u'TV']
         sub_coll.rating = 8
         sub_coll.n_watched_eps = 26
+                           
                          
-            
+class BangumiDummySubjectCollectionTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        path = os.path.split(module_path(cls.setUpClass))[0]
+        on_hold_html_path = os.path.join(path, 'on_hold_page')
+        with open(on_hold_html_path) as f:
+            on_hold_html = f.read()
+        cls.soup = BeautifulSoup(on_hold_html, 'html.parser')
+        cls.c_status = 4
+        cls.c_statuses = [4, 4, 4]
+        cls.ratings = [6, 6, 7]
+        cls.n_eps = [11, None, 47]
+        
+    def test_from_soup_for_li(self):
+        items = self.soup.find(id='browserItemList').find_all('li')
+        dummy_colls = [(BangumiDummySubjectCollection
+                        .from_soup_for_li(i,self.c_status)) for i in items]
+        c_statuses = [coll.c_status for coll in dummy_colls]
+        ratings = [coll.rating for coll in dummy_colls]
+        self.assertEqual(self.c_statuses, c_statuses)
+        self.assertEqual(self.ratings, ratings)
+        
+    def test_to_regular_collection(self):
+        with BangumiSession('glennqjy@gmail.com', '15263748') as session:
+            dummy_colls = session.get_dummy_collections('anime', 4)
+            colls = [dummy_coll.to_regular_collection()
+                     for dummy_coll in dummy_colls]
+            for coll in colls:
+                self.assertTrue(isinstance(coll, BangumiAnimeCollection))
+                self.assertTrue(isinstance(coll.subject, BangumiAnime))
+
+            n_eps = [coll.subject.n_eps for coll in colls]
+            self.assertEqual(self.n_eps, n_eps)
         

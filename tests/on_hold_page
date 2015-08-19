@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>我搁置的动画</title>
+<meta name="keywords" content="我搁置的动画,ACG,anime,comic,game,music,动漫,音乐,游戏,动画,漫画,番组,bangumi,chii,chobits" />
+<meta name="description" content="我搁置的动画" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://bgm.tv/static/xml/opensearch_bgm.xml" title="Bangumi 番组计划" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon-precomposed" href="/img/ico/ico_ios.png" />
+
+<!--[if lte IE 6]>
+<script src="/js/pngfixed.js" type="text/javascript"></script>
+<script>
+  DD_belatedPNG.fix('.png_bg,img,#wrapper');
+</script>
+<![endif]-->
+
+<link rel="stylesheet" type="text/css" href="/min/g=css?r262" />
+<script type="text/javascript">var SHOW_ROBOT = '0',CHOBITS_UID = 257420, SITE_URL = 'http://bgm.tv';</script>
+</head>
+<body class="bangumi">
+<div id="wrapperNeue" class="wrapperNeue">
+<div id="headerNeue2">
+    <div class="headerNeueInner clearit">
+         <div class="bg musume_4"></div>
+    <a href="/" class="logo">Bangumi 番组计划</a>
+    
+<div id="navNeue2">
+<div id="menuNeue">
+<ul id="navMenuNeue" class="clearit">
+<li><a href="/anime" class="top chl anime"><span>动画</span></a>
+                <div class="clear"></div>
+<ul class="clearit">
+<li><a href="/anime/chart" class="nav">排行榜</a></li>
+<li><a href="/calendar" class="nav">每日放送</a></li>
+<li><a href="/anime/tag" class="nav">动画标签</a></li>
+<li><a href="/anime/browser" class="nav">分类浏览</a></li>
+<li><a href="/anime/blog" class="nav">动画日志</a></li>
+<li><div class="sep">我看</div></li>
+<li><a href="/anime/list/257420/do" class="nav">在看</a></li>
+<li><a href="/anime/list/257420/wish" class="nav">想看</a></li>
+<li><a href="/anime/list/257420/collect" class="nav">看过</a></li>
+<li><a href="/anime/list/257420/on_hold" class="nav">搁置</a></li>
+<li><a href="/anime/list/257420/dropped" class="nav">抛弃</a></li>
+</ul>
+</li>
+<li><a href="/book" class="top chl"><span>书籍</span></a>
+<div class="clear"></div>
+<ul class="clearit">
+<li><a href="/book/chart" class="nav">排行榜</a></li>
+<li><a href="/book/tag" class="nav">图书标签</a></li>
+<li><a href="/book/browser" class="nav">分类浏览</a></li>
+<li><a href="/book/blog" class="nav">图书日志</a></li>
+<li><div class="sep">我读</div></li>
+<li><a href="/book/list/257420/do" class="nav">在读</a></li>
+<li><a href="/book/list/257420/wish" class="nav">想读</a></li>
+<li><a href="/book/list/257420/collect" class="nav">读过</a></li>
+<li><a href="/book/list/257420/on_hold" class="nav">搁置</a></li>
+<li><a href="/book/list/257420/dropped" class="nav">抛弃</a></li>
+</ul>
+</li>
+<li><a href="/music" class="top chl"><span>音乐</span></a>
+<div class="clear"></div>
+<ul class="clearit">
+<li><a href="/music/chart" class="nav">排行榜</a></li>
+<li><a href="/music/tag" class="nav">音乐标签</a></li>
+<li><a href="/music/browser" class="nav">浏览全部</a></li>
+<li><a href="/music/blog" class="nav">音乐日志</a></li>
+<li><div class="sep">我听</div></li>
+<li><a href="/music/list/257420/do" class="nav">在听</a></li>
+<li><a href="/music/list/257420/wish" class="nav">想听</a></li>
+<li><a href="/music/list/257420/collect" class="nav">听过</a></li>
+<li><a href="/music/list/257420/on_hold" class="nav">搁置</a></li>
+<li><a href="/music/list/257420/dropped" class="nav">抛弃</a></li>
+</ul>
+</li>
+<li><a href="/game" class="top chl"><span>游戏</span></a>
+<div class="clear"></div>
+<ul class="clearit">
+<li><a href="/game/chart" class="nav">排行榜</a></li>
+<li><a href="/game/tag" class="nav">游戏标签</a></li>
+<li><a href="/game/browser" class="nav">平台浏览</a></li>
+<li><a href="/game/blog" class="nav">游戏日志</a></li>
+<li><div class="sep">我玩</div></li>
+<li><a href="/game/list/257420/do" class="nav">在玩</a></li>
+<li><a href="/game/list/257420/wish" class="nav">想玩</a></li>
+<li><a href="/game/list/257420/collect" class="nav">玩过</a></li>
+<li><a href="/game/list/257420/on_hold" class="nav">搁置</a></li>
+<li><a href="/game/list/257420/dropped" class="nav">抛弃</a></li>
+</ul>
+</li>
+<li><a href="/real" class="top chl real"><span>三次元</span></a>
+<div class="clear"></div>
+<ul class="clearit">
+<li><a href="/real/chart" class="nav">排行榜</a></li>
+<li><a href="/real/tag" class="nav">三次元标签</a></li>
+<li><a href="/real/blog" class="nav">三次元日志</a></li>
+<li><a href="/real/browser/platform/jp" class="nav">日剧</a></li>
+<li><a href="/real/browser/platform/en" class="nav">欧美剧</a></li>
+<li><div class="sep">我看</div></li>
+<li><a href="/real/list/257420/do" class="nav">在看</a></li>
+<li><a href="/real/list/257420/wish" class="nav">想看</a></li>
+<li><a href="/real/list/257420/collect" class="nav">看过</a></li>
+<li><a href="/real/list/257420/on_hold" class="nav">搁置</a></li>
+<li><a href="/real/list/257420/dropped" class="nav">抛弃</a></li>
+</ul>
+</li>
+            <li><a href="/mono" class="top"><span>人物</span></a>
+<div class="clear"></div>
+<ul class="clearit">
+<li><a href="/character" class="nav">虚构人物</a></li>
+<li><a href="/person" class="nav">现实人物</a></li>
+<li><div class="sep">我</div></li>
+<li><a href="/mono/update" class="nav">关注人物更新</a></li>
+<li><a href="/user/257420/mono/character" class="nav">收藏的角色</a></li>
+<li><a href="/user/257420/mono/person" class="nav">收藏的人物</a></li>               
+    
+</ul>
+</li>
+<li><a href="/rakuen" class="top_lite"><span>超展开</span></a></li>
+<li><a href="/group"class="top"><span>小组</span></a>
+<div class="clear"></div>
+<ul class="clearit">
+<li><a href="/group/discover" class="nav">随便看看</a></li>
+<li><a href="/group/all" class="nav">所有小组</a></li>
+<li><div class="sep">我</div></li>
+<li><a href="/group/my_topic" class="nav">发表的话题</a></li>
+<li><a href="/group/my_reply" class="nav">回复的话题</a></li>
+<li><a href="/group/mine" class="nav">参加的小组</a></li>
+</ul>
+</li>
+<li><a href="javascript:void(0);" class="top"><span>探索</span></a>
+<div class="clear"></div>
+<ul class="explore clearit">
+
+<li class="single"><a href="/timeline">时空管理局</a></li>       
+                <li class="group">
+<span><a href="/blog">日志</a><a href="/index">目录</a><a href="/wiki">维基人</a></span>
+</li>               
+<li class="group"><span><a href="/magi">MAGI 问答</a><a href="/dollars">Dollars</a></span></li>               
+                <li class="group">
+<span class="root">客户端</span>
+<span><a href="/onair">onAir</a><a href="/group/topic/5155">Mobile</a></span>
+</li>               
+</ul>
+</li>
+<li class="doujin"><a href="http://doujin.bgm.tv">天窗联盟</a></li>
+</ul>   
+</div>
+</div>
+        
+    <div class="idBadgerNeue">
+<a class="avatar" href="http://bgm.tv/user/257420"><span class="avatarNeue avatarSize32 ll" style="background-image:url('//lain.bgm.tv/pic/user/s/icon.jpg')"></span></a>
+    
+<ul id="badgeUserPanel">
+        <li><a href="http://bgm.tv/user/257420">时光机</a></li>                    
+        <li><a href="http://bgm.tv/user/257420/blog">日志</a></li>
+        <li><a href="http://bgm.tv/user/257420/mono">人物</a></li>
+        <li><a href="http://bgm.tv/user/257420/index">目录</a></li>
+        <li><a href="http://bgm.tv/user/257420/timeline">时间胶囊</a></li>
+        <li><a href="http://bgm.tv/user/257420/groups">小组</a></li>
+        <li><a href="http://bgm.tv/user/257420/friends">好友</a></li>
+        <li class="row"><a href="http://doujin.bgm.tv/user/257420">天窗专页</a></li>
+        <li class="row"><a href="http://bgm.tv/pm">短信</a> | <a href="http://bgm.tv/settings">设置</a> | <a href="http://bgm.tv/logout/8ffa0617">登出</a></li>
+    </ul>   
+    </div><div id="headerSearch">
+        <form action="/subject_search" method="post">
+    <div class="inner">
+<select name="cat" id="siteSearchSelect">
+<option value="all">全部</option>
+<option value="2">动画</option>
+<option value="1">书籍</option>
+<option value="4">游戏</option>
+<option value="3">音乐</option>
+<option value="6">三次元</option>
+<option value="person">人物</option>          
+</select>
+<input id="search_text" name="search_text" class="textfield" type="text" />
+        <input type="submit" name="submit" value="搜索" class="search" />                 
+    </div>
+</form>
+    </div>     
+    </div>
+</div>
+
+<div id="main" class="png_bg"></div>
+<div id="headerProfile" class="clearit">
+    <div class="subjectNav">
+    <div class="headerContainer">
+        <h1 class="nameSingle">
+            <div class="rr">
+                        </div>      
+            
+            <div class="headerAvatar">
+                <a href="/user/257420" class="avatar"><span class="avatarNeue avatarSize75" style="background-image:url('//lain.bgm.tv/pic/user/l/icon.jpg')"></span></a> 
+            </div>
+            
+            <div class="inner"> 
+                <a href="/user/257420">abcde</a> <small class="grey">@257420</small>
+                <span id="friend_flag"></span>
+            </div>
+        </h1>
+    </div>
+    
+<ul class="navTabs">
+        <li><a href="/user/257420" >时光机</a></li>
+        <li><a href="/anime/list/257420" class="focus">收藏</a></li>
+        <li><a href="/user/257420/mono" >人物</a></li>
+        <li><a href="/user/257420/blog" >日志</a></li>
+        <li><a href="/user/257420/index" >目录</a></li>        
+        <li><a href="/user/257420/timeline" >时间胶囊</a></li>               
+        <li><a href="/user/257420/groups" >小组</a></li>
+        <li><a href="/user/257420/friends" >好友</a></li>        
+        <li><a href="/user/257420/doujin" >天窗</a></li>
+        </ul>
+
+<div class="navSubTabsWrapper">
+<ul class="navSubTabs">
+                                                        <li><a href="/anime/list/257420/do" ><span>在看        (2)</span></a></li>                        <li><a href="/anime/list/257420/on_hold" class="focus"><span>搁置        (3)</span></a></li>                        </ul>
+</div>  
+    
+
+    
+
+
+</div>
+</div>
+<div class="mainWrapper"><div class="columns clearit">
+<div id="columnSubjectBrowserA" class="column">
+
+    <div id="browserTools" class="clearit">
+        
+        <a href="/anime/list/257420/on_hold?orderby=rate" class="l">按评价排序</a> · <a href="/anime/list/257420/on_hold?" class="l">按时间排序</a> · <a href="/anime/list/257420/on_hold?orderby=title" class="l">按名称排序</a>
+        
+    
+    <ul id="browserTypeSelector" class="browserTypeSelector">
+        <li><a href="javascript:void(0);" id="list_selector" ><span>精简</span></a></li>
+        <li><a href="javascript:void(0);" id="full_selector" class="active">><span>列表</span></a></li>
+        <li><a href="javascript:void(0);" id="grid_selector" >><span>网格</span></a></li>
+    </ul>
+</div>    <ul id="browserItemList" class="browserFull"><li id="item_1451" class="item odd clearit">
+    <a href="/subject/1451" class="subjectCover cover ll">
+            <span class="image">
+            <img src="//lain.bgm.tv/pic/cover/s/80/a8/1451_uU8k9.jpg" class="cover" />
+        </span>
+        <span class="overlay"></span>
+        </a>
+    <div class="inner">
+                <div id="collectBlock_1451" class="collectBlock tip_i">
+    <p class="collectModify">
+    <a href="/update/1451?keepThis=false&TB_iframe=true&height=350&amp;width=500" title="修改收藏"  class="thickbox l">修改</a> | <a href="#;" onclick="eraseSubjectCollect(1451, '8ffa0617')" class="l">删除</a>
+    </p>
+    </div>
+                <h3>
+                
+                
+                    <a href="/subject/1451" class="l">东之伊甸</a> <small class="grey">東のエデン</small>
+                </h3>
+                
+                
+        <p class="info tip">
+                         11话 /  2009年4月9日 / 神山健治 / 森川聪子                     </p>
+                
+        <p class="collectInfo">
+<span class="sstars6 starsinfo"></span> <span class="tip_j">2015-8-19</span> </p>
+        
+                
+                        
+    </div>
+</li><li id="item_45241" class="item even clearit">
+    <a href="/subject/45241" class="subjectCover cover ll">
+            <span class="image">
+            <img src="//lain.bgm.tv/pic/cover/s/29/b9/45241_0gKOk.jpg" class="cover" />
+        </span>
+        <span class="overlay"></span>
+        </a>
+    <div class="inner">
+                <div id="collectBlock_45241" class="collectBlock tip_i">
+    <p class="collectModify">
+    <a href="/update/45241?keepThis=false&TB_iframe=true&height=350&amp;width=500" title="修改收藏"  class="thickbox l">修改</a> | <a href="#;" onclick="eraseSubjectCollect(45241, '8ffa0617')" class="l">删除</a>
+    </p>
+    </div>
+                <h3>
+                
+                
+                    <a href="/subject/45241" class="l">剑风传奇 黄金时代篇III 降临</a> <small class="grey">ベルセルク  黄金時代篇III 降臨</small>
+                </h3>
+                
+                
+        <p class="info tip">
+                          2013年2月1日                     </p>
+                
+        <p class="collectInfo">
+<span class="sstars6 starsinfo"></span> <span class="tip_j">2015-8-19</span> </p>
+        
+                
+                        
+    </div>
+</li><li id="item_8484" class="item odd clearit">
+    <a href="/subject/8484" class="subjectCover cover ll">
+            <span class="image">
+            <img src="//lain.bgm.tv/pic/cover/s/d7/c1/8484_ezmBb.jpg" class="cover" />
+        </span>
+        <span class="overlay"></span>
+        </a>
+    <div class="inner">
+                <div id="collectBlock_8484" class="collectBlock tip_i">
+    <p class="collectModify">
+    <a href="/update/8484?keepThis=false&TB_iframe=true&height=350&amp;width=500" title="修改收藏"  class="thickbox l">修改</a> | <a href="#;" onclick="eraseSubjectCollect(8484, '8ffa0617')" class="l">删除</a>
+    </p>
+    </div>
+                <h3>
+                
+                
+                    <a href="/subject/8484" class="l">机动警察</a> <small class="grey">機動警察パトレイバー</small>
+                </h3>
+                
+                
+        <p class="info tip">
+                         47话 /  1989年10月11日 / 吉永尚之 / ヘッドギア                     </p>
+                
+        <p class="collectInfo">
+<span class="sstars7 starsinfo"></span> <span class="tip_j">2015-8-19</span> </p>
+        
+                
+                        
+    </div>
+</li></ul><div id="multipage"></div>
+</div>
+
+
+<div id="columnSubjectBrowserB" class="column">
+    <div class="SimpleSidePanel" style="width:190px;">
+    <h2>搁置的标签</h2>
+    <ul id="userTagList" class="tagList">
+                
+            </ul>
+            
+</div><div class="menu_inner">
+<span class="tip">本页永久链接:</span><br /><a href="http://bgm.tv/anime/list/257420/on_hold" class="l">http://bgm.tv/anime/list/257420/on_hold</a>
+</div>
+
+</div>
+</div><div id="footer">
+<ul id="footerLinks" class="clearit">
+<li class="first">
+    <dl>
+        <dt>关于我们</dt>
+        <dd><a href="http://bgm.tv/about">关于我们</a></dd>
+        <dd><a href="http://bgm.tv/about/guideline">社区指导原则</a><dd>
+        <dd><a href="http://bgm.tv/about/copyright">版权声明</a><dd>        
+        <dd><a href="http://bgm.tv/about/link2us">链接我们</a><dd>
+    </dl>
+</li>
+<li>
+    <dl>
+    <dt>获取帮助</dt>
+        <dd><a href="http://bgm.tv/help/bbcode">BBCode</a></dd>
+        <dd><a href="http://bgm.tv/group/forum">站务论坛</a></dd>
+        <dd><a href="http://bgm.tv/group/issues">BUG追踪</a></dd>
+        <dd><a href="http://bgm.tv/group/doujin">天窗站务</a></dd>      
+    </dl>
+</li>
+<li>
+<dl>
+    <dt>特别推荐</dt>
+        <dd><a href="http://bgm.tv/onair">onAir 客户端</a></dd>
+        <dd><a href="http://bgm.tv/tokei">etokei 绘时计</a></dd>
+        <dd><a href="http://bgm.tv/award/2014">年鉴 2014</a> |  <a href="http://bgm.tv/award/2013">13</a> | <a href="http://bgm.tv/award/2012">12</a> | <a href="http://bgm.tv/award/2011">11</a> | <a href="http://bgm.tv/award/2010">10</a></dd>
+        <dd><a href="http://bgm.tv/group/wiki">番組WIKI計画</a></dd>
+    </dl>
+</li>
+<li class="last">
+    <dl>
+    <dt>更多</dt>
+        <dd><a href="http://bgm.tv/index">目录</a></dd>
+        <dd><a href="http://bgm.tv/wiki">维基人</a></dd>
+        <dd><a href="http://bgm.tv/magi">MAGI 问答</a></dd>   
+        <dd><a href="http://bgm.tv/goodies">周边</a></dd>
+        <dd><a href="http://bgm.tv/dollars">Dollars</a></dd>    
+    </dl>
+</li>
+</ul>
+
+<small class="grey">&copy; 2008-2015 Bangumi (a.k.a.Chobits), some rights reserved</small>
+</div>
+</div></div>
+<div class="homeBg"></div>
+<div id="dock">
+    <div class="content">
+        <ul class="clearit">
+                <li class="first"><a href="http://bgm.tv/user/257420">abcde</a></li>
+        <li><a href="http://bgm.tv/pm">短信</a> | <a href="http://bgm.tv/settings">设置</a> | <a href="http://bgm.tv/logout/8ffa0617" target="_self">登出</a></li>
+                <li class="last"><a href="javascript:void(0);" id="showrobot">&nbsp;</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="robot"  style="display:none;">
+<div id="ukagaka_shell">
+<div class="ui_10 shell_1">
+<div id="ukagaka_voice"></div>
+<div id="robot_balloon" class="ukagaka_balloon_pink">
+<div class="tools"><a href="javascript:void(0);" id="ukagaka_menu"><img src="/img/ukagaka/menu.gif" /></a></div>    <div class="inner">
+<div id="robot_speech" class="speech" >
+疼痛让思考明晰。</div>
+<div id="robot_speech_js" class="speech">
+        
+</div>
+</div>
+<div class="ukagaka_balloon_pink_bottom"></div> 
+</div>
+</div>
+</div>
+</div>
+<script src="/min/g=js?r262" type="text/javascript"></script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-4049707-6']);
+    _gaq.push(['_setDomainName', 'none']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+    
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+
+</body></html><script>
+$(function() {
+$('#expandTags').click(function() {
+$('#userTagList li').show();
+$(this).remove();
+});
+});
+</script> 
