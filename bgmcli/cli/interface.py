@@ -2,10 +2,10 @@ from __future__ import unicode_literals
 import os
 from prompt_toolkit import AbortAction
 from prompt_toolkit.shortcuts import get_input
-from prompt_toolkit.history import History
+from prompt_toolkit.history import InMemoryHistory
 from prompt_toolkit.contrib.completers import WordCompleter
 from bgmcli.cli.exception import ConfigError
-from bgmcli.cli.backend import CLIBackend, AutoCorrector
+from bgmcli.cli.backend import CLIBackend, key_bindings_manager
 from bgmcli.cli.exception import CommandError
 
 
@@ -28,7 +28,7 @@ def get_completer(words):
 
 def run():
     backend = CLIBackend(*read_config())
-    history = History()
+    history = InMemoryHistory()
     completer = get_completer(backend.get_completion_list())
     user_id = backend.get_user_id()
 
@@ -36,7 +36,7 @@ def run():
         try:
             text = get_input(user_id + '> ', completer=completer,
                              history=history, on_abort=AbortAction.RETRY,
-                             key_bindings_registry=AutoCorrector.key_bindings_manager.registry)
+                             key_bindings_registry=key_bindings_manager.registry)
         except EOFError:
             # Control-D pressed.
             break

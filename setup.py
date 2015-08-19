@@ -9,7 +9,8 @@ setup(
     install_requires=[
         'requests',
         'beautifulsoup4',
-        'prompt-toolkit'
+        'prompt-toolkit==0.47',
+        'xpinyin==0.5.3',
     ],
     entry_points={
         'console_scripts': [

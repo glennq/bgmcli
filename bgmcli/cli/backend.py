@@ -1,31 +1,31 @@
 from __future__ import unicode_literals
 from prompt_toolkit.key_binding.manager import KeyBindingManager
+from xpinyin import Pinyin
 from ..api import BangumiSession
 from .exception import InvalidCommandError
 from .command_executor import CommandExecutorIndex
 
 
-class AutoCorrector(object):
-    key_bindings_manager = KeyBindingManager()
-    corrections = {}
+key_bindings_manager = KeyBindingManager()
+corrections = {}
 
-    @key_bindings_manager.registry.add_binding(' ')
-    @classmethod
-    def _(cls, event):
-        """
-        When space is pressed, we check the word before the cursor, and
-        autocorrect that.
-        """
-        b = event.cli.current_buffer
-        w = b.document.get_word_before_cursor()
 
-        if w is not None:
-            if w in cls.corrections:
-                b.delete_before_cursor(count=len(w))
-                b.insert_text(cls.corrections[w])
+@key_bindings_manager.registry.add_binding(' ')
+def _(event):
+    """
+    When space is pressed, we check the word before the cursor, and
+    autocorrect that.
+    """
+    b = event.cli.current_buffer
+    w = b.document.get_word_before_cursor()
 
-        b.insert_text(' ')
+    if w is not None:
+        if w in corrections:
+            b.delete_before_cursor(count=len(w))
+            b.insert_text(corrections[w])
 
+    b.insert_text(' ')
+    
 
 class CLIBackend(object):
     """Backend for CLI, takes and parses command from CLI, and proxies calls
@@ -39,9 +39,15 @@ class CLIBackend(object):
     
     def __init__(self, email, password):
         self._session = BangumiSession(email, password)
-        self._watching = self._session.get_dummy_collections('anime', 3)
-        for coll in self._watching:
-            AutoCorrector.corrections.update({coll.ch_title, coll.title})
+        self._colls = self._session.get_dummy_collections('anime', 3)
+        pinyin = Pinyin()
+        for coll in self._colls:
+            pinyin_title = pinyin.get_pinyin(coll.subject.ch_title, '')
+            if not coll.subject.other_info.get('aliases'):
+                coll.subject.other_info['aliases'] = [pinyin_title]
+            else:
+                coll.subject.other_info['aliases'].append(pinyin_title)
+            corrections.update({pinyin_title: coll.subject.ch_title})
         self._titles = set()
         self._update_titles()
     
@@ -53,7 +59,7 @@ class CLIBackend(object):
             raise InvalidCommandError("Got invalid command: {0}"
                                       .format(parsed[0]))
         executor = (CommandExecutorIndex
-                    .get_command_executor(parsed[0])(parsed, self._watching))
+                    .get_command_executor(parsed[0])(parsed, self._colls))
         executor.execute()
         self._update_titles()
     
@@ -73,7 +79,7 @@ class CLIBackend(object):
         pass
     
     def _update_titles(self):
-        for coll in self._watching:
+        for coll in self._colls:
             sub = coll.subject
             names = ([sub.title, sub.ch_title] +
                      sub.other_info.get('aliases', []))
