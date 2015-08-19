@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from ..api import BangumiSession
 from .exception import InvalidCommandError
-from .command_executor import CommandExecutorFactory
+from .command_executor import CommandExecutorIndex
 
 
 class CLIBackend(object):
@@ -26,7 +26,7 @@ class CLIBackend(object):
         if parsed[0] not in self._VALID_COMMANDS:
             raise InvalidCommandError("Got invalid command: {0}"
                                       .format(parsed[0]))
-        executor = (CommandExecutorFactory
+        executor = (CommandExecutorIndex
                     .get_command_executor(parsed[0])(parsed, self._watching))
         executor.execute()
         self._update_titles()

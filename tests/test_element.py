@@ -2,7 +2,7 @@
 import unittest
 import os
 from bgmcli.api import BangumiSession
-from bgmcli.api.element import BangumiAnime, BangumiEpisode, FixedAttribute
+from bgmcli.api.element import BangumiAnime, BangumiEpisode
 from test_utils import module_path
 
 
@@ -22,7 +22,7 @@ class BangumiEpisodeTest(unittest.TestCase):
     def test_from_html(self):
         ep_id = "519"
         ep = BangumiEpisode.from_html(ep_id, self._ep_html)
-        self.assertEqual(self._ep_ids[0], ep.ep_id)
+        self.assertEqual(self._ep_ids[0], ep.id_)
         self.assertEqual(self._ep_nums[0], ep.ep_num)
         self.assertEqual(self._ep_types[0], ep.ep_type)
         
@@ -31,7 +31,7 @@ class BangumiEpisodeTest(unittest.TestCase):
         self.assertEqual(31, len(eps))
         for ep, ep_id, ep_num, ep_type in zip(eps, self._ep_ids,
                                               self._ep_nums, self._ep_types):
-            self.assertEqual(ep_id, ep.ep_id)
+            self.assertEqual(ep_id, ep.id_)
             self.assertEqual(ep_num, ep.ep_num)
             self.assertEqual(ep_type, ep.ep_type)
             
@@ -42,21 +42,12 @@ class BangumiEpisodeTest(unittest.TestCase):
         for ep, ep_new in zip(eps, eps_new):
             self.assertEqual(ep, ep_new)
             
-    def test_fix_attribute_exception(self):
+    def test_fixed_attribute_exception(self):
         ep_id = "519"
         ep = BangumiEpisode.from_html(ep_id, self._ep_html)
-        for key, value in BangumiEpisode.__dict__.items():
-            if isinstance(value, FixedAttribute) and getattr(ep, '_' + key):
-                with self.assertRaises(AttributeError):
-                    setattr(ep, key, 's')
-                    
-    def test_fix_attribute_success(self):
-        ep_id = "519"
-        ep = BangumiEpisode.from_html(ep_id, self._ep_html)
-        ep._ep_id = None
-        self.assertIsNone(ep.ep_id)
-        ep.ep_id = ep_id
-        self.assertEqual(ep_id, ep.ep_id)
+        for key in ['id_', 'ep_num', 'ep_type', 'title', 'ch_title']:
+            with self.assertRaises(AttributeError):
+                setattr(ep, key, 's')
         
     def test_status(self):
         ep_id = "519"
@@ -95,14 +86,14 @@ class BangumiAnimeTest(unittest.TestCase):
             cls._ep_html = f.read()
         with open(sub_html_path) as f:
             cls._sub_html = f.read()
-        cls._sub_id = "253"
+        cls._id_ = "253"
         cls._title = u'カウボーイビバップ'
         cls._ch_title = u'星际牛仔'
         cls._n_eps = 26
         
     def test_from_html(self):
         sub = BangumiAnime.from_html(self._sub_html, self._ep_html)
-        for attr_name in ['_sub_id', '_title', '_ch_title', '_n_eps']:
+        for attr_name in ['_id_', '_title', '_ch_title', '_n_eps']:
             self.assertEqual(getattr(self, attr_name),
                              getattr(sub, attr_name))
             
@@ -136,6 +127,6 @@ class BangumiAnimeTest(unittest.TestCase):
         sub = BangumiAnime.from_html(self._sub_html, self._ep_html)
         with BangumiSession('glennqjy@gmail.com', '15263748') as session:
             sub_coll = sub.to_collection(session)
-            sub_coll_other = session.get_sub_collection(self._sub_id)
+            sub_coll_other = session.get_sub_collection(self._id_)
             self.assertIs(session, sub_coll.session)
             self.assertEqual(sub_coll, sub_coll_other)

@@ -19,7 +19,7 @@ class BangumiEpisodeCollectionTest(unittest.TestCase):
         with open(sub_html_path) as f:
             cls._sub_html = f.read()
         cls._c_statuses = ['watched'] * 24 + ['queue', 'drop'] + [None] * 5
-        cls._sub_id = "253"
+        cls._id_ = "253"
         
     def test_from_html(self):
         ep_id = "519"
@@ -76,7 +76,7 @@ class BangumiAnimeCollectionTest(unittest.TestCase):
         with open(sub_html_path) as f:
             cls._sub_html = f.read()
         cls._c_status = 3
-        cls._sub_id = "253"
+        cls._id = "253"
         cls._rating = 8
         cls._tags = [u'科幻', u'TV', u'SUNRISE']
         cls._comment = u'佳作'
@@ -111,7 +111,7 @@ class BangumiAnimeCollectionTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             sub_coll.n_watched_eps = -1
         with self.assertRaises(ValueError):
-            sub_coll.n_watched_eps = sub_coll.subject.n_eps + 1
+            sub_coll.n_watched_eps = sub_coll.subject.n_eps + 10
             
     def test_ep_collections(self):
         sub_coll = BangumiAnimeCollection.from_html(self._sub_html,

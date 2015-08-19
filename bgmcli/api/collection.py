@@ -7,11 +7,13 @@ import json
 from functools import wraps
 import pkg_resources
 from bs4 import BeautifulSoup
-from .element import BangumiEpisode, BangumiAnime, BangumiSubject
+from .element import BangumiEpisode, BangumiAnime, BangumiSubjectFactory
 from .utils import get_user_id_from_soup, get_checked_values, to_unicode,\
     get_ep_colls_up_to_this, get_subject_type_from_soup,\
     get_n_watched_eps_from_soup
 from .base import BangumiBase
+from _pyio import __metaclass__
+
 
 
 CUR_VERSION = pkg_resources.require("bgmcli")[0].version
@@ -91,6 +93,53 @@ class BangumiCollection(BangumiBase):
         return not self.__eq__(other)
 
 
+class SubjectCollectionMeta(type):
+    """Metaclass for BangumiSubjectCollection. Helps to register subclasses in 
+    BangumiSubjectIndex
+    """
+    def __new__(meta, name, bases, class_dict):  # @NoSelf
+        (BangumiSubjectCollectionFactory.sub_type_subclass_map
+         .update({class_dict['_SUB_TYPE']: name}))
+        cls = type.__new__(meta, name, bases, class_dict) 
+        return cls
+    
+    
+class BangumiSubjectCollectionFactory(object):
+    """A factory class that identifies which subclass of
+    BangumiSubjectCollection need to be instantiated
+    
+    Attributes:
+        sub_type_subclass_map (dict): a mapping from subject type to the
+            subclass name that defines this kind of subject collection
+    """
+    sub_type_subclass_map = {}
+    
+    @classmethod
+    def from_html(cls, sub_html, ep_html):
+        sub_soup = BeautifulSoup(sub_html, 'html.parser')
+        ep_soup = BeautifulSoup(ep_html, 'html.parser')
+        return cls.from_soup(sub_soup, ep_soup)
+    
+    @classmethod
+    def from_soup(cls, sub_soup, ep_soup):
+        subject = BangumiSubjectFactory.from_soup(sub_soup, ep_soup)
+        return cls.from_soup_with_subject(subject, sub_soup, ep_soup)
+    
+    @classmethod
+    def from_html_with_subject(cls, subject, sub_html, ep_html):
+        sub_soup = BeautifulSoup(sub_html, 'html.parser')
+        ep_soup = BeautifulSoup(ep_html, 'html.parser')
+        return cls.from_soup_with_subject(subject, sub_soup, ep_soup)
+    
+    @classmethod
+    def from_soup_with_subject(cls, subject, sub_soup, ep_soup):
+        sub_type = get_subject_type_from_soup(sub_soup)
+        if sub_type not in cls.sub_type_subclass_map:
+            raise NotImplementedError
+        subclass = globals()[cls.sub_type_subclass_map[sub_type]]
+        return subclass.from_soup_with_subject(subject, sub_soup, ep_soup)
+
+
 class BangumiSubjectCollection(BangumiCollection):
     
     """Class representing a general subject collection.
@@ -99,9 +148,18 @@ class BangumiSubjectCollection(BangumiCollection):
         The constructor is NOT supposed to be called directly by client code,
         Please use class methods in this class and other methods provided in
         BangumiSession to create instances of BangumiAnimeCollection
+        
+    Args:
+        subject (BangumiSubject): subject belonging to the collection
+        c_status (int): status of the collection
+        rating (int): rating given to the subject collection
+        tags (list[unicode]): tags added to this subject collection
+        comment (unicode): comment to this subject collection
     """
     
     _VALID_C_STATUS = tuple(range(1, 6))
+    __metaclass__ = SubjectCollectionMeta
+    _SUB_TYPE = None
     
     def __init__(self, subject, c_status=None, rating=None, tags=None,
                  comment=None):
@@ -138,7 +196,7 @@ class BangumiSubjectCollection(BangumiCollection):
         Returns:
             BangumiSubjectCollection: subject collection with provided data
         """
-        subject = BangumiSubject.from_soup(sub_soup, ep_soup)
+        subject = BangumiSubjectFactory.from_soup(sub_soup, ep_soup)
         return cls.from_soup_with_subject(subject, sub_soup, ep_soup)
 
     @classmethod
@@ -161,15 +219,15 @@ class BangumiSubjectCollection(BangumiCollection):
         ep_soup = BeautifulSoup(ep_html, 'html.parser')
         return cls.from_soup_with_subject(subject, sub_soup, ep_soup)
     
-    @classmethod
-    def from_soup_with_subject(cls, subject, sub_soup, ep_soup):
-        sub_type = get_subject_type_from_soup(sub_soup)
-        if sub_type == 'anime':
-            return BangumiAnimeCollection.from_soup_with_subject(subject,
-                                                                sub_soup,
-                                                                ep_soup)
-        else:
-            raise NotImplementedError
+#     @classmethod
+#     def from_soup_with_subject(cls, subject, sub_soup, ep_soup):
+#         sub_type = get_subject_type_from_soup(sub_soup)
+#         if sub_type == 'anime':
+#             return BangumiAnimeCollection.from_soup_with_subject(subject,
+#                                                                 sub_soup,
+#                                                                 ep_soup)
+#         else:
+#             raise NotImplementedError
     
     @property
     def subject(self):
@@ -260,7 +318,19 @@ class BangumiAnimeCollection(BangumiSubjectCollection):
         The constructor is NOT supposed to be called directly by client code,
         Please use class methods in this class and other methods provided in
         BangumiSession to create instances of BangumiAnimeCollection
+        
+    Args:
+        subject (BangumiAnime): anime subject belonging to the collection
+        c_status (int): status of the collection
+        rating (int): rating given to the subject collection
+        tags (list[unicode]): tags added to this subject collection
+        comment (unicode): comment to this subject collection
+        n_watched_eps (int): number of episodes watched
+        ep_collections (list[BangumiEpisodeCollection]): episodes collections
+            belonging to this subject collection
     """
+    
+    _SUB_TYPE = 'anime'
 
     def __init__(self, subject, c_status=None, rating=None, tags=None,
                  comment=None, n_watched_eps=None, ep_collections=None):
@@ -365,8 +435,8 @@ class BangumiAnimeCollection(BangumiSubjectCollection):
     @n_watched_eps.setter
     def n_watched_eps(self, value):
         value = int(value)
-        if value < 0 or (self.subject.n_eps and
-                         value > len(self._ep_collections)):
+        if value < 0 or ((self.subject.n_eps and self.subject.n_eps) and
+                         value > len(self.subject.eps)):
             raise ValueError("n_watched_eps must be non-negative and less " + 
                              "than n_eps, got {0}".format(value))
         self._n_watched_eps = value
@@ -459,7 +529,7 @@ class BangumiAnimeCollection(BangumiSubjectCollection):
         """
         if ep_info.isdigit():
             search_result = [ep_c for ep_c in self.ep_collections
-                             if ep_c.episode.ep_id == ep_info]
+                             if ep_c.episode.id_ == ep_info]
         else:
             ep_type, ep_num = re.search('([a-zA-Z]*)([0-9]+)',
                                             ep_info).groups()
@@ -561,7 +631,7 @@ class BangumiEpisodeCollection(BangumiCollection):
         Returns:
             BangumiEpisodeCollection: object created with data provided
         """
-        ep_href = '/ep/{0}'.format(episode.ep_id)
+        ep_href = '/ep/{0}'.format(episode.id_)
         c_status = (soup.find(href=ep_href).parent.parent
                     .find(class_='listEpPrgManager')
                     .span['class'][0][6:].lower())

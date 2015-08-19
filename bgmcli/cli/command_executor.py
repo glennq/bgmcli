@@ -2,8 +2,8 @@ from __future__ import unicode_literals
 from .exception import WrongCommandExcecutorError, InvalidCommandError
 
 
-class CommandExecutorFactory(object):
-    """A factory class that finds returns the right subclass of
+class CommandExecutorIndex(object):
+    """A index class that finds returns the right subclass of
     BaseCommandExecutor
     
     Note:
@@ -37,7 +37,7 @@ class CommandExecutorMeta(type):
     """
     def __new__(meta, name, bases, class_dict):  # @NoSelf
         for key in class_dict['_VALID_COMMANDS']:
-            CommandExecutorFactory.command_executors_map.update({key: name})
+            CommandExecutorIndex.command_executors_map.update({key: name})
         cls = type.__new__(meta, name, bases, class_dict) 
         return cls
 

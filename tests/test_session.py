@@ -38,7 +38,7 @@ class BangumiSessionTest(unittest.TestCase):
 
     def test_get_subject_anime(self):
         subject = self._session.get_subject("253")
-        self.assertEqual("253", subject.sub_id)
+        self.assertEqual("253", subject.id_)
         self.assertEqual(u'カウボーイビバップ', subject.title)
         self.assertEqual(u'星际牛仔', subject.ch_title)
         self.assertEqual(26, subject.n_eps)
@@ -55,7 +55,7 @@ class BangumiSessionTest(unittest.TestCase):
             
     def test_get_episode(self):
         ep = self._session.get_episode("7028")
-        self.assertEqual("7028", ep.ep_id)
+        self.assertEqual("7028", ep.id_)
         self.assertEqual(u'ホンキィ・トンク・ウィメン', ep.title)
         self.assertEqual(u'Honky Tonk Women', ep.ch_title)
         self.assertEqual(3, ep.ep_num)
@@ -70,7 +70,7 @@ class BangumiSessionTest(unittest.TestCase):
         ep_nums = range(1, 27) + [0, 1, 1, 2, 3]
         ep_types = ['EP'] * 26 + ['SP', 'OP'] + ['ED'] * 3
         for ep, ep_id, ep_num, ep_type in zip(eps, ep_ids, ep_nums, ep_types):
-            self.assertEqual(ep_id, ep.ep_id)
+            self.assertEqual(ep_id, ep.id_)
             self.assertEqual(ep_num, ep.ep_num)
             self.assertEqual(ep_type, ep.ep_type)
 
@@ -151,7 +151,7 @@ class BangumiSessionTest(unittest.TestCase):
             self._session.set_ep_collection(ep_coll)
         ep_coll.c_status = 'watched'
         ep_coll.sync_collection()
-        new_ep_coll = self._session.get_ep_collection(ep_coll.episode.ep_id)
+        new_ep_coll = self._session.get_ep_collection(ep_coll.episode.id_)
         self.assertEqual(ep_coll.c_status, new_ep_coll.c_status)
         
     def test_set_ep_collection_watched_up_to(self):

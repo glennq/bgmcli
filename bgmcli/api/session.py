@@ -7,8 +7,9 @@ from functools import wraps
 import requests
 from bs4 import BeautifulSoup
 from .exception import LoginFailedError, NotLoggedInError, RequestFailedError
-from .element import BangumiSubject, BangumiEpisode
-from collection import BangumiEpisodeCollection, BangumiSubjectCollection
+from .element import BangumiEpisode, BangumiSubjectFactory
+from .collection import BangumiEpisodeCollection, BangumiSubjectCollection,\
+    BangumiSubjectCollectionFactory
 from .utils import get_ep_colls_up_to_this, check_response, to_unicode,\
     get_user_id_from_html, get_encoding_from_html, get_n_pages,\
     get_n_watched_eps_from_soup
@@ -77,7 +78,7 @@ class BangumiSession(object):
         """
         sub_html = self._get_html_for_subject_main(sub_id)
         ep_html = self._get_html_for_subject_eps(sub_id)
-        return BangumiSubject.from_html(sub_html, ep_html)
+        return BangumiSubjectFactory.from_html(sub_html, ep_html)
 
     def get_episode(self, ep_id):
         """Get crucial data for specified episode
@@ -115,7 +116,8 @@ class BangumiSession(object):
         """
         sub_html = self._get_html_for_subject_main(sub_id)
         ep_html = self._get_html_for_subject_eps(sub_id)
-        sub_coll = BangumiSubjectCollection.from_html(sub_html, ep_html)
+        sub_coll = BangumiSubjectCollectionFactory.from_html(sub_html,
+                                                             ep_html)
         sub_coll.session = self
         return sub_coll
 
@@ -131,10 +133,10 @@ class BangumiSession(object):
                 subject. Empty collection with only subject if it's not in
                 user's collection
         """
-        sub_html = self._get_html_for_subject_main(subject.sub_id)
-        ep_html = self._get_html_for_subject_eps(subject.sub_id)
-        sub_collection = BangumiSubjectCollection.from_html_with_subject(
-            subject, sub_html, ep_html)
+        sub_html = self._get_html_for_subject_main(subject.id_)
+        ep_html = self._get_html_for_subject_eps(subject.id_)
+        sub_collection = (BangumiSubjectCollectionFactory
+                          .from_html_with_subject(subject, sub_html, ep_html))
         sub_collection.session = self
         return sub_collection
 
@@ -164,7 +166,7 @@ class BangumiSession(object):
                 episode. Empty collection with only episode if it's not in
                 user's collection
         """
-        sub_id = self._get_sub_id_for_ep(episode.ep_id)
+        sub_id = self._get_sub_id_for_ep(episode.id_)
         html = self._get_html_for_subject_eps(sub_id)
         ep_collection = BangumiEpisodeCollection.from_html_with_ep(episode,
                                                                    html)
@@ -239,7 +241,7 @@ class BangumiSession(object):
                 'tags': u' '.join(sub_coll.tags),
                 'comment': sub_coll.comment, 'update': u'保存'}
         set_coll_url = '{0}/subject/{1}/interest/update?gh={2}'.format(
-            self._base_url, sub_coll.subject.sub_id, self._gh)
+            self._base_url, sub_coll.subject.id_, self._gh)
         response = self._post(set_coll_url, data)
 
         return check_response(response)
@@ -279,7 +281,7 @@ class BangumiSession(object):
                 return self._set_watched_eps_in_sub(ep_colls)
         else:
             set_url = ('{0}/subject/ep/{1}/status/{2}?gh={3}'
-                       .format(self._base_url, ep_coll.episode.ep_id,
+                       .format(self._base_url, ep_coll.episode.id_,
                                ep_coll.c_status, self._gh))
             response = self._get(set_url)
             # update n_watched_eps in subject collection
@@ -296,9 +298,9 @@ class BangumiSession(object):
             bool: True if successful
         """
         if isinstance(collection, BangumiSubjectCollection):
-            result = self._remove_sub_collection(collection.subject.sub_id)
+            result = self._remove_sub_collection(collection.subject.id_)
         elif isinstance(collection, BangumiEpisodeCollection):
-            result = self._remove_ep_collection(collection.episode.ep_id)
+            result = self._remove_ep_collection(collection.episode.id_)
         else:
             raise TypeError("Collection type invalid!")
         collection._c_status = None
@@ -321,11 +323,11 @@ class BangumiSession(object):
             raise ValueError("c_status must not be 1")
         if sub_collection.n_watched_eps is None:
             raise AttributeError("n_watched_eps must be defined")
-        result = self._set_n_watched_eps(sub_collection.subject.sub_id,
+        result = self._set_n_watched_eps(sub_collection.subject.id_,
                                          sub_collection.n_watched_eps)
         if result:
             sub = sub_collection.subject
-            html = self._get_html_for_subject_eps(sub.sub_id)
+            html = self._get_html_for_subject_eps(sub.id_)          
             sub_collection.ep_collections = (BangumiEpisodeCollection
                                              .ep_colls_for_sub_from_html(sub,
                                                                          html))
@@ -402,7 +404,7 @@ class BangumiSession(object):
             if ep_coll.sub_collection is not sub_coll:
                 raise ValueError("Exists entry in ep_coll not belong to " +
                                  "same subject collection!")
-        ep_ids = [ep_c.episode.ep_id for ep_c in ep_colls]
+        ep_ids = [ep_c.episode.id_ for ep_c in ep_colls]
         base_ep_id = ep_ids[-1]
         ep_ids_str = ','.join(ep_ids)
         data = {'ep_id': ep_ids_str}
@@ -412,7 +414,7 @@ class BangumiSession(object):
         if (response.status_code == 200 and
             response.text == u'{"status":"ok"}'):
             # update n_watched_eps as well as ep_collections
-            html = self._get_html_for_subject_main(sub_coll.subject.sub_id)
+            html = self._get_html_for_subject_main(sub_coll.subject.id_)
             soup = BeautifulSoup(html, 'html.parser')           
             sub_coll.n_watched_eps = get_n_watched_eps_from_soup(soup)
             for ep_c in ep_colls:

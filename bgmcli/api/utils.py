@@ -94,8 +94,8 @@ def get_ep_ids_up_to_this(episode):
     eps = subject.eps
     ep_ids = []
     for ep in eps:
-        ep_ids.append(ep.ep_id)
-        if ep.ep_id == episode.ep_id:
+        ep_ids.append(ep.id_)
+        if ep.id_ == episode.id_:
             break
     return ep_ids
 

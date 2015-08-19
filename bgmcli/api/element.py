@@ -15,50 +15,44 @@ __all__ = ['BangumiAnime', 'BangumiEpisode']
 CUR_VERSION = pkg_resources.require("bgmcli")[0].version
 
 
-class FixedAttribute(object):
-    """A descriptor for attributes not supposed to be modified once set
-    """
-    def __init__(self):
-        self.attr_name = None
-        self.internal_name = None
-        
-    def __get__(self, obj, objtype):
-        if obj is None:
-            return self
-        return getattr(obj, self.internal_name)
-    
-    def __set__(self, obj, value):
-        if not getattr(obj, self.internal_name):
-            setattr(obj, self.internal_name, value)
-        else:
-            raise AttributeError("Attribute {0} is NOT supposed to be changed"
-                                 .format(self.attr_name))
-
-  
-class ElementMeta(type):
-    """Metaclass for BangumiElement.
-    From the book Effective Python
-    """
-    def __new__(meta, name, bases, class_dict):  # @NoSelf
-        for key, value in class_dict.items():
-            if isinstance(value, FixedAttribute):
-                value.attr_name = key
-                value.internal_name = '_' + key
-        cls = type.__new__(meta, name, bases, class_dict) 
-        return cls
-
-
 class BangumiElement(BangumiBase):
-    """Interface for elements including BangumiAnime and BangumiEpisode"""
+    """class for elements including BangumiSubject and BangumiEpisode
     
-    __metaclass__ = ElementMeta
+    Note:
+        This abstract class is NOT supposed to be instantiated
+    """
+    
+    def __init__(self, id_, title=None, ch_title=None):
+        self._id_ = id_
+        self._title = title
+        self._ch_title = ch_title
+        
+    @property
+    def id_(self):
+        """str: element (episode, subject etc.) id. NOT supposed to be changed
+        """
+        return self._id_
+    
+    @property
+    def title(self):
+        """unicode: official title of the element. NOT supposed to be
+        modified
+        """
+        return self._title
+    
+    @property
+    def ch_title(self):
+        """unicode): title of the subject in Chinese or other language.
+        NOT supposed to be modified.
+        """
+        return self._ch_title
 
     def to_collection(self, session):
         """Transform to collection of same type."""
         raise NotImplementedError
     
     def __eq__(self, other):
-        """Does not compare BangumiAnime.eps and BangumiEpisode.subject"""
+        """Excludes attribute BangumiAnime.eps and BangumiEpisode.subject"""
         if not isinstance(other, self.__class__):
             return False
         else:
@@ -73,6 +67,42 @@ class BangumiElement(BangumiBase):
         return not self.__eq__(other)
 
 
+class SubjectMeta(type):
+    """Metaclass for BangumiSubject. Helps to register subclasses in 
+    BangumiSubjectIndex
+    """
+    def __new__(meta, name, bases, class_dict):  # @NoSelf
+        (BangumiSubjectFactory.sub_type_subclass_map
+         .update({class_dict['_SUB_TYPE']: name}))
+        cls = type.__new__(meta, name, bases, class_dict) 
+        return cls
+    
+    
+class BangumiSubjectFactory(object):
+    """A factory class that identifies which subclass of BangumiSubject
+    need to be instantiated
+    
+    Attributes:
+        sub_type_subclass_map (dict): a mapping from subject type to the
+            subclass name that defines this kind of subject
+    """
+    sub_type_subclass_map = {}
+    
+    @classmethod
+    def from_html(cls, sub_html, ep_html):
+        sub_soup = BeautifulSoup(sub_html, 'html.parser')
+        ep_soup = BeautifulSoup(ep_html, 'html.parser')
+        return cls.from_soup(sub_soup, ep_soup)
+    
+    @classmethod
+    def from_soup(cls, sub_soup, ep_soup):
+        sub_type = get_subject_type_from_soup(sub_soup)
+        if sub_type not in cls.sub_type_subclass_map:
+            raise NotImplementedError
+        subclass = globals()[cls.sub_type_subclass_map[sub_type]]
+        return subclass.from_soup(sub_soup, ep_soup)
+
+
 class BangumiSubject(BangumiElement):
     """"The class representing a general subject.
     A subject is an anime or book or game title, which may contain a number
@@ -82,24 +112,10 @@ class BangumiSubject(BangumiElement):
     
     Note:
         This abstract class is NOT supposed to be instantiated
-    
-    Attributes:
-        sub_id (str): subject id. NOT supposed to be modified
-        title (unicode): official title of the subject. NOT supposed to
-            be modified
-        ch_title (unicode): title of the subject in Chinese or other language.
-            NOT supposed to be modified.
     """
-    
-    sub_id = FixedAttribute()
-    title = FixedAttribute()
-    ch_title = FixedAttribute()
+
+    __metaclass__ = SubjectMeta
     _SUB_TYPE = None
-    
-    def __init__(self, sub_id, title=None, ch_title=None):
-        self._sub_id = sub_id
-        self._title = title
-        self._ch_title = ch_title
     
     @classmethod
     def from_html(cls, sub_html, ep_html):
@@ -117,32 +133,33 @@ class BangumiSubject(BangumiElement):
         ep_soup = BeautifulSoup(ep_html, 'html.parser')
         return cls.from_soup(sub_soup, ep_soup)
     
-    @classmethod
-    def from_soup(cls, sub_soup, ep_soup):
-        sub_type = get_subject_type_from_soup(sub_soup)
-        if sub_type == 'anime':
-            return BangumiAnime.from_soup(sub_soup, ep_soup)
-        else:
-            raise NotImplementedError
+#     @classmethod
+#     def from_soup(cls, sub_soup, ep_soup):
+#         sub_type = get_subject_type_from_soup(sub_soup)
+#         if sub_type == 'anime':
+#             return BangumiAnime.from_soup(sub_soup, ep_soup)
+#         else:
+#             raise NotImplementedError
 
 
 class BangumiAnime(BangumiSubject):
     """Class representing an anime subject
     
-    Attributes:
-        sub_id (str): subject id. NOT supposed to be modified
-        title (unicode): official title of the anime subject. NOT supposed to
-            be modified
+    Args:
+        id_ (str): subject id.
+        title (unicode): official title of the anime subject. 
         ch_title (unicode): title of the subject in Chinese or other language.
-            NOT supposed to be modified.
+        eps (list[BangumiEpisode]): episodes belonging to this anime
+    
+    Attributes:
         other_info (dict): key-values for other info
     """
     
     _SUB_TYPE = 'anime'
 
-    def __init__(self, sub_id, title=None, ch_title=None, n_eps=None,
+    def __init__(self, id_, title=None, ch_title=None, n_eps=None,
                  eps=None):
-        super(BangumiAnime, self).__init__(sub_id, title, ch_title)
+        super(BangumiAnime, self).__init__(id_, title, ch_title)
         self._n_eps = n_eps
         self._eps = list(eps) if eps else []
         for ep in self.eps:
@@ -276,27 +293,28 @@ class BangumiEpisode(BangumiElement):
         And data contained are typically NOT supposed to be changed after
         instantiation.
         
-    Attributes:
-        ep_id (str): episode id. NOT supposed to be changed
-        ep_num (int): episode number. NOT supposed to be changed
+    Args:
+        id_ (str): episode id.
+        ep_num (int): episode number
         ep_type (str): episode type, usually any of "EP", "SP", "OP", "ED";
             "EP" stands for regular episode. NOT supposed to be changed
+        status (str): airing status of the episode must be in 'air', 'today',
+            'na', where 'air' stands for aired, 'today' stands for to be aired
+            today, and 'na' stands for not aired
         title (unicode): official title of the episode. NOT supposed to be
             changed
         ch_title (unicode): title of the episode in Chinese or other language.
             NOT supposed to be changed.
         other_info (dict): other information for this episode
+        
+    Attributes:
+        other_info (dict): other information for this episode
     """
-    
-    ep_id = FixedAttribute()
-    ep_num = FixedAttribute()
-    ep_type = FixedAttribute()
-    title = FixedAttribute()
-    ch_title = FixedAttribute()
 
-    def __init__(self, ep_id, ep_num, ep_type=None, status=None, title=None,
+    def __init__(self, id_, ep_num, ep_type=None, status=None, title=None,
                  ch_title=None, subject=None):
-        self._ep_id = ep_id
+        super(BangumiEpisode, self).__init__(id_, title, ch_title)
+        self._id_ = id_
         self._ep_num = ep_num
         self._ep_type = ep_type
         self._status = status
@@ -343,7 +361,7 @@ class BangumiEpisode(BangumiElement):
         subject episodes page
         
         Args:
-            ep_id (str): the id of episode to create object for
+            id_ (str): the id_ of episode to create object for
             html (unicode): the html for the episodes page
             
         Returns:
@@ -358,7 +376,7 @@ class BangumiEpisode(BangumiElement):
         html of subject episodes page
         
         Args:
-            ep_id (str): the id of episode to create object for
+            id_ (str): the id_ of episode to create object for
             soup (BeautifulSoup): the parsed html for the episodes page
             
         Returns:
@@ -401,6 +419,19 @@ class BangumiEpisode(BangumiElement):
         kwargs['version'] = CUR_VERSION
         kwargs.pop('_subject')
         return json.dumps(kwargs, ensure_ascii=False)
+    
+    @property
+    def ep_num(self):
+        """int: episode number. NOT supposed to be modified.
+        """
+        return self._ep_num
+    
+    @property
+    def ep_type(self):
+        """str: episode type, usually any of "EP", "SP", "OP", "ED";
+        "EP" stands for regular episode. NOT supposed to be modified
+        """
+        return self._ep_type
         
     @property
     def status(self):
@@ -465,7 +496,7 @@ class BangumiEpisode(BangumiElement):
                 piece of the subjects ep page
                 
         Returns:
-            ep_id, ep_num, ep_type, ep_status, ep_title, ep_ch_title: data
+            id_, ep_num, ep_type, ep_status, ep_title, ep_ch_title: data
                 necessary for constructing a BangumiEpisode object
         """
         ep_id = info_soup.a['href'].split('/')[-1]
