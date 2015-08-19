@@ -365,7 +365,8 @@ class BangumiAnimeCollection(BangumiSubjectCollection):
     @n_watched_eps.setter
     def n_watched_eps(self, value):
         value = int(value)
-        if value < 0 or (self.subject.n_eps and value > self.subject.n_eps):
+        if value < 0 or (self.subject.n_eps and
+                         value > len(self._ep_collections)):
             raise ValueError("n_watched_eps must be non-negative and less " + 
                              "than n_eps, got {0}".format(value))
         self._n_watched_eps = value

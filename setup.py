@@ -11,4 +11,9 @@ setup(
         'beautifulsoup4',
         'prompt-toolkit'
     ],
+    entry_points={
+        'console_scripts': [
+            'bgmcli = bgmcli.cli.interface:run',
+        ]
+    },
 )

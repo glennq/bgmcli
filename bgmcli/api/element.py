@@ -147,7 +147,7 @@ class BangumiAnime(BangumiSubject):
         self._eps = list(eps) if eps else []
         for ep in self.eps:
             ep.subject = self
-        self.other_info = None
+        self.other_info = {}
 
     @classmethod
     def from_soup(cls, sub_soup, ep_soup):
@@ -303,7 +303,7 @@ class BangumiEpisode(BangumiElement):
         self._title = title if title else ""
         self._ch_title = ch_title if ch_title else ""
         self._subject = weakref.ref(subject) if subject else None
-        self.other_info = None
+        self.other_info = {}
 
     @classmethod
     def eps_from_html(cls, html):

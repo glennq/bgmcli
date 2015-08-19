@@ -1,7 +1,7 @@
-"""Exceptions for the package
+"""Exceptions for the APIs
 """
 
-class BangumiCLIException(Exception):
+class BangumiAPIException(Exception):
 
     def __init__(self, message):
         self.message = message
@@ -10,12 +10,12 @@ class BangumiCLIException(Exception):
         return repr(self.message)
 
 
-class NotLoggedInError(BangumiCLIException):
+class NotLoggedInError(BangumiAPIException):
     """Exception raised when trying to make requests while not logged in"""
     pass
 
 
-class RequestFailedError(BangumiCLIException):
+class RequestFailedError(BangumiAPIException):
     """Exception raised when failed to get necessary data"""
 
 
