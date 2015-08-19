@@ -7,6 +7,7 @@ from prompt_toolkit.contrib.completers import WordCompleter
 from bgmcli.cli.exception import ConfigError
 from bgmcli.cli.backend import CLIBackend, key_bindings_manager
 from bgmcli.cli.exception import CommandError
+from bgmcli.api.exception import BangumiAPIException
 
 
 def read_config():
@@ -45,7 +46,11 @@ def run():
                 backend.execute_command(text)
             except CommandError as e:
                 print e.message
-
+            except Exception:
+                backend.close()
+                raise
+            
+    backend.close()
 
 if __name__ == '__main__':
     run()

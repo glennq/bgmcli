@@ -30,6 +30,10 @@ def _(event):
 class CLIBackend(object):
     """Backend for CLI, takes and parses command from CLI, and proxies calls
     to and results from API
+    
+    Args:
+        email (str or unicode): email address for login
+        password (str or unicode) password for login
     """
     
     _VALID_COMMANDS = CommandExecutorIndex.valid_commands
@@ -52,6 +56,14 @@ class CLIBackend(object):
         self._update_titles()
     
     def execute_command(self, command):
+        """Execute given command
+        
+        Args:
+            command (unicode): command from user interface
+            
+        Raises:
+            InvalidCommandError: if command head is not valid
+        """
         parsed = command.strip().split()
         if not parsed:
             return
@@ -64,15 +76,32 @@ class CLIBackend(object):
         self._update_titles()
     
     def get_user_id(self):
+        """Get the user id for current user
+        
+        Returns:
+            str or unicode: user id
+        """
         return self._session.user_id
     
     def get_completion_list(self):
+        """Get the list of names for auto completion
+        
+        Returns:
+            list[unicode]: commands and titles
+        """
         return self._VALID_COMMANDS + list(self._titles)
     
     def get_valid_commands(self):
+        """Get valid command head
+        
+        Return:
+            tuple(unicode): valid commands
+        """
         return tuple(self._VALID_COMMANDS)
     
     def close(self):
+        """Close the session
+        """
         self._session.logout()
         
     def _parse_command(self, command):
