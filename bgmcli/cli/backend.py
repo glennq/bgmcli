@@ -16,15 +16,16 @@ def _(event):
     When space is pressed, we check the word before the cursor, and
     autocorrect that.
     """
-    b = event.cli.current_buffer
-    w = b.document.get_word_before_cursor()
+    buf = event.cli.current_buffer
+    text = buf.document.text_before_cursor
+    word = text.split()[-1]
 
-    if w is not None:
-        if w in corrections:
-            b.delete_before_cursor(count=len(w))
-            b.insert_text(corrections[w])
+    if word is not None:
+        if word in corrections:
+            buf.delete_before_cursor(count=len(word))
+            buf.insert_text(corrections[word])
 
-    b.insert_text(' ')
+    buf.insert_text(' ')
     
 
 class CLIBackend(object):
