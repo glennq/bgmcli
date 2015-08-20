@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
-from itertools import izip_longest
 from .exception import WrongCommandExcecutorError, InvalidCommandError
 from bgmcli.api.collection import BangumiDummySubjectCollection
+from .utils import get_display_width, get_full_width_count, resolve_status
 
 
 class CommandExecutorIndex(object):
@@ -104,17 +104,24 @@ class SubjectCommandMixin(object):
 
 
 class ListCommandMixin(object):
-    def _produce_output(self, data):
-        n_cols = 5
+    def _produce_output(self, data, n_cols=5):
+        if not data:
+            return ''
         rows = [data[x:x+n_cols] for x in range(0, len(data), n_cols)]
         if len(rows[-1]) < n_cols:
             rows[-1] += [''] * (n_cols - len(rows[-1]))
-        cols = izip_longest(*rows, fillvalue='')
-        max_widths = [max(len(elem) for elem in col) for col in cols]
-        format_str = ''.join(['{{{1}:<{0}}}'.format(width+2, i)
-                              for i, width in enumerate(max_widths)])
-        
-        return '\n'.join([format_str.format(*row) for row in rows])
+        cols = zip(*rows)
+        max_widths = [max(get_display_width(elem) for elem in col)
+                      for col in cols]
+        output = []
+        for row in rows:
+            row_out = ''
+            for i, width in enumerate(max_widths):
+                row_out += ('{{0:<{0}}}'
+                            .format(width + 1 - get_full_width_count(row[i]))
+                            .format(row[i]))
+            output.append(row_out)
+        return '\n'.join(output)
 
 
 class WatchedCommandExecutor(BaseCommandExecutor, SubjectCommandMixin):
@@ -169,7 +176,9 @@ class ListWatchingCommandExecutor(BaseCommandExecutor, ListCommandMixin):
         super(ListWatchingCommandExecutor, self).__init__(parsed, collections)
         
     def execute(self):
-        ch_titles = [coll.subject.ch_title for coll in self._collections]
+        ch_titles = [coll.subject.ch_title if coll.subject.ch_title
+                     else coll.subject.title
+                     for coll in self._collections]
         print self._produce_output(ch_titles)
         
         
@@ -184,8 +193,7 @@ class ListEpsCommandExecutor(BaseCommandExecutor, ListCommandMixin,
         
     def execute(self):
         coll = self._find_collection(self._parsed[1])
-        statuses = [self._resolve_status(ep_coll.c_status,
-                                         ep_coll.episode.status)
+        statuses = [resolve_status(ep_coll.c_status, ep_coll.episode.status)
                     for ep_coll in coll.ep_collections]
         ep_type_nums = ['{0}{1}'.format(ep_coll.episode.ep_type, 
                                         ep_coll.episode.ep_num)
@@ -195,12 +203,6 @@ class ListEpsCommandExecutor(BaseCommandExecutor, ListCommandMixin,
                        for status, type_num in zip(statuses, ep_type_nums)]
 
         print self._produce_output(ep_displays)
-    
-    def _resolve_status(self, c_status, air_status):
-        if not c_status:
-            return air_status
-        else:
-            return c_status
         
     def _status_color(self, status):
         """

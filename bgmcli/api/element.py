@@ -162,7 +162,11 @@ class BangumiDummySubject(BangumiSubject):
         """
         sub_id = soup_for_li['id'].split('_')[-1]
         ch_title = soup_for_li.h3.a.text
-        title = soup_for_li.h3.small.text
+        if soup_for_li.h3.small:
+            title = soup_for_li.h3.small.text
+        else:
+            title = ch_title
+            ch_title = None
         return cls(sub_id, title, ch_title)
  
 

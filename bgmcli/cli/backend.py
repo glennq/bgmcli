@@ -46,6 +46,8 @@ class CLIBackend(object):
         self._colls = self._session.get_dummy_collections('anime', 3)
         pinyin = Pinyin()
         for coll in self._colls:
+            if not coll.subject.ch_title:
+                continue
             pinyin_title = pinyin.get_pinyin(coll.subject.ch_title, '')
             if not coll.subject.other_info.get('aliases'):
                 coll.subject.other_info['aliases'] = [pinyin_title]
@@ -113,5 +115,5 @@ class CLIBackend(object):
             names = ([sub.title, sub.ch_title] +
                      sub.other_info.get('aliases', []))
             for name in names:
-                if name not in self._titles:
+                if name and name not in self._titles:
                     self._titles.add(name)
