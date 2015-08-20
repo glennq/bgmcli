@@ -1,3 +1,6 @@
+"""Module for classes that are responsible for executing a command
+"""
+
 from __future__ import unicode_literals
 from .exception import WrongCommandExcecutorError, InvalidCommandError
 from bgmcli.api.collection import BangumiDummySubjectCollection
@@ -9,12 +12,13 @@ class CommandExecutorIndex(object):
     BaseCommandExecutor
     
     Note:
-        This only serves as a factory class and is NOT supposed to be
-        instantiated
+        This only serves as an index and is NOT supposed to be instantiated
         
     Attributes:
         command_executors_map (dict): map from command head to subclass name
             that deals with this type of command
+        valid_commands (list[unicode or str]): words that valid for being
+            command head. Registered automatically by CommandExecutorMeta
     """
 
     command_executors_map = {}
@@ -29,14 +33,20 @@ class CommandExecutorIndex(object):
             
         Returns:
             CommandExecutorMeta: a subclass of BaseCommandExecutor
+            
+        Raises:
+            InvalidCommandError: if command head not valid
         """
+        if command_head not in cls.valid_commands:
+            raise InvalidCommandError("Got invalid command: {0}"
+                                      .format(command_head))
         executor_class = cls.command_executors_map[command_head]
         return executor_class
 
 
 class CommandExecutorMeta(type):
     """Meta class for BaseCommandExecutor, registers subclasses of
-    BaseCommandExecutor in CommandExecutorFactory
+    BaseCommandExecutor in CommandExecutorIndex
     """
     def __new__(meta, name, bases, class_dict):  # @NoSelf
         cls = type.__new__(meta, name, bases, class_dict) 
@@ -48,6 +58,9 @@ class CommandExecutorMeta(type):
 
 
 class BaseCommandExecutor(object):
+    """An base class for command executors, provides ways to validate commands
+    based on length
+    """
 
     __metaclass__ = CommandExecutorMeta
     _VALID_COMMANDS = []
@@ -65,6 +78,7 @@ class BaseCommandExecutor(object):
         self._validate_command()
         
     def execute(self):
+        """Executes the command"""
         raise NotImplementedError
         
     def _validate_command(self):
@@ -93,6 +107,12 @@ class SubjectCommandMixin(object):
         raise InvalidCommandError("Subject name {0} not found".format(name))
     
     def _update_collection(self, coll):
+        """Transform collection to regular one if it's dummy.
+        
+        Returns:
+            BangumiSubjectCollection: transformed regular collection, self if
+                input is not dummy
+        """
         if (isinstance(coll, BangumiDummySubjectCollection) and
             coll in self._collections):
             new_coll = coll.to_regular_collection()
@@ -104,6 +124,7 @@ class SubjectCommandMixin(object):
 
 
 class ListCommandMixin(object):
+    """Mixin for list commands to organize output string"""
     def _produce_output(self, data, n_cols=5):
         if not data:
             return ''
@@ -125,6 +146,8 @@ class ListCommandMixin(object):
 
 
 class WatchedCommandExecutor(BaseCommandExecutor, SubjectCommandMixin):
+    """Command to set a subject or episode as watched
+    """
 
     _VALID_COMMANDS = ['watched', 'kanguo']
     _MAX_COMMAND_LEN = 3
@@ -134,6 +157,9 @@ class WatchedCommandExecutor(BaseCommandExecutor, SubjectCommandMixin):
         super(WatchedCommandExecutor, self).__init__(parsed, collections)
         
     def execute(self):
+        """Executes the command, decide whether it is for episode or subject
+        depending on length of parsed command
+        """
         coll = self._find_collection(self._parsed[1])
 
         if self._length == 2:
@@ -149,6 +175,8 @@ class WatchedCommandExecutor(BaseCommandExecutor, SubjectCommandMixin):
             
     
 class WatchedUpToCommandExecutor(BaseCommandExecutor, SubjectCommandMixin):
+    """Command to set watched up to some episode for a subject
+    """
 
     _VALID_COMMANDS = ['watchedupto', 'kandao']
     _MAX_COMMAND_LEN = 3
@@ -168,6 +196,8 @@ class WatchedUpToCommandExecutor(BaseCommandExecutor, SubjectCommandMixin):
         
         
 class ListWatchingCommandExecutor(BaseCommandExecutor, ListCommandMixin):
+    """Command to list all subjects marked as watching
+    """
     _VALID_COMMANDS = ['lswatching', 'lszaikan']
     _MAX_COMMAND_LEN = 1
     _MIN_COMMAND_LEN = 1
@@ -184,6 +214,8 @@ class ListWatchingCommandExecutor(BaseCommandExecutor, ListCommandMixin):
         
 class ListEpsCommandExecutor(BaseCommandExecutor, ListCommandMixin,
                              SubjectCommandMixin):
+    """Command to list all episodes for a subject
+    """
     _VALID_COMMANDS = ['lseps']
     _MAX_COMMAND_LEN = 2
     _MIN_COMMAND_LEN = 2
