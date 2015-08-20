@@ -1,6 +1,11 @@
 # bgmcli
 ##Unofficial APIs and a simple CLI for Bangumi.tv in Python
 
+Note:
+
+It only supports Python 2.7, and is only tested with OSX 10.10 and
+Python 2.7.10
+
 Simple examples for using the APIs. Note it currently only works with anime collections
 
 ```
