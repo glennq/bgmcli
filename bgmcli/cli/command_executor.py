@@ -202,7 +202,7 @@ class ListEpsCommandExecutor(BaseCommandExecutor, ListCommandMixin,
                                             type_num, status) 
                        for status, type_num in zip(statuses, ep_type_nums)]
 
-        print self._produce_output(ep_displays)
+        print self._produce_output(ep_displays, 7)
         
     def _status_color(self, status):
         """
