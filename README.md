@@ -10,7 +10,7 @@ import codecs
 from bgmcli.api import BangumiSession
 
 # to mark subject id 253 as watched, rate it 8, and add a few tags
-with BangumiSession('xxxxx@gmail.com', 'xxxxxx') as session:
+with BangumiSession('xxxxx@gmail.com', 'password') as session:
     coll = session.get_sub_collection('253')
     coll.c_status = 2
     coll.rating = 8
@@ -18,7 +18,7 @@ with BangumiSession('xxxxx@gmail.com', 'xxxxxx') as session:
     coll.sync_collection()
 
 # to export all anime you are watching and your progress
-with BangumiSession('xxxxx@gmail.com', 'xxxxxx') as session:
+with BangumiSession('xxxxx@gmail.com', 'password') as session:
     watching = session.get_dummy_collections('anime', 3)
     serialized = [coll.to_regular_collection().to_json() for coll in watching]
 with codecs.open('watching.txt', 'w', encoding='utf8') as f:
